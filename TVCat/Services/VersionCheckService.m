@@ -74,7 +74,7 @@
                @"param1": AWAppVersion(),
                @"param2": @"iOS",
                }
-     completion:^(id result, NSError *error) {
+     completion:^(id result, id rawData, NSError *error) {
          [weakSelf handleResult:result error:error];
      }];
 }

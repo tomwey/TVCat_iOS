@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Defines.h"
-#import "GuideVC.h"
+//#import "GuideVC.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCryptor.h>
 
@@ -113,18 +113,18 @@
         return;
     }
     
-    __weak typeof(self) me = self;
-    [[self apiServiceWithName:@"APIService"]
-     POST:nil
-     params:@{
-              @"dotype": @"GetData",
-              @"funname": @"供应商获取未读消息数APP",
-              @"param1": [userInfo[@"supid"] ?: @"0" description],
-              @"param2": userInfo[@"loginname"] ?: @"",
-              @"param3": [userInfo[@"symbolkeyid"] ?: @"0" description],
-              } completion:^(id result, NSError *error) {
-                  [me handleResult:result error:error loadMessage:loadMessage];
-              }];
+//    __weak typeof(self) me = self;
+//    [[self apiServiceWithName:@"APIService"]
+//     POST:nil
+//     params:@{
+//              @"dotype": @"GetData",
+//              @"funname": @"供应商获取未读消息数APP",
+//              @"param1": [userInfo[@"supid"] ?: @"0" description],
+//              @"param2": userInfo[@"loginname"] ?: @"",
+//              @"param3": [userInfo[@"symbolkeyid"] ?: @"0" description],
+//              } completion:^(id result, NSError *error) {
+//                  [me handleResult:result error:error loadMessage:loadMessage];
+//              }];
 }
 
 - (void)handleResult:(id)result error:(NSError *)error loadMessage:(BOOL)yesOrNo
@@ -153,8 +153,8 @@
 - (void)showGuide:(BOOL)yesOrNo
 {
     if ( yesOrNo ) {
-        GuideVC *guideVC = [[GuideVC alloc] init];
-        self.window.rootViewController = guideVC;
+//        GuideVC *guideVC = [[GuideVC alloc] init];
+//        self.window.rootViewController = guideVC;
     } else {
         UINavigationController *nav =
         [[UINavigationController alloc] initWithRootViewController:self.appRootController];

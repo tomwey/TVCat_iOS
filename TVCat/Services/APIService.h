@@ -22,11 +22,11 @@
 
 - (NSUInteger)GET:(NSString *)uri
            params:(NSDictionary *)params
-       completion:(void (^)(id result, NSError *error))completion;
+       completion:(void (^)(id result, id rawData, NSError *error))completion;
 
 - (NSUInteger)POST:(NSString *)uri
             params:(NSDictionary *)params
-        completion:(void (^)(id result, NSError *error))completion;
+        completion:(void (^)(id result, id rawData, NSError *error))completion;
 
 - (NSUInteger)POST2:(NSString *)uri
              params:(NSDictionary *)params
@@ -44,11 +44,11 @@
 
 - (NSUInteger)GET:(NSString *)uri
      params:(NSDictionary *)params
- completion:(void (^)(id result, NSError *error))completion;
+ completion:(void (^)(id result, id rawData, NSError *error))completion;
 
 - (NSUInteger)POST:(NSString *)uri
             params:(NSDictionary *)params
-        completion:(void (^)(id result, NSError *error))completion;
+        completion:(void (^)(id result, id rawData, NSError *error))completion;
 
 - (NSUInteger)POST2:(NSString *)uri
             params:(NSDictionary *)params

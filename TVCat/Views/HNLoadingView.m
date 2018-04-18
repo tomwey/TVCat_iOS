@@ -132,7 +132,7 @@
         self.indicatorView.hidden = YES;
     }
     
-    if ( state == LoadingStateSuccessResult || state == LoadingStateDefault ) {
+    if ( state == HNLoadingStateSuccessResult || state == HNLoadingStateDefault ) {
         self.resultView.hidden = YES;
         self.hidden = YES;
     } else {

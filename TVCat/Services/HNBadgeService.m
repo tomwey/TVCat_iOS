@@ -65,7 +65,7 @@ NSString * const kNeedReloadBadgeNotification = @"kNeedReloadBadgeNotification";
                               };
     
     [[self apiServiceWithName:@"APIService"]
-     POST:nil params:params completion:^(id result, NSError *error) {
+     POST:nil params:params completion:^(id result, id rawData, NSError *error) {
          // 此处单例不考虑循环引用
          self.loading = NO;
          

@@ -167,131 +167,8 @@
 		99690CD12086E5E500A68431 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909172086E5E300A68431 /* UICountingLabel.m */; };
 		99690CD22086E5E500A68431 /* UIWebView+KeyValueStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969091A2086E5E300A68431 /* UIWebView+KeyValueStorage.m */; };
 		99690CD32086E5E500A68431 /* UIWebView+RemoveGrayBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969091C2086E5E300A68431 /* UIWebView+RemoveGrayBackground.m */; };
-		99690CD42086E5E500A68431 /* AddSignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969091F2086E5E300A68431 /* AddSignVC.m */; };
-		99690CD52086E5E500A68431 /* ApplyLeaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909212086E5E300A68431 /* ApplyLeaveVC.m */; };
-		99690CD62086E5E500A68431 /* AppQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909232086E5E300A68431 /* AppQrcodeVC.m */; };
-		99690CD72086E5E500A68431 /* AttachmentPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909252086E5E300A68431 /* AttachmentPreviewVC.m */; };
-		99690CD82086E5E500A68431 /* AttendanceFlowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909272086E5E300A68431 /* AttendanceFlowVC.m */; };
-		99690CD92086E5E500A68431 /* AttendanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909292086E5E300A68431 /* AttendanceVC.m */; };
-		99690CDA2086E5E500A68431 /* AuthorizeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969092B2086E5E300A68431 /* AuthorizeVC.m */; };
-		99690CDB2086E5E500A68431 /* BackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969092D2086E5E300A68431 /* BackVC.m */; };
-		99690CDC2086E5E500A68431 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969092F2086E5E300A68431 /* BannerView.m */; };
-		99690CDD2086E5E500A68431 /* BaseNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909312086E5E300A68431 /* BaseNavBarVC.m */; };
-		99690CDE2086E5E500A68431 /* BaseSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909332086E5E300A68431 /* BaseSearchVC.m */; };
-		99690CDF2086E5E500A68431 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909352086E5E300A68431 /* BaseVC.m */; };
-		99690CE02086E5E500A68431 /* CatalogContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909372086E5E300A68431 /* CatalogContentView.m */; };
-		99690CE12086E5E500A68431 /* CatalogLeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909392086E5E300A68431 /* CatalogLeftMenuView.m */; };
-		99690CE22086E5E500A68431 /* CommentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969093B2086E5E300A68431 /* CommentVC.m */; };
-		99690CE32086E5E500A68431 /* CompanyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969093D2086E5E300A68431 /* CompanyVC.m */; };
-		99690CE42086E5E500A68431 /* ContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969093F2086E5E300A68431 /* ContactsVC.m */; };
-		99690CE52086E5E500A68431 /* ContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909412086E5E300A68431 /* ContactVC.m */; };
-		99690CE62086E5E500A68431 /* ContractDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909432086E5E300A68431 /* ContractDetailVC.m */; };
-		99690CE72086E5E500A68431 /* ContractListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909452086E5E300A68431 /* ContractListVC.m */; };
-		99690CE82086E5E500A68431 /* DeclareFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909472086E5E300A68431 /* DeclareFormVC.m */; };
-		99690CE92086E5E500A68431 /* DeclareListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909492086E5E300A68431 /* DeclareListVC.m */; };
-		99690CEA2086E5E500A68431 /* DeclareSearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969094B2086E5E300A68431 /* DeclareSearchResultVC.m */; };
-		99690CEB2086E5E500A68431 /* DeclareSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969094D2086E5E300A68431 /* DeclareSearchVC.m */; };
-		99690CEC2086E5E500A68431 /* DMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969094F2086E5E300A68431 /* DMButton.m */; };
-		99690CED2086E5E500A68431 /* DocAttachmentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909512086E5E300A68431 /* DocAttachmentListVC.m */; };
-		99690CEE2086E5E500A68431 /* DocBreadcrumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909532086E5E300A68431 /* DocBreadcrumbView.m */; };
-		99690CEF2086E5E500A68431 /* DocSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909552086E5E300A68431 /* DocSearchVC.m */; };
-		99690CF02086E5E500A68431 /* DocumentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909572086E5E300A68431 /* DocumentVC.m */; };
-		99690CF12086E5E500A68431 /* EmployeeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909592086E5E300A68431 /* EmployeeListVC.m */; };
-		99690CF22086E5E500A68431 /* EmploySearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969095B2086E5E300A68431 /* EmploySearchVC.m */; };
-		99690CF32086E5E500A68431 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969095D2086E5E300A68431 /* FeedbackVC.m */; };
-		99690CF42086E5E500A68431 /* FloorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969095F2086E5E300A68431 /* FloorButton.m */; };
-		99690CF52086E5E500A68431 /* FlowbackListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909612086E5E300A68431 /* FlowbackListVC.m */; };
-		99690CF62086E5E500A68431 /* FlowcopyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909632086E5E300A68431 /* FlowcopyVC.m */; };
-		99690CF72086E5E500A68431 /* FlowOperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909652086E5E300A68431 /* FlowOperationVC.m */; };
-		99690CF82086E5E500A68431 /* FlowSearchResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909672086E5E300A68431 /* FlowSearchResultVC.m */; };
-		99690CF92086E5E500A68431 /* FlowSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909692086E5E300A68431 /* FlowSearchVC.m */; };
-		99690CFA2086E5E500A68431 /* FormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969096B2086E5E300A68431 /* FormVC.m */; };
-		99690CFB2086E5E500A68431 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969096D2086E5E300A68431 /* GuideVC.m */; };
-		99690CFC2086E5E500A68431 /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969096F2086E5E300A68431 /* HelpVC.m */; };
 		99690CFD2086E5E500A68431 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909712086E5E300A68431 /* HomeVC.m */; };
-		99690CFE2086E5E500A68431 /* KnowledgeDocListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909732086E5E300A68431 /* KnowledgeDocListVC.m */; };
-		99690CFF2086E5E500A68431 /* KnowledgeDocSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909752086E5E300A68431 /* KnowledgeDocSearchVC.m */; };
-		99690D002086E5E500A68431 /* KnowledgeTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909772086E5E300A68431 /* KnowledgeTypeVC.m */; };
-		99690D012086E5E500A68431 /* LandAnnexListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909792086E5E300A68431 /* LandAnnexListVC.m */; };
-		99690D022086E5E500A68431 /* LandDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969097B2086E5E300A68431 /* LandDetailVC.m */; };
-		99690D032086E5E500A68431 /* LandListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969097D2086E5E300A68431 /* LandListVC.m */; };
-		99690D042086E5E500A68431 /* LandPayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969097F2086E5E300A68431 /* LandPayCell.m */; };
-		99690D052086E5E500A68431 /* LandPayListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909812086E5E300A68431 /* LandPayListVC.m */; };
-		99690D062086E5E500A68431 /* LandPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909832086E5E300A68431 /* LandPlanCell.m */; };
-		99690D072086E5E500A68431 /* LandPlanListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909852086E5E300A68431 /* LandPlanListVC.m */; };
-		99690D082086E5E500A68431 /* LandSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909872086E5E300A68431 /* LandSearchVC.m */; };
-		99690D092086E5E500A68431 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909892086E5E300A68431 /* LoginVC.m */; };
-		99690D0A2086E5E500A68431 /* MancardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969098B2086E5E300A68431 /* MancardVC.m */; };
-		99690D0B2086E5E500A68431 /* meeting_base_info.html in Resources */ = {isa = PBXBuildFile; fileRef = 9969098C2086E5E300A68431 /* meeting_base_info.html */; };
-		99690D0C2086E5E500A68431 /* MeetingBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969098E2086E5E300A68431 /* MeetingBaseInfoView.m */; };
-		99690D0D2086E5E500A68431 /* MeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909902086E5E300A68431 /* MeetingCell.m */; };
-		99690D0E2086E5E500A68431 /* MeetingDateRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909922086E5E300A68431 /* MeetingDateRange.m */; };
-		99690D0F2086E5E500A68431 /* MeetingDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909942086E5E300A68431 /* MeetingDetailVC.m */; };
-		99690D102086E5E500A68431 /* MeetingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909962086E5E300A68431 /* MeetingListView.m */; };
-		99690D112086E5E500A68431 /* MeetingNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909982086E5E300A68431 /* MeetingNotesCell.m */; };
-		99690D122086E5E500A68431 /* MeetingNotesDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969099A2086E5E300A68431 /* MeetingNotesDetailVC.m */; };
-		99690D132086E5E500A68431 /* MeetingNotesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969099C2086E5E300A68431 /* MeetingNotesListView.m */; };
-		99690D142086E5E500A68431 /* MeetingOrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969099E2086E5E300A68431 /* MeetingOrderDetailVC.m */; };
-		99690D152086E5E500A68431 /* MeetingOrderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909A02086E5E300A68431 /* MeetingOrderedView.m */; };
-		99690D162086E5E500A68431 /* MeetingOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909A22086E5E300A68431 /* MeetingOrderListVC.m */; };
-		99690D172086E5E500A68431 /* MeetingRoomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909A42086E5E300A68431 /* MeetingRoomVC.m */; };
-		99690D182086E5E500A68431 /* MeetingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909A62086E5E300A68431 /* MeetingVC.m */; };
-		99690D192086E5E500A68431 /* MessageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909A82086E5E300A68431 /* MessageDetailVC.m */; };
-		99690D1A2086E5E500A68431 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909AA2086E5E300A68431 /* MessageVC.m */; };
-		99690D1B2086E5E500A68431 /* MobileInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909AC2086E5E300A68431 /* MobileInputVC.m */; };
-		99690D1C2086E5E500A68431 /* NewMeetingOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909AE2086E5E300A68431 /* NewMeetingOrderVC.m */; };
-		99690D1D2086E5E500A68431 /* NewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909B02086E5E300A68431 /* NewsDetailVC.m */; };
-		99690D1E2086E5E500A68431 /* NewsListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909B22086E5E300A68431 /* NewsListVC.m */; };
-		99690D1F2086E5E500A68431 /* NSDate+WeekdayRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909B42086E5E300A68431 /* NSDate+WeekdayRange.m */; };
-		99690D202086E5E500A68431 /* NSObject+APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909B62086E5E300A68431 /* NSObject+APIService.m */; };
-		99690D212086E5E500A68431 /* NSObject+RTIDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909B82086E5E300A68431 /* NSObject+RTIDataService.m */; };
-		99690D222086E5E500A68431 /* NSObject+StoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909BA2086E5E300A68431 /* NSObject+StoreService.m */; };
-		99690D232086E5E500A68431 /* OADetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909BC2086E5E300A68431 /* OADetailVC.m */; };
-		99690D242086E5E500A68431 /* OAListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909BE2086E5E300A68431 /* OAListVC.m */; };
-		99690D252086E5E500A68431 /* OAPopoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909C02086E5E300A68431 /* OAPopoverVC.m */; };
-		99690D262086E5E500A68431 /* OutputArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909C22086E5E300A68431 /* OutputArea.m */; };
-		99690D272086E5E500A68431 /* OutputCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909C42086E5E300A68431 /* OutputCatalog.m */; };
-		99690D282086E5E500A68431 /* OutputCatalogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909C62086E5E300A68431 /* OutputCatalogVC.m */; };
-		99690D292086E5E500A68431 /* OutputConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909C82086E5E300A68431 /* OutputConfirmVC.m */; };
-		99690D2A2086E5E500A68431 /* OutputContractListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909CA2086E5E300A68431 /* OutputContractListVC.m */; };
-		99690D2B2086E5E500A68431 /* OutputJDConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909CC2086E5E300A68431 /* OutputJDConfirmVC.m */; };
-		99690D2C2086E5E500A68431 /* OutputNodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909CE2086E5E300A68431 /* OutputNodeCell.m */; };
-		99690D2D2086E5E500A68431 /* OutputProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909D02086E5E300A68431 /* OutputProject.m */; };
-		99690D2E2086E5E500A68431 /* OutputQueryParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909D22086E5E300A68431 /* OutputQueryParams.m */; };
-		99690D2F2086E5E500A68431 /* OutputRoomConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909D42086E5E300A68431 /* OutputRoomConfirmVC.m */; };
-		99690D302086E5E500A68431 /* OutputSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909D62086E5E300A68431 /* OutputSearchVC.m */; };
-		99690D312086E5E500A68431 /* OutputValueConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909D82086E5E300A68431 /* OutputValueConfirmVC.m */; };
-		99690D322086E5E500A68431 /* ParamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909DA2086E5E300A68431 /* ParamUtil.m */; };
-		99690D332086E5E500A68431 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909DC2086E5E300A68431 /* PasswordVC.m */; };
-		99690D342086E5E500A68431 /* PayListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909DE2086E5E300A68431 /* PayListVC.m */; };
-		99690D352086E5E500A68431 /* PaymentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909E02086E5E300A68431 /* PaymentsVC.m */; };
-		99690D362086E5E500A68431 /* PlanAdjustVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909E22086E5E300A68431 /* PlanAdjustVC.m */; };
-		99690D372086E5E500A68431 /* PlanConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909E42086E5E300A68431 /* PlanConfirmVC.m */; };
-		99690D382086E5E500A68431 /* PlanDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909E62086E5E300A68431 /* PlanDetailVC.m */; };
-		99690D392086E5E500A68431 /* PlanFlowFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909E82086E5E300A68431 /* PlanFlowFormVC.m */; };
-		99690D3A2086E5E500A68431 /* PlanListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909EA2086E5E300A68431 /* PlanListVC.m */; };
-		99690D3B2086E5E500A68431 /* PlanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909EC2086E5E300A68431 /* PlanVC.m */; };
-		99690D3C2086E5E500A68431 /* RelatedFlowListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909EE2086E5E300A68431 /* RelatedFlowListVC.m */; };
-		99690D3D2086E5E500A68431 /* ReportListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909F02086E5E300A68431 /* ReportListVC.m */; };
-		99690D3E2086E5E500A68431 /* ReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909F22086E5E300A68431 /* ReportVC.m */; };
-		99690D3F2086E5E500A68431 /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909F42086E5E300A68431 /* ResetPasswordVC.m */; };
-		99690D402086E5E500A68431 /* RulesSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909F62086E5E300A68431 /* RulesSearchVC.m */; };
-		99690D412086E5E500A68431 /* RulesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909F82086E5E300A68431 /* RulesVC.m */; };
-		99690D422086E5E500A68431 /* SalaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909FA2086E5E300A68431 /* SalaryVC.m */; };
-		99690D432086E5E500A68431 /* SearchConditionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909FC2086E5E300A68431 /* SearchConditionVC.m */; };
-		99690D442086E5E500A68431 /* SelectContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 996909FE2086E5E300A68431 /* SelectContactVC.m */; };
 		99690D452086E5E500A68431 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A002086E5E300A68431 /* SettingVC.m */; };
-		99690D462086E5E500A68431 /* SignFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A022086E5E300A68431 /* SignFormVC.m */; };
-		99690D472086E5E500A68431 /* SignListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A042086E5E300A68431 /* SignListVC.m */; };
-		99690D482086E5E500A68431 /* SignOptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A062086E5E300A68431 /* SignOptionsVC.m */; };
-		99690D492086E5E500A68431 /* SubmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A082086E5E300A68431 /* SubmitVC.m */; };
-		99690D4A2086E5E500A68431 /* TracePlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A0A2086E5E300A68431 /* TracePlanCell.m */; };
-		99690D4B2086E5E500A68431 /* TracePlanListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A0C2086E5E300A68431 /* TracePlanListView.m */; };
-		99690D4C2086E5E500A68431 /* TransmitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A0E2086E5E300A68431 /* TransmitVC.m */; };
-		99690D4D2086E5E500A68431 /* TypeGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A102086E5E300A68431 /* TypeGridView.m */; };
-		99690D4E2086E5E500A68431 /* UIViewController+CreateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A122086E5E300A68431 /* UIViewController+CreateFactory.m */; };
-		99690D4F2086E5E500A68431 /* UploadImageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A142086E5E300A68431 /* UploadImageControl.m */; };
-		99690D502086E5E500A68431 /* WorkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A162086E5E300A68431 /* WorkVC.m */; };
 		99690D512086E5E500A68431 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A1C2086E5E300A68431 /* AFHTTPRequestOperation.m */; };
 		99690D522086E5E500A68431 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A1E2086E5E300A68431 /* AFHTTPRequestOperationManager.m */; };
 		99690D532086E5E500A68431 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690A202086E5E300A68431 /* AFHTTPSessionManager.m */; };
@@ -583,9 +460,7 @@
 		99690E712086E5E500A68431 /* APIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BA42086E5E400A68431 /* APIService.m */; };
 		99690E722086E5E500A68431 /* AttachmentDownloadService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BA62086E5E400A68431 /* AttachmentDownloadService.m */; };
 		99690E732086E5E500A68431 /* HNBadgeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BA82086E5E400A68431 /* HNBadgeService.m */; };
-		99690E742086E5E500A68431 /* HNNewFlowCountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BAA2086E5E400A68431 /* HNNewFlowCountService.m */; };
 		99690E752086E5E500A68431 /* NetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BAC2086E5E400A68431 /* NetworkService.m */; };
-		99690E762086E5E500A68431 /* RTIDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BAE2086E5E400A68431 /* RTIDataService.m */; };
 		99690E772086E5E500A68431 /* StoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BB02086E5E400A68431 /* StoreService.m */; };
 		99690E782086E5E500A68431 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BB22086E5E400A68431 /* UserService.m */; };
 		99690E792086E5E500A68431 /* VersionCheckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BB42086E5E400A68431 /* VersionCheckService.m */; };
@@ -597,27 +472,10 @@
 		99690E7F2086E5E500A68431 /* AWSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BC22086E5E400A68431 /* AWSectionHeaderView.m */; };
 		99690E802086E5E500A68431 /* BIChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BC42086E5E400A68431 /* BIChartView.m */; };
 		99690E812086E5E500A68431 /* Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BC62086E5E400A68431 /* Checkbox.m */; };
-		99690E822086E5E600A68431 /* ContractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BC82086E5E400A68431 /* ContractCell.m */; };
-		99690E832086E5E600A68431 /* ContractDeclareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BCA2086E5E400A68431 /* ContractDeclareCell.m */; };
-		99690E842086E5E600A68431 /* ContractDetailBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BCC2086E5E400A68431 /* ContractDetailBaseView.m */; };
-		99690E852086E5E600A68431 /* ContractDetailDeclareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BCE2086E5E400A68431 /* ContractDetailDeclareView.m */; };
-		99690E862086E5E600A68431 /* ContractDetailPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BD02086E5E400A68431 /* ContractDetailPayView.m */; };
-		99690E872086E5E600A68431 /* ContractDetailSignView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BD22086E5E400A68431 /* ContractDetailSignView.m */; };
-		99690E882086E5E600A68431 /* ContractPayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BD42086E5E400A68431 /* ContractPayCell.m */; };
-		99690E892086E5E600A68431 /* ContractPayCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BD62086E5E400A68431 /* ContractPayCell2.m */; };
-		99690E8A2086E5E600A68431 /* ContractSignCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BD82086E5E400A68431 /* ContractSignCell.m */; };
 		99690E8B2086E5E600A68431 /* CustomOpinionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BDA2086E5E400A68431 /* CustomOpinionView.m */; };
 		99690E8C2086E5E600A68431 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BDC2086E5E400A68431 /* CustomSearchBar.m */; };
 		99690E8D2086E5E600A68431 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BDE2086E5E400A68431 /* DatePicker.m */; };
 		99690E8E2086E5E600A68431 /* DateSelectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BE02086E5E400A68431 /* DateSelectControl.m */; };
-		99690E8F2086E5E600A68431 /* DeclareListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BE22086E5E400A68431 /* DeclareListCell.m */; };
-		99690E902086E5E600A68431 /* DeclareListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BE42086E5E400A68431 /* DeclareListView.m */; };
-		99690E912086E5E600A68431 /* DocumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BE62086E5E400A68431 /* DocumentCell.m */; };
-		99690E922086E5E600A68431 /* DocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BE82086E5E400A68431 /* DocumentView.m */; };
-		99690E932086E5E600A68431 /* EmployCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BEA2086E5E400A68431 /* EmployCell.m */; };
-		99690E942086E5E600A68431 /* EmploySearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BEC2086E5E400A68431 /* EmploySearchView.m */; };
-		99690E952086E5E600A68431 /* FlowSearchHelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BEE2086E5E400A68431 /* FlowSearchHelpView.m */; };
-		99690E962086E5E600A68431 /* FlowSubmitAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BF02086E5E400A68431 /* FlowSubmitAlert.m */; };
 		99690E972086E5E600A68431 /* FormControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BF22086E5E400A68431 /* FormControl.m */; };
 		99690E982086E5E600A68431 /* FormInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BF42086E5E400A68431 /* FormInputControl.m */; };
 		99690E992086E5E600A68431 /* HNBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BF62086E5E400A68431 /* HNBadge.m */; };
@@ -625,23 +483,17 @@
 		99690E9B2086E5E600A68431 /* HNLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BFA2086E5E400A68431 /* HNLoadingView.m */; };
 		99690E9C2086E5E600A68431 /* HNProgressHUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BFC2086E5E400A68431 /* HNProgressHUDHelper.m */; };
 		99690E9D2086E5E600A68431 /* HNRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690BFE2086E5E400A68431 /* HNRefreshView.m */; };
-		99690E9E2086E5E600A68431 /* LandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C002086E5E400A68431 /* LandCell.m */; };
-		99690E9F2086E5E600A68431 /* LandListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C022086E5E400A68431 /* LandListView.m */; };
 		99690EA02086E5E600A68431 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C042086E5E400A68431 /* LoadingView.m */; };
 		99690EA12086E5E600A68431 /* MeetingOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C062086E5E400A68431 /* MeetingOrderCell.m */; };
 		99690EA22086E5E600A68431 /* MeetingRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C082086E5E400A68431 /* MeetingRoom.m */; };
 		99690EA32086E5E600A68431 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C0A2086E5E400A68431 /* MessageCell.m */; };
 		99690EA42086E5E600A68431 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C0C2086E5E400A68431 /* NewsCell.m */; };
 		99690EA52086E5E600A68431 /* NTMonthYearPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C0E2086E5E400A68431 /* NTMonthYearPicker.m */; };
-		99690EA62086E5E600A68431 /* OACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C102086E5E400A68431 /* OACell.m */; };
-		99690EA72086E5E600A68431 /* OACell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C122086E5E400A68431 /* OACell2.m */; };
-		99690EA82086E5E600A68431 /* OAListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C142086E5E400A68431 /* OAListView.m */; };
 		99690EA92086E5E600A68431 /* PagerTabStripper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C162086E5E400A68431 /* PagerTabStripper.m */; };
 		99690EAA2086E5E600A68431 /* PayTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C182086E5E400A68431 /* PayTimeView.m */; };
 		99690EAB2086E5E600A68431 /* PlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C1A2086E5E400A68431 /* PlanCell.m */; };
 		99690EAC2086E5E600A68431 /* PlanCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C1C2086E5E400A68431 /* PlanCell2.m */; };
 		99690EAD2086E5E600A68431 /* PlanDocView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C1E2086E5E400A68431 /* PlanDocView.m */; };
-		99690EAE2086E5E600A68431 /* PlanListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C202086E5E400A68431 /* PlanListView.m */; };
 		99690EAF2086E5E600A68431 /* PlanProjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C222086E5E400A68431 /* PlanProjectView.m */; };
 		99690EB02086E5E600A68431 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C242086E5E400A68431 /* RadioButton.m */; };
 		99690EB12086E5E600A68431 /* ReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690C262086E5E400A68431 /* ReportCell.m */; };
@@ -660,6 +512,9 @@
 		99690EC02086E9B400A68431 /* ExploreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EBF2086E9B400A68431 /* ExploreVC.m */; };
 		99690EC42086EC6600A68431 /* tab_explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690EC22086EC6500A68431 /* tab_explore@2x.png */; };
 		99690EC52086EC6600A68431 /* tab_explore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690EC32086EC6600A68431 /* tab_explore@3x.png */; };
+		99690EC8208706CA00A68431 /* UIViewController+CreateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EC7208706CA00A68431 /* UIViewController+CreateFactory.m */; };
+		99690ECD208707A500A68431 /* BaseNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ECA208707A500A68431 /* BaseNavBarVC.m */; };
+		99690ECE208707A500A68431 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ECB208707A500A68431 /* BaseVC.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -997,255 +852,10 @@
 		9969091A2086E5E300A68431 /* UIWebView+KeyValueStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+KeyValueStorage.m"; sourceTree = "<group>"; };
 		9969091B2086E5E300A68431 /* UIWebView+RemoveGrayBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+RemoveGrayBackground.h"; sourceTree = "<group>"; };
 		9969091C2086E5E300A68431 /* UIWebView+RemoveGrayBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+RemoveGrayBackground.m"; sourceTree = "<group>"; };
-		9969091E2086E5E300A68431 /* AddSignVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSignVC.h; sourceTree = "<group>"; };
-		9969091F2086E5E300A68431 /* AddSignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSignVC.m; sourceTree = "<group>"; };
-		996909202086E5E300A68431 /* ApplyLeaveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyLeaveVC.h; sourceTree = "<group>"; };
-		996909212086E5E300A68431 /* ApplyLeaveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyLeaveVC.m; sourceTree = "<group>"; };
-		996909222086E5E300A68431 /* AppQrcodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppQrcodeVC.h; sourceTree = "<group>"; };
-		996909232086E5E300A68431 /* AppQrcodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppQrcodeVC.m; sourceTree = "<group>"; };
-		996909242086E5E300A68431 /* AttachmentPreviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentPreviewVC.h; sourceTree = "<group>"; };
-		996909252086E5E300A68431 /* AttachmentPreviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentPreviewVC.m; sourceTree = "<group>"; };
-		996909262086E5E300A68431 /* AttendanceFlowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceFlowVC.h; sourceTree = "<group>"; };
-		996909272086E5E300A68431 /* AttendanceFlowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceFlowVC.m; sourceTree = "<group>"; };
-		996909282086E5E300A68431 /* AttendanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceVC.h; sourceTree = "<group>"; };
-		996909292086E5E300A68431 /* AttendanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceVC.m; sourceTree = "<group>"; };
-		9969092A2086E5E300A68431 /* AuthorizeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizeVC.h; sourceTree = "<group>"; };
-		9969092B2086E5E300A68431 /* AuthorizeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizeVC.m; sourceTree = "<group>"; };
-		9969092C2086E5E300A68431 /* BackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackVC.h; sourceTree = "<group>"; };
-		9969092D2086E5E300A68431 /* BackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackVC.m; sourceTree = "<group>"; };
-		9969092E2086E5E300A68431 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
-		9969092F2086E5E300A68431 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
-		996909302086E5E300A68431 /* BaseNavBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavBarVC.h; sourceTree = "<group>"; };
-		996909312086E5E300A68431 /* BaseNavBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavBarVC.m; sourceTree = "<group>"; };
-		996909322086E5E300A68431 /* BaseSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSearchVC.h; sourceTree = "<group>"; };
-		996909332086E5E300A68431 /* BaseSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSearchVC.m; sourceTree = "<group>"; };
-		996909342086E5E300A68431 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
-		996909352086E5E300A68431 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
-		996909362086E5E300A68431 /* CatalogContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogContentView.h; sourceTree = "<group>"; };
-		996909372086E5E300A68431 /* CatalogContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogContentView.m; sourceTree = "<group>"; };
-		996909382086E5E300A68431 /* CatalogLeftMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogLeftMenuView.h; sourceTree = "<group>"; };
-		996909392086E5E300A68431 /* CatalogLeftMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogLeftMenuView.m; sourceTree = "<group>"; };
-		9969093A2086E5E300A68431 /* CommentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentVC.h; sourceTree = "<group>"; };
-		9969093B2086E5E300A68431 /* CommentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentVC.m; sourceTree = "<group>"; };
-		9969093C2086E5E300A68431 /* CompanyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyVC.h; sourceTree = "<group>"; };
-		9969093D2086E5E300A68431 /* CompanyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyVC.m; sourceTree = "<group>"; };
-		9969093E2086E5E300A68431 /* ContactsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsVC.h; sourceTree = "<group>"; };
-		9969093F2086E5E300A68431 /* ContactsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsVC.m; sourceTree = "<group>"; };
-		996909402086E5E300A68431 /* ContactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactVC.h; sourceTree = "<group>"; };
-		996909412086E5E300A68431 /* ContactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactVC.m; sourceTree = "<group>"; };
-		996909422086E5E300A68431 /* ContractDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailVC.h; sourceTree = "<group>"; };
-		996909432086E5E300A68431 /* ContractDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailVC.m; sourceTree = "<group>"; };
-		996909442086E5E300A68431 /* ContractListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractListVC.h; sourceTree = "<group>"; };
-		996909452086E5E300A68431 /* ContractListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractListVC.m; sourceTree = "<group>"; };
-		996909462086E5E300A68431 /* DeclareFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareFormVC.h; sourceTree = "<group>"; };
-		996909472086E5E300A68431 /* DeclareFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareFormVC.m; sourceTree = "<group>"; };
-		996909482086E5E300A68431 /* DeclareListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareListVC.h; sourceTree = "<group>"; };
-		996909492086E5E300A68431 /* DeclareListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareListVC.m; sourceTree = "<group>"; };
-		9969094A2086E5E300A68431 /* DeclareSearchResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareSearchResultVC.h; sourceTree = "<group>"; };
-		9969094B2086E5E300A68431 /* DeclareSearchResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareSearchResultVC.m; sourceTree = "<group>"; };
-		9969094C2086E5E300A68431 /* DeclareSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareSearchVC.h; sourceTree = "<group>"; };
-		9969094D2086E5E300A68431 /* DeclareSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareSearchVC.m; sourceTree = "<group>"; };
-		9969094E2086E5E300A68431 /* DMButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMButton.h; sourceTree = "<group>"; };
-		9969094F2086E5E300A68431 /* DMButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMButton.m; sourceTree = "<group>"; };
-		996909502086E5E300A68431 /* DocAttachmentListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocAttachmentListVC.h; sourceTree = "<group>"; };
-		996909512086E5E300A68431 /* DocAttachmentListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocAttachmentListVC.m; sourceTree = "<group>"; };
-		996909522086E5E300A68431 /* DocBreadcrumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocBreadcrumbView.h; sourceTree = "<group>"; };
-		996909532086E5E300A68431 /* DocBreadcrumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocBreadcrumbView.m; sourceTree = "<group>"; };
-		996909542086E5E300A68431 /* DocSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocSearchVC.h; sourceTree = "<group>"; };
-		996909552086E5E300A68431 /* DocSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocSearchVC.m; sourceTree = "<group>"; };
-		996909562086E5E300A68431 /* DocumentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentVC.h; sourceTree = "<group>"; };
-		996909572086E5E300A68431 /* DocumentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentVC.m; sourceTree = "<group>"; };
-		996909582086E5E300A68431 /* EmployeeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeListVC.h; sourceTree = "<group>"; };
-		996909592086E5E300A68431 /* EmployeeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeListVC.m; sourceTree = "<group>"; };
-		9969095A2086E5E300A68431 /* EmploySearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmploySearchVC.h; sourceTree = "<group>"; };
-		9969095B2086E5E300A68431 /* EmploySearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmploySearchVC.m; sourceTree = "<group>"; };
-		9969095C2086E5E300A68431 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
-		9969095D2086E5E300A68431 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
-		9969095E2086E5E300A68431 /* FloorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorButton.h; sourceTree = "<group>"; };
-		9969095F2086E5E300A68431 /* FloorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorButton.m; sourceTree = "<group>"; };
-		996909602086E5E300A68431 /* FlowbackListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowbackListVC.h; sourceTree = "<group>"; };
-		996909612086E5E300A68431 /* FlowbackListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowbackListVC.m; sourceTree = "<group>"; };
-		996909622086E5E300A68431 /* FlowcopyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowcopyVC.h; sourceTree = "<group>"; };
-		996909632086E5E300A68431 /* FlowcopyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowcopyVC.m; sourceTree = "<group>"; };
-		996909642086E5E300A68431 /* FlowOperationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowOperationVC.h; sourceTree = "<group>"; };
-		996909652086E5E300A68431 /* FlowOperationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowOperationVC.m; sourceTree = "<group>"; };
-		996909662086E5E300A68431 /* FlowSearchResultVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowSearchResultVC.h; sourceTree = "<group>"; };
-		996909672086E5E300A68431 /* FlowSearchResultVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowSearchResultVC.m; sourceTree = "<group>"; };
-		996909682086E5E300A68431 /* FlowSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowSearchVC.h; sourceTree = "<group>"; };
-		996909692086E5E300A68431 /* FlowSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowSearchVC.m; sourceTree = "<group>"; };
-		9969096A2086E5E300A68431 /* FormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormVC.h; sourceTree = "<group>"; };
-		9969096B2086E5E300A68431 /* FormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormVC.m; sourceTree = "<group>"; };
-		9969096C2086E5E300A68431 /* GuideVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
-		9969096D2086E5E300A68431 /* GuideVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
-		9969096E2086E5E300A68431 /* HelpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpVC.h; sourceTree = "<group>"; };
-		9969096F2086E5E300A68431 /* HelpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpVC.m; sourceTree = "<group>"; };
 		996909702086E5E300A68431 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		996909712086E5E300A68431 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		996909722086E5E300A68431 /* KnowledgeDocListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowledgeDocListVC.h; sourceTree = "<group>"; };
-		996909732086E5E300A68431 /* KnowledgeDocListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowledgeDocListVC.m; sourceTree = "<group>"; };
-		996909742086E5E300A68431 /* KnowledgeDocSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowledgeDocSearchVC.h; sourceTree = "<group>"; };
-		996909752086E5E300A68431 /* KnowledgeDocSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowledgeDocSearchVC.m; sourceTree = "<group>"; };
-		996909762086E5E300A68431 /* KnowledgeTypeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnowledgeTypeVC.h; sourceTree = "<group>"; };
-		996909772086E5E300A68431 /* KnowledgeTypeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnowledgeTypeVC.m; sourceTree = "<group>"; };
-		996909782086E5E300A68431 /* LandAnnexListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandAnnexListVC.h; sourceTree = "<group>"; };
-		996909792086E5E300A68431 /* LandAnnexListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandAnnexListVC.m; sourceTree = "<group>"; };
-		9969097A2086E5E300A68431 /* LandDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandDetailVC.h; sourceTree = "<group>"; };
-		9969097B2086E5E300A68431 /* LandDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandDetailVC.m; sourceTree = "<group>"; };
-		9969097C2086E5E300A68431 /* LandListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandListVC.h; sourceTree = "<group>"; };
-		9969097D2086E5E300A68431 /* LandListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandListVC.m; sourceTree = "<group>"; };
-		9969097E2086E5E300A68431 /* LandPayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandPayCell.h; sourceTree = "<group>"; };
-		9969097F2086E5E300A68431 /* LandPayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandPayCell.m; sourceTree = "<group>"; };
-		996909802086E5E300A68431 /* LandPayListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandPayListVC.h; sourceTree = "<group>"; };
-		996909812086E5E300A68431 /* LandPayListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandPayListVC.m; sourceTree = "<group>"; };
-		996909822086E5E300A68431 /* LandPlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandPlanCell.h; sourceTree = "<group>"; };
-		996909832086E5E300A68431 /* LandPlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandPlanCell.m; sourceTree = "<group>"; };
-		996909842086E5E300A68431 /* LandPlanListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandPlanListVC.h; sourceTree = "<group>"; };
-		996909852086E5E300A68431 /* LandPlanListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandPlanListVC.m; sourceTree = "<group>"; };
-		996909862086E5E300A68431 /* LandSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandSearchVC.h; sourceTree = "<group>"; };
-		996909872086E5E300A68431 /* LandSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandSearchVC.m; sourceTree = "<group>"; };
-		996909882086E5E300A68431 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		996909892086E5E300A68431 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		9969098A2086E5E300A68431 /* MancardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MancardVC.h; sourceTree = "<group>"; };
-		9969098B2086E5E300A68431 /* MancardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MancardVC.m; sourceTree = "<group>"; };
-		9969098C2086E5E300A68431 /* meeting_base_info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = meeting_base_info.html; sourceTree = "<group>"; };
-		9969098D2086E5E300A68431 /* MeetingBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingBaseInfoView.h; sourceTree = "<group>"; };
-		9969098E2086E5E300A68431 /* MeetingBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingBaseInfoView.m; sourceTree = "<group>"; };
-		9969098F2086E5E300A68431 /* MeetingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingCell.h; sourceTree = "<group>"; };
-		996909902086E5E300A68431 /* MeetingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingCell.m; sourceTree = "<group>"; };
-		996909912086E5E300A68431 /* MeetingDateRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDateRange.h; sourceTree = "<group>"; };
-		996909922086E5E300A68431 /* MeetingDateRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDateRange.m; sourceTree = "<group>"; };
-		996909932086E5E300A68431 /* MeetingDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailVC.h; sourceTree = "<group>"; };
-		996909942086E5E300A68431 /* MeetingDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailVC.m; sourceTree = "<group>"; };
-		996909952086E5E300A68431 /* MeetingListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingListView.h; sourceTree = "<group>"; };
-		996909962086E5E300A68431 /* MeetingListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingListView.m; sourceTree = "<group>"; };
-		996909972086E5E300A68431 /* MeetingNotesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingNotesCell.h; sourceTree = "<group>"; };
-		996909982086E5E300A68431 /* MeetingNotesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingNotesCell.m; sourceTree = "<group>"; };
-		996909992086E5E300A68431 /* MeetingNotesDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingNotesDetailVC.h; sourceTree = "<group>"; };
-		9969099A2086E5E300A68431 /* MeetingNotesDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingNotesDetailVC.m; sourceTree = "<group>"; };
-		9969099B2086E5E300A68431 /* MeetingNotesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingNotesListView.h; sourceTree = "<group>"; };
-		9969099C2086E5E300A68431 /* MeetingNotesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingNotesListView.m; sourceTree = "<group>"; };
-		9969099D2086E5E300A68431 /* MeetingOrderDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingOrderDetailVC.h; sourceTree = "<group>"; };
-		9969099E2086E5E300A68431 /* MeetingOrderDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingOrderDetailVC.m; sourceTree = "<group>"; };
-		9969099F2086E5E300A68431 /* MeetingOrderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingOrderedView.h; sourceTree = "<group>"; };
-		996909A02086E5E300A68431 /* MeetingOrderedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingOrderedView.m; sourceTree = "<group>"; };
-		996909A12086E5E300A68431 /* MeetingOrderListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingOrderListVC.h; sourceTree = "<group>"; };
-		996909A22086E5E300A68431 /* MeetingOrderListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingOrderListVC.m; sourceTree = "<group>"; };
-		996909A32086E5E300A68431 /* MeetingRoomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingRoomVC.h; sourceTree = "<group>"; };
-		996909A42086E5E300A68431 /* MeetingRoomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingRoomVC.m; sourceTree = "<group>"; };
-		996909A52086E5E300A68431 /* MeetingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingVC.h; sourceTree = "<group>"; };
-		996909A62086E5E300A68431 /* MeetingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingVC.m; sourceTree = "<group>"; };
-		996909A72086E5E300A68431 /* MessageDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailVC.h; sourceTree = "<group>"; };
-		996909A82086E5E300A68431 /* MessageDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailVC.m; sourceTree = "<group>"; };
-		996909A92086E5E300A68431 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
-		996909AA2086E5E300A68431 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
-		996909AB2086E5E300A68431 /* MobileInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileInputVC.h; sourceTree = "<group>"; };
-		996909AC2086E5E300A68431 /* MobileInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileInputVC.m; sourceTree = "<group>"; };
-		996909AD2086E5E300A68431 /* NewMeetingOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMeetingOrderVC.h; sourceTree = "<group>"; };
-		996909AE2086E5E300A68431 /* NewMeetingOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMeetingOrderVC.m; sourceTree = "<group>"; };
-		996909AF2086E5E300A68431 /* NewsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailVC.h; sourceTree = "<group>"; };
-		996909B02086E5E300A68431 /* NewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailVC.m; sourceTree = "<group>"; };
-		996909B12086E5E300A68431 /* NewsListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListVC.h; sourceTree = "<group>"; };
-		996909B22086E5E300A68431 /* NewsListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListVC.m; sourceTree = "<group>"; };
-		996909B32086E5E300A68431 /* NSDate+WeekdayRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WeekdayRange.h"; sourceTree = "<group>"; };
-		996909B42086E5E300A68431 /* NSDate+WeekdayRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WeekdayRange.m"; sourceTree = "<group>"; };
-		996909B52086E5E300A68431 /* NSObject+APIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+APIService.h"; sourceTree = "<group>"; };
-		996909B62086E5E300A68431 /* NSObject+APIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+APIService.m"; sourceTree = "<group>"; };
-		996909B72086E5E300A68431 /* NSObject+RTIDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RTIDataService.h"; sourceTree = "<group>"; };
-		996909B82086E5E300A68431 /* NSObject+RTIDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RTIDataService.m"; sourceTree = "<group>"; };
-		996909B92086E5E300A68431 /* NSObject+StoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+StoreService.h"; sourceTree = "<group>"; };
-		996909BA2086E5E300A68431 /* NSObject+StoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+StoreService.m"; sourceTree = "<group>"; };
-		996909BB2086E5E300A68431 /* OADetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADetailVC.h; sourceTree = "<group>"; };
-		996909BC2086E5E300A68431 /* OADetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADetailVC.m; sourceTree = "<group>"; };
-		996909BD2086E5E300A68431 /* OAListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAListVC.h; sourceTree = "<group>"; };
-		996909BE2086E5E300A68431 /* OAListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAListVC.m; sourceTree = "<group>"; };
-		996909BF2086E5E300A68431 /* OAPopoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPopoverVC.h; sourceTree = "<group>"; };
-		996909C02086E5E300A68431 /* OAPopoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPopoverVC.m; sourceTree = "<group>"; };
-		996909C12086E5E300A68431 /* OutputArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputArea.h; sourceTree = "<group>"; };
-		996909C22086E5E300A68431 /* OutputArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputArea.m; sourceTree = "<group>"; };
-		996909C32086E5E300A68431 /* OutputCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputCatalog.h; sourceTree = "<group>"; };
-		996909C42086E5E300A68431 /* OutputCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputCatalog.m; sourceTree = "<group>"; };
-		996909C52086E5E300A68431 /* OutputCatalogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputCatalogVC.h; sourceTree = "<group>"; };
-		996909C62086E5E300A68431 /* OutputCatalogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputCatalogVC.m; sourceTree = "<group>"; };
-		996909C72086E5E300A68431 /* OutputConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputConfirmVC.h; sourceTree = "<group>"; };
-		996909C82086E5E300A68431 /* OutputConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputConfirmVC.m; sourceTree = "<group>"; };
-		996909C92086E5E300A68431 /* OutputContractListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputContractListVC.h; sourceTree = "<group>"; };
-		996909CA2086E5E300A68431 /* OutputContractListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputContractListVC.m; sourceTree = "<group>"; };
-		996909CB2086E5E300A68431 /* OutputJDConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputJDConfirmVC.h; sourceTree = "<group>"; };
-		996909CC2086E5E300A68431 /* OutputJDConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputJDConfirmVC.m; sourceTree = "<group>"; };
-		996909CD2086E5E300A68431 /* OutputNodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputNodeCell.h; sourceTree = "<group>"; };
-		996909CE2086E5E300A68431 /* OutputNodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputNodeCell.m; sourceTree = "<group>"; };
-		996909CF2086E5E300A68431 /* OutputProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputProject.h; sourceTree = "<group>"; };
-		996909D02086E5E300A68431 /* OutputProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputProject.m; sourceTree = "<group>"; };
-		996909D12086E5E300A68431 /* OutputQueryParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputQueryParams.h; sourceTree = "<group>"; };
-		996909D22086E5E300A68431 /* OutputQueryParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputQueryParams.m; sourceTree = "<group>"; };
-		996909D32086E5E300A68431 /* OutputRoomConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputRoomConfirmVC.h; sourceTree = "<group>"; };
-		996909D42086E5E300A68431 /* OutputRoomConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputRoomConfirmVC.m; sourceTree = "<group>"; };
-		996909D52086E5E300A68431 /* OutputSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputSearchVC.h; sourceTree = "<group>"; };
-		996909D62086E5E300A68431 /* OutputSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputSearchVC.m; sourceTree = "<group>"; };
-		996909D72086E5E300A68431 /* OutputValueConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputValueConfirmVC.h; sourceTree = "<group>"; };
-		996909D82086E5E300A68431 /* OutputValueConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputValueConfirmVC.m; sourceTree = "<group>"; };
-		996909D92086E5E300A68431 /* ParamUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamUtil.h; sourceTree = "<group>"; };
-		996909DA2086E5E300A68431 /* ParamUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamUtil.m; sourceTree = "<group>"; };
-		996909DB2086E5E300A68431 /* PasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordVC.h; sourceTree = "<group>"; };
-		996909DC2086E5E300A68431 /* PasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordVC.m; sourceTree = "<group>"; };
-		996909DD2086E5E300A68431 /* PayListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayListVC.h; sourceTree = "<group>"; };
-		996909DE2086E5E300A68431 /* PayListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayListVC.m; sourceTree = "<group>"; };
-		996909DF2086E5E300A68431 /* PaymentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsVC.h; sourceTree = "<group>"; };
-		996909E02086E5E300A68431 /* PaymentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentsVC.m; sourceTree = "<group>"; };
-		996909E12086E5E300A68431 /* PlanAdjustVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanAdjustVC.h; sourceTree = "<group>"; };
-		996909E22086E5E300A68431 /* PlanAdjustVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanAdjustVC.m; sourceTree = "<group>"; };
-		996909E32086E5E300A68431 /* PlanConfirmVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanConfirmVC.h; sourceTree = "<group>"; };
-		996909E42086E5E300A68431 /* PlanConfirmVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanConfirmVC.m; sourceTree = "<group>"; };
-		996909E52086E5E300A68431 /* PlanDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailVC.h; sourceTree = "<group>"; };
-		996909E62086E5E300A68431 /* PlanDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailVC.m; sourceTree = "<group>"; };
-		996909E72086E5E300A68431 /* PlanFlowFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanFlowFormVC.h; sourceTree = "<group>"; };
-		996909E82086E5E300A68431 /* PlanFlowFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanFlowFormVC.m; sourceTree = "<group>"; };
-		996909E92086E5E300A68431 /* PlanListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanListVC.h; sourceTree = "<group>"; };
-		996909EA2086E5E300A68431 /* PlanListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanListVC.m; sourceTree = "<group>"; };
-		996909EB2086E5E300A68431 /* PlanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanVC.h; sourceTree = "<group>"; };
-		996909EC2086E5E300A68431 /* PlanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanVC.m; sourceTree = "<group>"; };
-		996909ED2086E5E300A68431 /* RelatedFlowListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelatedFlowListVC.h; sourceTree = "<group>"; };
-		996909EE2086E5E300A68431 /* RelatedFlowListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelatedFlowListVC.m; sourceTree = "<group>"; };
-		996909EF2086E5E300A68431 /* ReportListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportListVC.h; sourceTree = "<group>"; };
-		996909F02086E5E300A68431 /* ReportListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportListVC.m; sourceTree = "<group>"; };
-		996909F12086E5E300A68431 /* ReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportVC.h; sourceTree = "<group>"; };
-		996909F22086E5E300A68431 /* ReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportVC.m; sourceTree = "<group>"; };
-		996909F32086E5E300A68431 /* ResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordVC.h; sourceTree = "<group>"; };
-		996909F42086E5E300A68431 /* ResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordVC.m; sourceTree = "<group>"; };
-		996909F52086E5E300A68431 /* RulesSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesSearchVC.h; sourceTree = "<group>"; };
-		996909F62086E5E300A68431 /* RulesSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesSearchVC.m; sourceTree = "<group>"; };
-		996909F72086E5E300A68431 /* RulesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesVC.h; sourceTree = "<group>"; };
-		996909F82086E5E300A68431 /* RulesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesVC.m; sourceTree = "<group>"; };
-		996909F92086E5E300A68431 /* SalaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryVC.h; sourceTree = "<group>"; };
-		996909FA2086E5E300A68431 /* SalaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryVC.m; sourceTree = "<group>"; };
-		996909FB2086E5E300A68431 /* SearchConditionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchConditionVC.h; sourceTree = "<group>"; };
-		996909FC2086E5E300A68431 /* SearchConditionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchConditionVC.m; sourceTree = "<group>"; };
-		996909FD2086E5E300A68431 /* SelectContactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectContactVC.h; sourceTree = "<group>"; };
-		996909FE2086E5E300A68431 /* SelectContactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectContactVC.m; sourceTree = "<group>"; };
 		996909FF2086E5E300A68431 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		99690A002086E5E300A68431 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		99690A012086E5E300A68431 /* SignFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignFormVC.h; sourceTree = "<group>"; };
-		99690A022086E5E300A68431 /* SignFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignFormVC.m; sourceTree = "<group>"; };
-		99690A032086E5E300A68431 /* SignListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignListVC.h; sourceTree = "<group>"; };
-		99690A042086E5E300A68431 /* SignListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignListVC.m; sourceTree = "<group>"; };
-		99690A052086E5E300A68431 /* SignOptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignOptionsVC.h; sourceTree = "<group>"; };
-		99690A062086E5E300A68431 /* SignOptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignOptionsVC.m; sourceTree = "<group>"; };
-		99690A072086E5E300A68431 /* SubmitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitVC.h; sourceTree = "<group>"; };
-		99690A082086E5E300A68431 /* SubmitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitVC.m; sourceTree = "<group>"; };
-		99690A092086E5E300A68431 /* TracePlanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracePlanCell.h; sourceTree = "<group>"; };
-		99690A0A2086E5E300A68431 /* TracePlanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracePlanCell.m; sourceTree = "<group>"; };
-		99690A0B2086E5E300A68431 /* TracePlanListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracePlanListView.h; sourceTree = "<group>"; };
-		99690A0C2086E5E300A68431 /* TracePlanListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracePlanListView.m; sourceTree = "<group>"; };
-		99690A0D2086E5E300A68431 /* TransmitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransmitVC.h; sourceTree = "<group>"; };
-		99690A0E2086E5E300A68431 /* TransmitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransmitVC.m; sourceTree = "<group>"; };
-		99690A0F2086E5E300A68431 /* TypeGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeGridView.h; sourceTree = "<group>"; };
-		99690A102086E5E300A68431 /* TypeGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeGridView.m; sourceTree = "<group>"; };
-		99690A112086E5E300A68431 /* UIViewController+CreateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CreateFactory.h"; sourceTree = "<group>"; };
-		99690A122086E5E300A68431 /* UIViewController+CreateFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CreateFactory.m"; sourceTree = "<group>"; };
-		99690A132086E5E300A68431 /* UploadImageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadImageControl.h; sourceTree = "<group>"; };
-		99690A142086E5E300A68431 /* UploadImageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadImageControl.m; sourceTree = "<group>"; };
-		99690A152086E5E300A68431 /* WorkVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkVC.h; sourceTree = "<group>"; };
-		99690A162086E5E300A68431 /* WorkVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkVC.m; sourceTree = "<group>"; };
 		99690A172086E5E300A68431 /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		99690A1B2086E5E300A68431 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		99690A1C2086E5E300A68431 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -1628,12 +1238,8 @@
 		99690BA62086E5E400A68431 /* AttachmentDownloadService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttachmentDownloadService.m; sourceTree = "<group>"; };
 		99690BA72086E5E400A68431 /* HNBadgeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBadgeService.h; sourceTree = "<group>"; };
 		99690BA82086E5E400A68431 /* HNBadgeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBadgeService.m; sourceTree = "<group>"; };
-		99690BA92086E5E400A68431 /* HNNewFlowCountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNNewFlowCountService.h; sourceTree = "<group>"; };
-		99690BAA2086E5E400A68431 /* HNNewFlowCountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNNewFlowCountService.m; sourceTree = "<group>"; };
 		99690BAB2086E5E400A68431 /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		99690BAC2086E5E400A68431 /* NetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkService.m; sourceTree = "<group>"; };
-		99690BAD2086E5E400A68431 /* RTIDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTIDataService.h; sourceTree = "<group>"; };
-		99690BAE2086E5E400A68431 /* RTIDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTIDataService.m; sourceTree = "<group>"; };
 		99690BAF2086E5E400A68431 /* StoreService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreService.h; sourceTree = "<group>"; };
 		99690BB02086E5E400A68431 /* StoreService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreService.m; sourceTree = "<group>"; };
 		99690BB12086E5E400A68431 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserService.h; sourceTree = "<group>"; };
@@ -1656,24 +1262,6 @@
 		99690BC42086E5E400A68431 /* BIChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIChartView.m; sourceTree = "<group>"; };
 		99690BC52086E5E400A68431 /* Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkbox.h; sourceTree = "<group>"; };
 		99690BC62086E5E400A68431 /* Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checkbox.m; sourceTree = "<group>"; };
-		99690BC72086E5E400A68431 /* ContractCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractCell.h; sourceTree = "<group>"; };
-		99690BC82086E5E400A68431 /* ContractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractCell.m; sourceTree = "<group>"; };
-		99690BC92086E5E400A68431 /* ContractDeclareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDeclareCell.h; sourceTree = "<group>"; };
-		99690BCA2086E5E400A68431 /* ContractDeclareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDeclareCell.m; sourceTree = "<group>"; };
-		99690BCB2086E5E400A68431 /* ContractDetailBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailBaseView.h; sourceTree = "<group>"; };
-		99690BCC2086E5E400A68431 /* ContractDetailBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailBaseView.m; sourceTree = "<group>"; };
-		99690BCD2086E5E400A68431 /* ContractDetailDeclareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailDeclareView.h; sourceTree = "<group>"; };
-		99690BCE2086E5E400A68431 /* ContractDetailDeclareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailDeclareView.m; sourceTree = "<group>"; };
-		99690BCF2086E5E400A68431 /* ContractDetailPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailPayView.h; sourceTree = "<group>"; };
-		99690BD02086E5E400A68431 /* ContractDetailPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailPayView.m; sourceTree = "<group>"; };
-		99690BD12086E5E400A68431 /* ContractDetailSignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractDetailSignView.h; sourceTree = "<group>"; };
-		99690BD22086E5E400A68431 /* ContractDetailSignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractDetailSignView.m; sourceTree = "<group>"; };
-		99690BD32086E5E400A68431 /* ContractPayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractPayCell.h; sourceTree = "<group>"; };
-		99690BD42086E5E400A68431 /* ContractPayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractPayCell.m; sourceTree = "<group>"; };
-		99690BD52086E5E400A68431 /* ContractPayCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractPayCell2.h; sourceTree = "<group>"; };
-		99690BD62086E5E400A68431 /* ContractPayCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractPayCell2.m; sourceTree = "<group>"; };
-		99690BD72086E5E400A68431 /* ContractSignCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContractSignCell.h; sourceTree = "<group>"; };
-		99690BD82086E5E400A68431 /* ContractSignCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractSignCell.m; sourceTree = "<group>"; };
 		99690BD92086E5E400A68431 /* CustomOpinionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOpinionView.h; sourceTree = "<group>"; };
 		99690BDA2086E5E400A68431 /* CustomOpinionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOpinionView.m; sourceTree = "<group>"; };
 		99690BDB2086E5E400A68431 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchBar.h; sourceTree = "<group>"; };
@@ -1682,22 +1270,6 @@
 		99690BDE2086E5E400A68431 /* DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePicker.m; sourceTree = "<group>"; };
 		99690BDF2086E5E400A68431 /* DateSelectControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelectControl.h; sourceTree = "<group>"; };
 		99690BE02086E5E400A68431 /* DateSelectControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectControl.m; sourceTree = "<group>"; };
-		99690BE12086E5E400A68431 /* DeclareListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareListCell.h; sourceTree = "<group>"; };
-		99690BE22086E5E400A68431 /* DeclareListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareListCell.m; sourceTree = "<group>"; };
-		99690BE32086E5E400A68431 /* DeclareListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeclareListView.h; sourceTree = "<group>"; };
-		99690BE42086E5E400A68431 /* DeclareListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeclareListView.m; sourceTree = "<group>"; };
-		99690BE52086E5E400A68431 /* DocumentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentCell.h; sourceTree = "<group>"; };
-		99690BE62086E5E400A68431 /* DocumentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentCell.m; sourceTree = "<group>"; };
-		99690BE72086E5E400A68431 /* DocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentView.h; sourceTree = "<group>"; };
-		99690BE82086E5E400A68431 /* DocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentView.m; sourceTree = "<group>"; };
-		99690BE92086E5E400A68431 /* EmployCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployCell.h; sourceTree = "<group>"; };
-		99690BEA2086E5E400A68431 /* EmployCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployCell.m; sourceTree = "<group>"; };
-		99690BEB2086E5E400A68431 /* EmploySearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmploySearchView.h; sourceTree = "<group>"; };
-		99690BEC2086E5E400A68431 /* EmploySearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmploySearchView.m; sourceTree = "<group>"; };
-		99690BED2086E5E400A68431 /* FlowSearchHelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowSearchHelpView.h; sourceTree = "<group>"; };
-		99690BEE2086E5E400A68431 /* FlowSearchHelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowSearchHelpView.m; sourceTree = "<group>"; };
-		99690BEF2086E5E400A68431 /* FlowSubmitAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowSubmitAlert.h; sourceTree = "<group>"; };
-		99690BF02086E5E400A68431 /* FlowSubmitAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowSubmitAlert.m; sourceTree = "<group>"; };
 		99690BF12086E5E400A68431 /* FormControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormControl.h; sourceTree = "<group>"; };
 		99690BF22086E5E400A68431 /* FormControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormControl.m; sourceTree = "<group>"; };
 		99690BF32086E5E400A68431 /* FormInputControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormInputControl.h; sourceTree = "<group>"; };
@@ -1712,10 +1284,6 @@
 		99690BFC2086E5E400A68431 /* HNProgressHUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNProgressHUDHelper.m; sourceTree = "<group>"; };
 		99690BFD2086E5E400A68431 /* HNRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNRefreshView.h; sourceTree = "<group>"; };
 		99690BFE2086E5E400A68431 /* HNRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNRefreshView.m; sourceTree = "<group>"; };
-		99690BFF2086E5E400A68431 /* LandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandCell.h; sourceTree = "<group>"; };
-		99690C002086E5E400A68431 /* LandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandCell.m; sourceTree = "<group>"; };
-		99690C012086E5E400A68431 /* LandListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandListView.h; sourceTree = "<group>"; };
-		99690C022086E5E400A68431 /* LandListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandListView.m; sourceTree = "<group>"; };
 		99690C032086E5E400A68431 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		99690C042086E5E400A68431 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		99690C052086E5E400A68431 /* MeetingOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingOrderCell.h; sourceTree = "<group>"; };
@@ -1728,12 +1296,6 @@
 		99690C0C2086E5E400A68431 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
 		99690C0D2086E5E400A68431 /* NTMonthYearPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMonthYearPicker.h; sourceTree = "<group>"; };
 		99690C0E2086E5E400A68431 /* NTMonthYearPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMonthYearPicker.m; sourceTree = "<group>"; };
-		99690C0F2086E5E400A68431 /* OACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OACell.h; sourceTree = "<group>"; };
-		99690C102086E5E400A68431 /* OACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OACell.m; sourceTree = "<group>"; };
-		99690C112086E5E400A68431 /* OACell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OACell2.h; sourceTree = "<group>"; };
-		99690C122086E5E400A68431 /* OACell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OACell2.m; sourceTree = "<group>"; };
-		99690C132086E5E400A68431 /* OAListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAListView.h; sourceTree = "<group>"; };
-		99690C142086E5E400A68431 /* OAListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAListView.m; sourceTree = "<group>"; };
 		99690C152086E5E400A68431 /* PagerTabStripper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagerTabStripper.h; sourceTree = "<group>"; };
 		99690C162086E5E400A68431 /* PagerTabStripper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagerTabStripper.m; sourceTree = "<group>"; };
 		99690C172086E5E400A68431 /* PayTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTimeView.h; sourceTree = "<group>"; };
@@ -1744,8 +1306,6 @@
 		99690C1C2086E5E400A68431 /* PlanCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanCell2.m; sourceTree = "<group>"; };
 		99690C1D2086E5E400A68431 /* PlanDocView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDocView.h; sourceTree = "<group>"; };
 		99690C1E2086E5E400A68431 /* PlanDocView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDocView.m; sourceTree = "<group>"; };
-		99690C1F2086E5E400A68431 /* PlanListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanListView.h; sourceTree = "<group>"; };
-		99690C202086E5E400A68431 /* PlanListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanListView.m; sourceTree = "<group>"; };
 		99690C212086E5E400A68431 /* PlanProjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanProjectView.h; sourceTree = "<group>"; };
 		99690C222086E5E400A68431 /* PlanProjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanProjectView.m; sourceTree = "<group>"; };
 		99690C232086E5E400A68431 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
@@ -1780,6 +1340,12 @@
 		99690EBF2086E9B400A68431 /* ExploreVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreVC.m; sourceTree = "<group>"; };
 		99690EC22086EC6500A68431 /* tab_explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_explore@2x.png"; sourceTree = "<group>"; };
 		99690EC32086EC6600A68431 /* tab_explore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_explore@3x.png"; sourceTree = "<group>"; };
+		99690EC6208706CA00A68431 /* UIViewController+CreateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CreateFactory.h"; sourceTree = "<group>"; };
+		99690EC7208706CA00A68431 /* UIViewController+CreateFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CreateFactory.m"; sourceTree = "<group>"; };
+		99690EC9208707A400A68431 /* BaseNavBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavBarVC.h; sourceTree = "<group>"; };
+		99690ECA208707A500A68431 /* BaseNavBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavBarVC.m; sourceTree = "<group>"; };
+		99690ECB208707A500A68431 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		99690ECC208707A500A68431 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2683,7 +2249,12 @@
 		9969091D2086E5E300A68431 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				99690EC12086EA2C00A68431 /* No Use */,
+				99690EC6208706CA00A68431 /* UIViewController+CreateFactory.h */,
+				99690EC7208706CA00A68431 /* UIViewController+CreateFactory.m */,
+				99690EC9208707A400A68431 /* BaseNavBarVC.h */,
+				99690ECA208707A500A68431 /* BaseNavBarVC.m */,
+				99690ECC208707A500A68431 /* BaseVC.h */,
+				99690ECB208707A500A68431 /* BaseVC.m */,
 				996909702086E5E300A68431 /* HomeVC.h */,
 				996909712086E5E300A68431 /* HomeVC.m */,
 				99690EBE2086E9B400A68431 /* ExploreVC.h */,
@@ -3227,12 +2798,8 @@
 				99690BA62086E5E400A68431 /* AttachmentDownloadService.m */,
 				99690BA72086E5E400A68431 /* HNBadgeService.h */,
 				99690BA82086E5E400A68431 /* HNBadgeService.m */,
-				99690BA92086E5E400A68431 /* HNNewFlowCountService.h */,
-				99690BAA2086E5E400A68431 /* HNNewFlowCountService.m */,
 				99690BAB2086E5E400A68431 /* NetworkService.h */,
 				99690BAC2086E5E400A68431 /* NetworkService.m */,
-				99690BAD2086E5E400A68431 /* RTIDataService.h */,
-				99690BAE2086E5E400A68431 /* RTIDataService.m */,
 				99690BAF2086E5E400A68431 /* StoreService.h */,
 				99690BB02086E5E400A68431 /* StoreService.m */,
 				99690BB12086E5E400A68431 /* UserService.h */,
@@ -3267,24 +2834,6 @@
 				99690BC42086E5E400A68431 /* BIChartView.m */,
 				99690BC52086E5E400A68431 /* Checkbox.h */,
 				99690BC62086E5E400A68431 /* Checkbox.m */,
-				99690BC72086E5E400A68431 /* ContractCell.h */,
-				99690BC82086E5E400A68431 /* ContractCell.m */,
-				99690BC92086E5E400A68431 /* ContractDeclareCell.h */,
-				99690BCA2086E5E400A68431 /* ContractDeclareCell.m */,
-				99690BCB2086E5E400A68431 /* ContractDetailBaseView.h */,
-				99690BCC2086E5E400A68431 /* ContractDetailBaseView.m */,
-				99690BCD2086E5E400A68431 /* ContractDetailDeclareView.h */,
-				99690BCE2086E5E400A68431 /* ContractDetailDeclareView.m */,
-				99690BCF2086E5E400A68431 /* ContractDetailPayView.h */,
-				99690BD02086E5E400A68431 /* ContractDetailPayView.m */,
-				99690BD12086E5E400A68431 /* ContractDetailSignView.h */,
-				99690BD22086E5E400A68431 /* ContractDetailSignView.m */,
-				99690BD32086E5E400A68431 /* ContractPayCell.h */,
-				99690BD42086E5E400A68431 /* ContractPayCell.m */,
-				99690BD52086E5E400A68431 /* ContractPayCell2.h */,
-				99690BD62086E5E400A68431 /* ContractPayCell2.m */,
-				99690BD72086E5E400A68431 /* ContractSignCell.h */,
-				99690BD82086E5E400A68431 /* ContractSignCell.m */,
 				99690BD92086E5E400A68431 /* CustomOpinionView.h */,
 				99690BDA2086E5E400A68431 /* CustomOpinionView.m */,
 				99690BDB2086E5E400A68431 /* CustomSearchBar.h */,
@@ -3293,22 +2842,6 @@
 				99690BDE2086E5E400A68431 /* DatePicker.m */,
 				99690BDF2086E5E400A68431 /* DateSelectControl.h */,
 				99690BE02086E5E400A68431 /* DateSelectControl.m */,
-				99690BE12086E5E400A68431 /* DeclareListCell.h */,
-				99690BE22086E5E400A68431 /* DeclareListCell.m */,
-				99690BE32086E5E400A68431 /* DeclareListView.h */,
-				99690BE42086E5E400A68431 /* DeclareListView.m */,
-				99690BE52086E5E400A68431 /* DocumentCell.h */,
-				99690BE62086E5E400A68431 /* DocumentCell.m */,
-				99690BE72086E5E400A68431 /* DocumentView.h */,
-				99690BE82086E5E400A68431 /* DocumentView.m */,
-				99690BE92086E5E400A68431 /* EmployCell.h */,
-				99690BEA2086E5E400A68431 /* EmployCell.m */,
-				99690BEB2086E5E400A68431 /* EmploySearchView.h */,
-				99690BEC2086E5E400A68431 /* EmploySearchView.m */,
-				99690BED2086E5E400A68431 /* FlowSearchHelpView.h */,
-				99690BEE2086E5E400A68431 /* FlowSearchHelpView.m */,
-				99690BEF2086E5E400A68431 /* FlowSubmitAlert.h */,
-				99690BF02086E5E400A68431 /* FlowSubmitAlert.m */,
 				99690BF12086E5E400A68431 /* FormControl.h */,
 				99690BF22086E5E400A68431 /* FormControl.m */,
 				99690BF32086E5E400A68431 /* FormInputControl.h */,
@@ -3323,10 +2856,6 @@
 				99690BFC2086E5E400A68431 /* HNProgressHUDHelper.m */,
 				99690BFD2086E5E400A68431 /* HNRefreshView.h */,
 				99690BFE2086E5E400A68431 /* HNRefreshView.m */,
-				99690BFF2086E5E400A68431 /* LandCell.h */,
-				99690C002086E5E400A68431 /* LandCell.m */,
-				99690C012086E5E400A68431 /* LandListView.h */,
-				99690C022086E5E400A68431 /* LandListView.m */,
 				99690C032086E5E400A68431 /* LoadingView.h */,
 				99690C042086E5E400A68431 /* LoadingView.m */,
 				99690C052086E5E400A68431 /* MeetingOrderCell.h */,
@@ -3339,12 +2868,6 @@
 				99690C0C2086E5E400A68431 /* NewsCell.m */,
 				99690C0D2086E5E400A68431 /* NTMonthYearPicker.h */,
 				99690C0E2086E5E400A68431 /* NTMonthYearPicker.m */,
-				99690C0F2086E5E400A68431 /* OACell.h */,
-				99690C102086E5E400A68431 /* OACell.m */,
-				99690C112086E5E400A68431 /* OACell2.h */,
-				99690C122086E5E400A68431 /* OACell2.m */,
-				99690C132086E5E400A68431 /* OAListView.h */,
-				99690C142086E5E400A68431 /* OAListView.m */,
 				99690C152086E5E400A68431 /* PagerTabStripper.h */,
 				99690C162086E5E400A68431 /* PagerTabStripper.m */,
 				99690C172086E5E400A68431 /* PayTimeView.h */,
@@ -3355,8 +2878,6 @@
 				99690C1C2086E5E400A68431 /* PlanCell2.m */,
 				99690C1D2086E5E400A68431 /* PlanDocView.h */,
 				99690C1E2086E5E400A68431 /* PlanDocView.m */,
-				99690C1F2086E5E400A68431 /* PlanListView.h */,
-				99690C202086E5E400A68431 /* PlanListView.m */,
 				99690C212086E5E400A68431 /* PlanProjectView.h */,
 				99690C222086E5E400A68431 /* PlanProjectView.m */,
 				99690C232086E5E400A68431 /* RadioButton.h */,
@@ -3389,258 +2910,6 @@
 				99690C3E2086E5E400A68431 /* YearMonthPickerView.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		99690EC12086EA2C00A68431 /* No Use */ = {
-			isa = PBXGroup;
-			children = (
-				996909CC2086E5E300A68431 /* OutputJDConfirmVC.m */,
-				996909E92086E5E300A68431 /* PlanListVC.h */,
-				9969091E2086E5E300A68431 /* AddSignVC.h */,
-				9969091F2086E5E300A68431 /* AddSignVC.m */,
-				996909202086E5E300A68431 /* ApplyLeaveVC.h */,
-				996909212086E5E300A68431 /* ApplyLeaveVC.m */,
-				996909222086E5E300A68431 /* AppQrcodeVC.h */,
-				996909232086E5E300A68431 /* AppQrcodeVC.m */,
-				996909242086E5E300A68431 /* AttachmentPreviewVC.h */,
-				996909252086E5E300A68431 /* AttachmentPreviewVC.m */,
-				996909262086E5E300A68431 /* AttendanceFlowVC.h */,
-				996909272086E5E300A68431 /* AttendanceFlowVC.m */,
-				996909282086E5E300A68431 /* AttendanceVC.h */,
-				996909292086E5E300A68431 /* AttendanceVC.m */,
-				9969092A2086E5E300A68431 /* AuthorizeVC.h */,
-				9969092B2086E5E300A68431 /* AuthorizeVC.m */,
-				9969092C2086E5E300A68431 /* BackVC.h */,
-				9969092D2086E5E300A68431 /* BackVC.m */,
-				9969092E2086E5E300A68431 /* BannerView.h */,
-				9969092F2086E5E300A68431 /* BannerView.m */,
-				996909302086E5E300A68431 /* BaseNavBarVC.h */,
-				996909312086E5E300A68431 /* BaseNavBarVC.m */,
-				996909322086E5E300A68431 /* BaseSearchVC.h */,
-				996909332086E5E300A68431 /* BaseSearchVC.m */,
-				996909342086E5E300A68431 /* BaseVC.h */,
-				996909352086E5E300A68431 /* BaseVC.m */,
-				996909362086E5E300A68431 /* CatalogContentView.h */,
-				996909372086E5E300A68431 /* CatalogContentView.m */,
-				996909382086E5E300A68431 /* CatalogLeftMenuView.h */,
-				996909392086E5E300A68431 /* CatalogLeftMenuView.m */,
-				9969093A2086E5E300A68431 /* CommentVC.h */,
-				9969093B2086E5E300A68431 /* CommentVC.m */,
-				9969093C2086E5E300A68431 /* CompanyVC.h */,
-				9969093D2086E5E300A68431 /* CompanyVC.m */,
-				9969093E2086E5E300A68431 /* ContactsVC.h */,
-				9969093F2086E5E300A68431 /* ContactsVC.m */,
-				996909402086E5E300A68431 /* ContactVC.h */,
-				996909412086E5E300A68431 /* ContactVC.m */,
-				996909422086E5E300A68431 /* ContractDetailVC.h */,
-				996909432086E5E300A68431 /* ContractDetailVC.m */,
-				996909442086E5E300A68431 /* ContractListVC.h */,
-				996909452086E5E300A68431 /* ContractListVC.m */,
-				996909462086E5E300A68431 /* DeclareFormVC.h */,
-				996909472086E5E300A68431 /* DeclareFormVC.m */,
-				996909482086E5E300A68431 /* DeclareListVC.h */,
-				996909492086E5E300A68431 /* DeclareListVC.m */,
-				9969094A2086E5E300A68431 /* DeclareSearchResultVC.h */,
-				9969094B2086E5E300A68431 /* DeclareSearchResultVC.m */,
-				9969094C2086E5E300A68431 /* DeclareSearchVC.h */,
-				9969094D2086E5E300A68431 /* DeclareSearchVC.m */,
-				9969094E2086E5E300A68431 /* DMButton.h */,
-				9969094F2086E5E300A68431 /* DMButton.m */,
-				996909502086E5E300A68431 /* DocAttachmentListVC.h */,
-				996909512086E5E300A68431 /* DocAttachmentListVC.m */,
-				996909522086E5E300A68431 /* DocBreadcrumbView.h */,
-				996909532086E5E300A68431 /* DocBreadcrumbView.m */,
-				996909542086E5E300A68431 /* DocSearchVC.h */,
-				996909552086E5E300A68431 /* DocSearchVC.m */,
-				996909562086E5E300A68431 /* DocumentVC.h */,
-				996909572086E5E300A68431 /* DocumentVC.m */,
-				996909582086E5E300A68431 /* EmployeeListVC.h */,
-				996909592086E5E300A68431 /* EmployeeListVC.m */,
-				9969095A2086E5E300A68431 /* EmploySearchVC.h */,
-				9969095B2086E5E300A68431 /* EmploySearchVC.m */,
-				9969095C2086E5E300A68431 /* FeedbackVC.h */,
-				9969095D2086E5E300A68431 /* FeedbackVC.m */,
-				9969095E2086E5E300A68431 /* FloorButton.h */,
-				9969095F2086E5E300A68431 /* FloorButton.m */,
-				996909602086E5E300A68431 /* FlowbackListVC.h */,
-				996909612086E5E300A68431 /* FlowbackListVC.m */,
-				996909622086E5E300A68431 /* FlowcopyVC.h */,
-				996909632086E5E300A68431 /* FlowcopyVC.m */,
-				996909642086E5E300A68431 /* FlowOperationVC.h */,
-				996909652086E5E300A68431 /* FlowOperationVC.m */,
-				996909662086E5E300A68431 /* FlowSearchResultVC.h */,
-				996909672086E5E300A68431 /* FlowSearchResultVC.m */,
-				996909682086E5E300A68431 /* FlowSearchVC.h */,
-				996909692086E5E300A68431 /* FlowSearchVC.m */,
-				9969096A2086E5E300A68431 /* FormVC.h */,
-				9969096B2086E5E300A68431 /* FormVC.m */,
-				9969096C2086E5E300A68431 /* GuideVC.h */,
-				9969096D2086E5E300A68431 /* GuideVC.m */,
-				9969096E2086E5E300A68431 /* HelpVC.h */,
-				9969096F2086E5E300A68431 /* HelpVC.m */,
-				996909722086E5E300A68431 /* KnowledgeDocListVC.h */,
-				996909732086E5E300A68431 /* KnowledgeDocListVC.m */,
-				996909742086E5E300A68431 /* KnowledgeDocSearchVC.h */,
-				996909752086E5E300A68431 /* KnowledgeDocSearchVC.m */,
-				996909762086E5E300A68431 /* KnowledgeTypeVC.h */,
-				996909772086E5E300A68431 /* KnowledgeTypeVC.m */,
-				996909782086E5E300A68431 /* LandAnnexListVC.h */,
-				996909792086E5E300A68431 /* LandAnnexListVC.m */,
-				9969097A2086E5E300A68431 /* LandDetailVC.h */,
-				9969097B2086E5E300A68431 /* LandDetailVC.m */,
-				9969097C2086E5E300A68431 /* LandListVC.h */,
-				9969097D2086E5E300A68431 /* LandListVC.m */,
-				9969097E2086E5E300A68431 /* LandPayCell.h */,
-				9969097F2086E5E300A68431 /* LandPayCell.m */,
-				996909802086E5E300A68431 /* LandPayListVC.h */,
-				996909812086E5E300A68431 /* LandPayListVC.m */,
-				996909822086E5E300A68431 /* LandPlanCell.h */,
-				996909832086E5E300A68431 /* LandPlanCell.m */,
-				996909842086E5E300A68431 /* LandPlanListVC.h */,
-				996909852086E5E300A68431 /* LandPlanListVC.m */,
-				996909862086E5E300A68431 /* LandSearchVC.h */,
-				996909872086E5E300A68431 /* LandSearchVC.m */,
-				996909882086E5E300A68431 /* LoginVC.h */,
-				996909892086E5E300A68431 /* LoginVC.m */,
-				9969098A2086E5E300A68431 /* MancardVC.h */,
-				9969098B2086E5E300A68431 /* MancardVC.m */,
-				9969098C2086E5E300A68431 /* meeting_base_info.html */,
-				9969098D2086E5E300A68431 /* MeetingBaseInfoView.h */,
-				9969098E2086E5E300A68431 /* MeetingBaseInfoView.m */,
-				9969098F2086E5E300A68431 /* MeetingCell.h */,
-				996909902086E5E300A68431 /* MeetingCell.m */,
-				996909912086E5E300A68431 /* MeetingDateRange.h */,
-				996909922086E5E300A68431 /* MeetingDateRange.m */,
-				996909932086E5E300A68431 /* MeetingDetailVC.h */,
-				996909942086E5E300A68431 /* MeetingDetailVC.m */,
-				996909952086E5E300A68431 /* MeetingListView.h */,
-				996909962086E5E300A68431 /* MeetingListView.m */,
-				996909972086E5E300A68431 /* MeetingNotesCell.h */,
-				996909982086E5E300A68431 /* MeetingNotesCell.m */,
-				996909992086E5E300A68431 /* MeetingNotesDetailVC.h */,
-				9969099A2086E5E300A68431 /* MeetingNotesDetailVC.m */,
-				9969099B2086E5E300A68431 /* MeetingNotesListView.h */,
-				9969099C2086E5E300A68431 /* MeetingNotesListView.m */,
-				9969099D2086E5E300A68431 /* MeetingOrderDetailVC.h */,
-				9969099E2086E5E300A68431 /* MeetingOrderDetailVC.m */,
-				9969099F2086E5E300A68431 /* MeetingOrderedView.h */,
-				996909A02086E5E300A68431 /* MeetingOrderedView.m */,
-				996909A12086E5E300A68431 /* MeetingOrderListVC.h */,
-				996909A22086E5E300A68431 /* MeetingOrderListVC.m */,
-				996909A32086E5E300A68431 /* MeetingRoomVC.h */,
-				996909A42086E5E300A68431 /* MeetingRoomVC.m */,
-				996909A52086E5E300A68431 /* MeetingVC.h */,
-				996909A62086E5E300A68431 /* MeetingVC.m */,
-				996909A72086E5E300A68431 /* MessageDetailVC.h */,
-				996909A82086E5E300A68431 /* MessageDetailVC.m */,
-				996909A92086E5E300A68431 /* MessageVC.h */,
-				996909AA2086E5E300A68431 /* MessageVC.m */,
-				996909AB2086E5E300A68431 /* MobileInputVC.h */,
-				996909AC2086E5E300A68431 /* MobileInputVC.m */,
-				996909AD2086E5E300A68431 /* NewMeetingOrderVC.h */,
-				996909AE2086E5E300A68431 /* NewMeetingOrderVC.m */,
-				996909AF2086E5E300A68431 /* NewsDetailVC.h */,
-				996909B02086E5E300A68431 /* NewsDetailVC.m */,
-				996909B12086E5E300A68431 /* NewsListVC.h */,
-				996909B22086E5E300A68431 /* NewsListVC.m */,
-				996909B32086E5E300A68431 /* NSDate+WeekdayRange.h */,
-				996909B42086E5E300A68431 /* NSDate+WeekdayRange.m */,
-				996909B52086E5E300A68431 /* NSObject+APIService.h */,
-				996909B62086E5E300A68431 /* NSObject+APIService.m */,
-				996909B72086E5E300A68431 /* NSObject+RTIDataService.h */,
-				996909B82086E5E300A68431 /* NSObject+RTIDataService.m */,
-				996909B92086E5E300A68431 /* NSObject+StoreService.h */,
-				996909BA2086E5E300A68431 /* NSObject+StoreService.m */,
-				996909BB2086E5E300A68431 /* OADetailVC.h */,
-				996909BC2086E5E300A68431 /* OADetailVC.m */,
-				996909BD2086E5E300A68431 /* OAListVC.h */,
-				996909BE2086E5E300A68431 /* OAListVC.m */,
-				996909BF2086E5E300A68431 /* OAPopoverVC.h */,
-				996909C02086E5E300A68431 /* OAPopoverVC.m */,
-				996909C12086E5E300A68431 /* OutputArea.h */,
-				996909C22086E5E300A68431 /* OutputArea.m */,
-				996909C32086E5E300A68431 /* OutputCatalog.h */,
-				996909C42086E5E300A68431 /* OutputCatalog.m */,
-				996909C52086E5E300A68431 /* OutputCatalogVC.h */,
-				996909C62086E5E300A68431 /* OutputCatalogVC.m */,
-				996909C72086E5E300A68431 /* OutputConfirmVC.h */,
-				996909C82086E5E300A68431 /* OutputConfirmVC.m */,
-				996909C92086E5E300A68431 /* OutputContractListVC.h */,
-				996909CA2086E5E300A68431 /* OutputContractListVC.m */,
-				996909CB2086E5E300A68431 /* OutputJDConfirmVC.h */,
-				996909CD2086E5E300A68431 /* OutputNodeCell.h */,
-				996909CE2086E5E300A68431 /* OutputNodeCell.m */,
-				996909CF2086E5E300A68431 /* OutputProject.h */,
-				996909D02086E5E300A68431 /* OutputProject.m */,
-				996909D12086E5E300A68431 /* OutputQueryParams.h */,
-				996909D22086E5E300A68431 /* OutputQueryParams.m */,
-				996909D32086E5E300A68431 /* OutputRoomConfirmVC.h */,
-				996909D42086E5E300A68431 /* OutputRoomConfirmVC.m */,
-				996909D52086E5E300A68431 /* OutputSearchVC.h */,
-				996909D62086E5E300A68431 /* OutputSearchVC.m */,
-				996909D72086E5E300A68431 /* OutputValueConfirmVC.h */,
-				996909D82086E5E300A68431 /* OutputValueConfirmVC.m */,
-				996909D92086E5E300A68431 /* ParamUtil.h */,
-				996909DA2086E5E300A68431 /* ParamUtil.m */,
-				996909DB2086E5E300A68431 /* PasswordVC.h */,
-				996909DC2086E5E300A68431 /* PasswordVC.m */,
-				996909DD2086E5E300A68431 /* PayListVC.h */,
-				996909DE2086E5E300A68431 /* PayListVC.m */,
-				996909DF2086E5E300A68431 /* PaymentsVC.h */,
-				996909E02086E5E300A68431 /* PaymentsVC.m */,
-				996909E12086E5E300A68431 /* PlanAdjustVC.h */,
-				996909E22086E5E300A68431 /* PlanAdjustVC.m */,
-				996909E32086E5E300A68431 /* PlanConfirmVC.h */,
-				996909E42086E5E300A68431 /* PlanConfirmVC.m */,
-				996909E52086E5E300A68431 /* PlanDetailVC.h */,
-				996909E62086E5E300A68431 /* PlanDetailVC.m */,
-				996909E72086E5E300A68431 /* PlanFlowFormVC.h */,
-				996909E82086E5E300A68431 /* PlanFlowFormVC.m */,
-				996909EA2086E5E300A68431 /* PlanListVC.m */,
-				996909EB2086E5E300A68431 /* PlanVC.h */,
-				996909EC2086E5E300A68431 /* PlanVC.m */,
-				996909ED2086E5E300A68431 /* RelatedFlowListVC.h */,
-				996909EE2086E5E300A68431 /* RelatedFlowListVC.m */,
-				996909EF2086E5E300A68431 /* ReportListVC.h */,
-				996909F02086E5E300A68431 /* ReportListVC.m */,
-				996909F12086E5E300A68431 /* ReportVC.h */,
-				996909F22086E5E300A68431 /* ReportVC.m */,
-				996909F32086E5E300A68431 /* ResetPasswordVC.h */,
-				996909F42086E5E300A68431 /* ResetPasswordVC.m */,
-				996909F52086E5E300A68431 /* RulesSearchVC.h */,
-				996909F62086E5E300A68431 /* RulesSearchVC.m */,
-				996909F72086E5E300A68431 /* RulesVC.h */,
-				996909F82086E5E300A68431 /* RulesVC.m */,
-				996909F92086E5E300A68431 /* SalaryVC.h */,
-				996909FA2086E5E300A68431 /* SalaryVC.m */,
-				996909FB2086E5E300A68431 /* SearchConditionVC.h */,
-				996909FC2086E5E300A68431 /* SearchConditionVC.m */,
-				996909FD2086E5E300A68431 /* SelectContactVC.h */,
-				996909FE2086E5E300A68431 /* SelectContactVC.m */,
-				99690A012086E5E300A68431 /* SignFormVC.h */,
-				99690A022086E5E300A68431 /* SignFormVC.m */,
-				99690A032086E5E300A68431 /* SignListVC.h */,
-				99690A042086E5E300A68431 /* SignListVC.m */,
-				99690A052086E5E300A68431 /* SignOptionsVC.h */,
-				99690A062086E5E300A68431 /* SignOptionsVC.m */,
-				99690A072086E5E300A68431 /* SubmitVC.h */,
-				99690A082086E5E300A68431 /* SubmitVC.m */,
-				99690A092086E5E300A68431 /* TracePlanCell.h */,
-				99690A0A2086E5E300A68431 /* TracePlanCell.m */,
-				99690A0B2086E5E300A68431 /* TracePlanListView.h */,
-				99690A0C2086E5E300A68431 /* TracePlanListView.m */,
-				99690A0D2086E5E300A68431 /* TransmitVC.h */,
-				99690A0E2086E5E300A68431 /* TransmitVC.m */,
-				99690A0F2086E5E300A68431 /* TypeGridView.h */,
-				99690A102086E5E300A68431 /* TypeGridView.m */,
-				99690A112086E5E300A68431 /* UIViewController+CreateFactory.h */,
-				99690A122086E5E300A68431 /* UIViewController+CreateFactory.m */,
-				99690A132086E5E300A68431 /* UploadImageControl.h */,
-				99690A142086E5E300A68431 /* UploadImageControl.m */,
-				99690A152086E5E300A68431 /* WorkVC.h */,
-				99690A162086E5E300A68431 /* WorkVC.m */,
-			);
-			path = "No Use";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3726,7 +2995,6 @@
 				99690E1F2086E5E500A68431 /* icon_unread1@2x.png in Resources */,
 				99690E152086E5E500A68431 /* icon_qrcode@2x.png in Resources */,
 				99690E682086E5E500A68431 /* work_icon_pay@3x.png in Resources */,
-				99690D0B2086E5E500A68431 /* meeting_base_info.html in Resources */,
 				99690E562086E5E500A68431 /* work_icon_chanzhi@3x.png in Resources */,
 				99690DBF2086E5E500A68431 /* Default-375w-812h@3x.png in Resources */,
 				99690E492086E5E500A68431 /* tab_setting@3x.png in Resources */,
@@ -3937,43 +3205,30 @@
 			files = (
 				99690D832086E5E500A68431 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				99690CA02086E5E400A68431 /* TYTextContainer.m in Sources */,
-				99690D432086E5E500A68431 /* SearchConditionVC.m in Sources */,
 				99690D8C2086E5E500A68431 /* NSBundle+TZImagePicker.m in Sources */,
 				99690E812086E5E500A68431 /* Checkbox.m in Sources */,
 				99690D622086E5E500A68431 /* UIRefreshControl+AFNetworking.m in Sources */,
 				99690CA22086E5E400A68431 /* TYViewStorage.m in Sources */,
 				99690D9D2086E5E500A68431 /* Breadcrumb.m in Sources */,
-				99690D0A2086E5E500A68431 /* MancardVC.m in Sources */,
 				99690DA72086E5E500A68431 /* User.m in Sources */,
 				99690EBD2086E5E600A68431 /* YearMonthPickerView.m in Sources */,
 				99690CAC2086E5E400A68431 /* AWButton.m in Sources */,
 				99690DA82086E5E500A68431 /* main.m in Sources */,
 				99690D9C2086E5E500A68431 /* AppManager.m in Sources */,
-				99690D152086E5E500A68431 /* MeetingOrderedView.m in Sources */,
 				99690D932086E5E500A68431 /* TZImagePickerController.m in Sources */,
-				99690D322086E5E500A68431 /* ParamUtil.m in Sources */,
 				99690D692086E5E500A68431 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				99690CB72086E5E400A68431 /* UIImageView+AWProgress.m in Sources */,
 				99690C492086E5E400A68431 /* CTPersistanceQueryCommand+DataManipulations.m in Sources */,
 				99690D6B2086E5E500A68431 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
-				99690D362086E5E500A68431 /* PlanAdjustVC.m in Sources */,
 				99690C972086E5E400A68431 /* UIView+TYAlertView.m in Sources */,
 				99690D572086E5E500A68431 /* AFURLRequestSerialization.m in Sources */,
-				99690CEC2086E5E500A68431 /* DMButton.m in Sources */,
-				99690CE22086E5E500A68431 /* CommentVC.m in Sources */,
-				99690D192086E5E500A68431 /* MessageDetailVC.m in Sources */,
 				99690E7A2086E5E500A68431 /* UIApplication+Close.m in Sources */,
-				99690D072086E5E500A68431 /* LandPlanListVC.m in Sources */,
 				99690CBC2086E5E400A68431 /* AWLoadingStateView.m in Sources */,
 				99690D972086E5E500A68431 /* TZProgressView.m in Sources */,
-				99690D032086E5E500A68431 /* LandListVC.m in Sources */,
 				99690D722086E5E500A68431 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
-				99690D202086E5E500A68431 /* NSObject+APIService.m in Sources */,
 				99690C8B2086E5E400A68431 /* PNScatterChartData.m in Sources */,
 				99690CA42086E5E400A68431 /* BaseAppDelegate.m in Sources */,
 				99690C632086E5E400A68431 /* FSCalendar+Deprecated.m in Sources */,
-				99690D462086E5E500A68431 /* SignFormVC.m in Sources */,
-				99690D392086E5E500A68431 /* PlanFlowFormVC.m in Sources */,
 				99690D782086E5E500A68431 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
 				99690C482086E5E400A68431 /* CTPersistanceVersionRecord.m in Sources */,
 				99690D542086E5E500A68431 /* AFNetworkReachabilityManager.m in Sources */,
@@ -3984,12 +3239,8 @@
 				99690C782086E5E400A68431 /* UIApplication+JTSImageViewController.m in Sources */,
 				99690C9B2086E5E400A68431 /* TYDrawStorage.m in Sources */,
 				99690D8E2086E5E500A68431 /* TZAssetModel.m in Sources */,
-				99690D442086E5E500A68431 /* SelectContactVC.m in Sources */,
 				99690D682086E5E500A68431 /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
-				99690D2A2086E5E500A68431 /* OutputContractListVC.m in Sources */,
 				99690C582086E5E400A68431 /* FAKIonIcons.m in Sources */,
-				99690D1D2086E5E500A68431 /* NewsDetailVC.m in Sources */,
-				99690D0C2086E5E500A68431 /* MeetingBaseInfoView.m in Sources */,
 				99690CAD2086E5E400A68431 /* UIButton+UserData.m in Sources */,
 				99690D732086E5E500A68431 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				99690EA02086E5E600A68431 /* LoadingView.m in Sources */,
@@ -3998,21 +3249,14 @@
 				99690C502086E5E400A68431 /* CTPersistanceTable+Find.m in Sources */,
 				99690E782086E5E500A68431 /* UserService.m in Sources */,
 				99690EB52086E5E600A68431 /* SelectPicker.m in Sources */,
-				99690CD52086E5E500A68431 /* ApplyLeaveVC.m in Sources */,
 				99690D6D2086E5E500A68431 /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
-				99690CFE2086E5E500A68431 /* KnowledgeDocListVC.m in Sources */,
-				99690E832086E5E600A68431 /* ContractDeclareCell.m in Sources */,
 				99690CB22086E5E400A68431 /* NSObject+UserData.m in Sources */,
 				99690C6B2086E5E400A68431 /* FSCalendarDelegationFactory.m in Sources */,
 				99690EA12086E5E600A68431 /* MeetingOrderCell.m in Sources */,
 				99690D522086E5E500A68431 /* AFHTTPRequestOperationManager.m in Sources */,
-				99690E9E2086E5E600A68431 /* LandCell.m in Sources */,
-				99690CF72086E5E500A68431 /* FlowOperationVC.m in Sources */,
 				99690D772086E5E500A68431 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
 				99690C4B2086E5E400A68431 /* CTPersistanceQueryCommand+SchemaManipulations.m in Sources */,
-				99690D0E2086E5E500A68431 /* MeetingDateRange.m in Sources */,
 				99690EA52086E5E600A68431 /* NTMonthYearPicker.m in Sources */,
-				99690E862086E5E600A68431 /* ContractDetailPayView.m in Sources */,
 				99690D812086E5E500A68431 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				99690C4C2086E5E400A68431 /* CTPersistanceQueryCommand+Status.m in Sources */,
 				99690C542086E5E400A68431 /* CTPersistanceTransaction.m in Sources */,
@@ -4024,309 +3268,196 @@
 				99690D642086E5E500A68431 /* DGActivityIndicatorBallBeatAnimation.m in Sources */,
 				99690CC42086E5E400A68431 /* AWTableViewDataSource.m in Sources */,
 				99690D912086E5E500A68431 /* TZImageManager.m in Sources */,
-				99690CF92086E5E500A68431 /* FlowSearchVC.m in Sources */,
 				99690C452086E5E400A68431 /* CTPersistanceDatabasePool.m in Sources */,
 				99690D752086E5E500A68431 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
-				99690D402086E5E500A68431 /* RulesSearchVC.m in Sources */,
 				99690D982086E5E500A68431 /* TZVideoPlayerController.m in Sources */,
 				99690C9C2086E5E400A68431 /* TYImageCache.m in Sources */,
 				99690D512086E5E500A68431 /* AFHTTPRequestOperation.m in Sources */,
-				99690D342086E5E500A68431 /* PayListVC.m in Sources */,
 				99690C4D2086E5E400A68431 /* CTPersistanceQueryCommand.m in Sources */,
-				99690CE02086E5E500A68431 /* CatalogContentView.m in Sources */,
 				99690C942086E5E400A68431 /* TYAlertView.m in Sources */,
 				99690C662086E5E400A68431 /* FSCalendarCalculator.m in Sources */,
 				99690C902086E5E400A68431 /* TYAlertController.m in Sources */,
-				99690D3A2086E5E500A68431 /* PlanListVC.m in Sources */,
 				99690C962086E5E400A68431 /* TYShowAlertView.m in Sources */,
-				99690D4B2086E5E500A68431 /* TracePlanListView.m in Sources */,
 				99690D762086E5E500A68431 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
-				99690D332086E5E500A68431 /* PasswordVC.m in Sources */,
 				99690EB02086E5E600A68431 /* RadioButton.m in Sources */,
-				99690D122086E5E500A68431 /* MeetingNotesDetailVC.m in Sources */,
-				99690CFF2086E5E500A68431 /* KnowledgeDocSearchVC.m in Sources */,
 				99690CBA2086E5E400A68431 /* AWLoadingResultView.m in Sources */,
 				99690D8D2086E5E500A68431 /* TZAssetCell.m in Sources */,
-				99690D272086E5E500A68431 /* OutputCatalog.m in Sources */,
 				99690C702086E5E400A68431 /* FSCalendarStickyHeader.m in Sources */,
 				99690C9A2086E5E400A68431 /* TYAttributedLabel.m in Sources */,
-				99690CF02086E5E500A68431 /* DocumentVC.m in Sources */,
-				99690D4E2086E5E500A68431 /* UIViewController+CreateFactory.m in Sources */,
 				99690CA72086E5E400A68431 /* APIEntityReformer.m in Sources */,
-				99690E882086E5E600A68431 /* ContractPayCell.m in Sources */,
 				99690CB92086E5E400A68431 /* AWKeyboardManager.m in Sources */,
 				99690CB62086E5E400A68431 /* MACircleProgressIndicator.m in Sources */,
 				99690CD12086E5E500A68431 /* UICountingLabel.m in Sources */,
 				99690C9F2086E5E400A68431 /* TYTextContainer+Extended.m in Sources */,
 				99690C822086E5E400A68431 /* PNGenericChart.m in Sources */,
-				99690CE92086E5E500A68431 /* DeclareListVC.m in Sources */,
 				99690E792086E5E500A68431 /* VersionCheckService.m in Sources */,
 				99690C422086E5E400A68431 /* NSString+SQL.m in Sources */,
-				99690EAE2086E5E600A68431 /* PlanListView.m in Sources */,
 				99690C532086E5E400A68431 /* CTPersistanceTable.m in Sources */,
 				99690D742086E5E500A68431 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				99690EC02086E9B400A68431 /* ExploreVC.m in Sources */,
 				99690C522086E5E400A68431 /* CTPersistanceTable+Update.m in Sources */,
 				99690CBE2086E5E400A68431 /* WGS84ToGCJ02.m in Sources */,
 				99690C8C2086E5E400A68431 /* PNScatterChartDataItem.m in Sources */,
-				99690D042086E5E500A68431 /* LandPayCell.m in Sources */,
-				99690D252086E5E500A68431 /* OAPopoverVC.m in Sources */,
 				99690EBA2086E5E600A68431 /* SwipeView.m in Sources */,
 				99690D5D2086E5E500A68431 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				99690EA62086E5E600A68431 /* OACell.m in Sources */,
-				99690D302086E5E500A68431 /* OutputSearchVC.m in Sources */,
 				99690E7D2086E5E500A68431 /* ValuesUtils.m in Sources */,
-				99690D472086E5E500A68431 /* SignListVC.m in Sources */,
-				99690CD62086E5E500A68431 /* AppQrcodeVC.m in Sources */,
 				99690C572086E5E400A68431 /* FAKIcon.m in Sources */,
 				99690D872086E5E500A68431 /* SVIndefiniteAnimatedView.m in Sources */,
-				99690D162086E5E500A68431 /* MeetingOrderListVC.m in Sources */,
 				99690D852086E5E500A68431 /* MBProgressHUD.m in Sources */,
 				99690C4F2086E5E400A68431 /* CTPersistanceTable+Delete.m in Sources */,
-				99690E922086E5E600A68431 /* DocumentView.m in Sources */,
-				99690D052086E5E500A68431 /* LandPayListVC.m in Sources */,
-				99690D4F2086E5E500A68431 /* UploadImageControl.m in Sources */,
+				99690ECE208707A500A68431 /* BaseVC.m in Sources */,
 				99690C842086E5E400A68431 /* PNLineChartData.m in Sources */,
 				99690D7E2086E5E500A68431 /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				99690CCB2086E5E400A68431 /* UITextView+AWPlaceholder.m in Sources */,
 				99690EB82086E5E600A68431 /* SignOptionCell.m in Sources */,
 				99690E712086E5E500A68431 /* APIService.m in Sources */,
-				99690E842086E5E600A68431 /* ContractDetailBaseView.m in Sources */,
 				99690CA52086E5E400A68431 /* APIConfig.m in Sources */,
-				99690E8F2086E5E600A68431 /* DeclareListCell.m in Sources */,
 				99690D592086E5E500A68431 /* AFURLSessionManager.m in Sources */,
-				99690E872086E5E600A68431 /* ContractDetailSignView.m in Sources */,
-				99690CED2086E5E500A68431 /* DocAttachmentListVC.m in Sources */,
 				99690E992086E5E600A68431 /* HNBadge.m in Sources */,
-				99690D132086E5E500A68431 /* MeetingNotesListView.m in Sources */,
 				99690CAA2086E5E400A68431 /* APIManager.m in Sources */,
-				99690D0D2086E5E500A68431 /* MeetingCell.m in Sources */,
 				99690CB42086E5E400A68431 /* UIView+AWGeometry.m in Sources */,
 				99690EB12086E5E600A68431 /* ReportCell.m in Sources */,
-				99690E962086E5E600A68431 /* FlowSubmitAlert.m in Sources */,
 				99690D842086E5E500A68431 /* DGActivityIndicatorView.m in Sources */,
 				99690D8A2086E5E500A68431 /* SVProgressHUD.m in Sources */,
 				99690C5B2086E5E400A68431 /* FAKZocial.m in Sources */,
 				99690C4E2086E5E400A68431 /* CTPersistanceRecord.m in Sources */,
 				99690E9A2086E5E600A68431 /* HNImageHelper.m in Sources */,
 				99690C3F2086E5E400A68431 /* CTPersistanceAsyncExecutor.m in Sources */,
-				99690CE12086E5E500A68431 /* CatalogLeftMenuView.m in Sources */,
 				99690CBD2086E5E400A68431 /* AWLocationManager.m in Sources */,
-				99690D232086E5E500A68431 /* OADetailVC.m in Sources */,
 				99690CC82086E5E400A68431 /* UITableView+RemoveBlankCells.m in Sources */,
-				99690CDF2086E5E500A68431 /* BaseVC.m in Sources */,
-				99690CE62086E5E500A68431 /* ContractDetailVC.m in Sources */,
 				99690D672086E5E500A68431 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				99690E9C2086E5E600A68431 /* HNProgressHUDHelper.m in Sources */,
 				99690E7E2086E5E500A68431 /* AWPagerTabStrip.m in Sources */,
 				99690C912086E5E400A68431 /* TYAlertDropDownAnimation.m in Sources */,
 				99690C6C2086E5E400A68431 /* FSCalendarDelegationProxy.m in Sources */,
-				99690D112086E5E500A68431 /* MeetingNotesCell.m in Sources */,
 				99690C932086E5E400A68431 /* TYAlertScaleFadeAnimation.m in Sources */,
-				99690CE42086E5E500A68431 /* ContactsVC.m in Sources */,
 				99690C9E2086E5E400A68431 /* TYLinkTextStorage.m in Sources */,
 				99690C8D2086E5E400A68431 /* TYAlertController+BlurEffects.m in Sources */,
 				99690D6C2086E5E500A68431 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				99690C742086E5E400A68431 /* JTSAnimatedGIFUtility.m in Sources */,
-				99690D222086E5E500A68431 /* NSObject+StoreService.m in Sources */,
 				99690D5F2086E5E500A68431 /* UIButton+AFNetworking.m in Sources */,
-				99690D412086E5E500A68431 /* RulesVC.m in Sources */,
-				99690CFC2086E5E500A68431 /* HelpVC.m in Sources */,
 				99690C6F2086E5E400A68431 /* FSCalendarScopeHandle.m in Sources */,
 				99690EA22086E5E600A68431 /* MeetingRoom.m in Sources */,
 				99690CCC2086E5E400A68431 /* AWUIUtils.m in Sources */,
 				99690C5A2086E5E400A68431 /* FAKOcticons.m in Sources */,
 				99690C652086E5E400A68431 /* FSCalendarAppearance.m in Sources */,
-				99690D382086E5E500A68431 /* PlanDetailVC.m in Sources */,
 				99690CA92086E5E400A68431 /* APIFileParam.m in Sources */,
-				99690D212086E5E500A68431 /* NSObject+RTIDataService.m in Sources */,
 				99690D802086E5E500A68431 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				99690C682086E5E400A68431 /* FSCalendarCollectionView.m in Sources */,
 				99690D7B2086E5E500A68431 /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
-				99690CEE2086E5E500A68431 /* DocBreadcrumbView.m in Sources */,
 				99690D712086E5E500A68431 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				99690C432086E5E400A68431 /* CTPersistanceCriteria.m in Sources */,
 				99690D792086E5E500A68431 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				99690C8F2086E5E400A68431 /* TYAlertController+TransitionAnimate.m in Sources */,
 				99690C8E2086E5E400A68431 /* UIImage+ImageEffects.m in Sources */,
-				99690D502086E5E500A68431 /* WorkVC.m in Sources */,
-				99690CF52086E5E500A68431 /* FlowbackListVC.m in Sources */,
-				99690E902086E5E600A68431 /* DeclareListView.m in Sources */,
-				99690D4C2086E5E500A68431 /* TransmitVC.m in Sources */,
 				99690CFD2086E5E500A68431 /* HomeVC.m in Sources */,
-				99690D3C2086E5E500A68431 /* RelatedFlowListVC.m in Sources */,
 				99690E7C2086E5E500A68431 /* HNAlertHelper.m in Sources */,
 				99690CCE2086E5E400A68431 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				99690C952086E5E400A68431 /* TYBaseAnimation.m in Sources */,
-				99690D282086E5E500A68431 /* OutputCatalogVC.m in Sources */,
-				99690E942086E5E600A68431 /* EmploySearchView.m in Sources */,
-				99690CF82086E5E500A68431 /* FlowSearchResultVC.m in Sources */,
 				99690D6A2086E5E500A68431 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				99690D8F2086E5E500A68431 /* TZGifPhotoPreviewController.m in Sources */,
-				99690D292086E5E500A68431 /* OutputConfirmVC.m in Sources */,
-				99690D242086E5E500A68431 /* OAListVC.m in Sources */,
-				99690CD72086E5E500A68431 /* AttachmentPreviewVC.m in Sources */,
-				99690CDB2086E5E500A68431 /* BackVC.m in Sources */,
-				99690CDA2086E5E500A68431 /* AuthorizeVC.m in Sources */,
 				99690E9B2086E5E600A68431 /* HNLoadingView.m in Sources */,
-				99690CDD2086E5E500A68431 /* BaseNavBarVC.m in Sources */,
 				99690CC22086E5E400A68431 /* UITableView+RefreshControl.m in Sources */,
 				99690D582086E5E500A68431 /* AFURLResponseSerialization.m in Sources */,
-				99690D262086E5E500A68431 /* OutputArea.m in Sources */,
-				99690D2F2086E5E500A68431 /* OutputRoomConfirmVC.m in Sources */,
-				99690D3B2086E5E500A68431 /* PlanVC.m in Sources */,
 				99690C4A2086E5E400A68431 /* CTPersistanceQueryCommand+ReadMethods.m in Sources */,
 				99690E722086E5E500A68431 /* AttachmentDownloadService.m in Sources */,
 				99690E732086E5E500A68431 /* HNBadgeService.m in Sources */,
 				99690C802086E5E400A68431 /* PNCircleChart.m in Sources */,
+				99690EC8208706CA00A68431 /* UIViewController+CreateFactory.m in Sources */,
 				99690C412086E5E400A68431 /* NSString+ReqularExpression.m in Sources */,
 				99690C402086E5E400A68431 /* NSArray+CTPersistanceRecordTransform.m in Sources */,
-				99690D2D2086E5E500A68431 /* OutputProject.m in Sources */,
 				99690CCD2086E5E400A68431 /* iCarousel.m in Sources */,
-				99690CE82086E5E500A68431 /* DeclareFormVC.m in Sources */,
 				99690D822086E5E500A68431 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				99690CCA2086E5E400A68431 /* AWTextField.m in Sources */,
 				99690C552086E5E400A68431 /* FAKFontAwesome.m in Sources */,
-				99690D022086E5E500A68431 /* LandDetailVC.m in Sources */,
-				99690D182086E5E500A68431 /* MeetingVC.m in Sources */,
-				99690D1B2086E5E500A68431 /* MobileInputVC.m in Sources */,
 				99690C592086E5E400A68431 /* FAKMaterialIcons.m in Sources */,
 				99690D7F2086E5E500A68431 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				99690CAE2086E5E400A68431 /* UIButton+AWButtonLoading.m in Sources */,
 				99690C442086E5E400A68431 /* CTPersistanceDataBase.m in Sources */,
 				99690CC92086E5E400A68431 /* UITableViewCell+RemoveBackground.m in Sources */,
-				99690CF62086E5E500A68431 /* FlowcopyVC.m in Sources */,
-				99690D4A2086E5E500A68431 /* TracePlanCell.m in Sources */,
 				99690D5E2086E5E500A68431 /* UIAlertView+AFNetworking.m in Sources */,
 				99690D7C2086E5E500A68431 /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
 				99690CD32086E5E500A68431 /* UIWebView+RemoveGrayBackground.m in Sources */,
 				99690C852086E5E400A68431 /* PNLineChartDataItem.m in Sources */,
 				99690DA02086E5E500A68431 /* ContactInsertHistoryTable.m in Sources */,
 				99690CB32086E5E400A68431 /* NSStringAdditions.m in Sources */,
+				99690ECD208707A500A68431 /* BaseNavBarVC.m in Sources */,
 				99690E772086E5E500A68431 /* StoreService.m in Sources */,
-				99690CF22086E5E500A68431 /* EmploySearchVC.m in Sources */,
 				99690D662086E5E500A68431 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
-				99690E8A2086E5E600A68431 /* ContractSignCell.m in Sources */,
 				99690C692086E5E400A68431 /* FSCalendarCollectionViewLayout.m in Sources */,
-				99690D142086E5E500A68431 /* MeetingOrderDetailVC.m in Sources */,
 				99690D612086E5E500A68431 /* UIProgressView+AFNetworking.m in Sources */,
-				99690D3D2086E5E500A68431 /* ReportListVC.m in Sources */,
-				99690CF12086E5E500A68431 /* EmployeeListVC.m in Sources */,
-				99690CFB2086E5E500A68431 /* GuideVC.m in Sources */,
 				99690E8E2086E5E600A68431 /* DateSelectControl.m in Sources */,
-				99690CEF2086E5E500A68431 /* DocSearchVC.m in Sources */,
 				99690C7F2086E5E400A68431 /* PNChartLabel.m in Sources */,
 				99690E982086E5E600A68431 /* FormInputControl.m in Sources */,
 				99690EB72086E5E600A68431 /* SignCell.m in Sources */,
 				99690EB62086E5E600A68431 /* SettingTableHeader.m in Sources */,
 				99690D8B2086E5E500A68431 /* SVRadialGradientLayer.m in Sources */,
 				99690EA92086E5E600A68431 /* PagerTabStripper.m in Sources */,
-				99690D1E2086E5E500A68431 /* NewsListVC.m in Sources */,
 				99690DA52086E5E500A68431 /* OfficeDocProtocol.m in Sources */,
-				99690D3E2086E5E500A68431 /* ReportVC.m in Sources */,
 				99690C832086E5E400A68431 /* PNLineChart.m in Sources */,
 				99690CC12086E5E400A68431 /* UIScrollView+AWRefresh.m in Sources */,
 				99690C752086E5E400A68431 /* JTSImageInfo.m in Sources */,
-				99690CF32086E5E500A68431 /* FeedbackVC.m in Sources */,
 				99690C7E2086E5E400A68431 /* PNBarChart.m in Sources */,
-				99690D1A2086E5E500A68431 /* MessageVC.m in Sources */,
 				99690CC52086E5E400A68431 /* UITableView+CompatibilityHandle.m in Sources */,
-				99690E9F2086E5E600A68431 /* LandListView.m in Sources */,
 				99690E9D2086E5E600A68431 /* HNRefreshView.m in Sources */,
 				99690C762086E5E400A68431 /* JTSImageViewController.m in Sources */,
 				99690C7D2086E5E400A68431 /* PNBar.m in Sources */,
 				99690EAA2086E5E600A68431 /* PayTimeView.m in Sources */,
 				99690EB32086E5E600A68431 /* SalaryPasswordView.m in Sources */,
-				99690CF42086E5E500A68431 /* FloorButton.m in Sources */,
-				99690CD92086E5E500A68431 /* AttendanceVC.m in Sources */,
 				99690D882086E5E500A68431 /* SVProgressAnimatedView.m in Sources */,
-				99690D312086E5E500A68431 /* OutputValueConfirmVC.m in Sources */,
 				99690EAD2086E5E600A68431 /* PlanDocView.m in Sources */,
-				99690CEA2086E5E500A68431 /* DeclareSearchResultVC.m in Sources */,
 				99690C6A2086E5E400A68431 /* FSCalendarConstants.m in Sources */,
 				99690E802086E5E500A68431 /* BIChartView.m in Sources */,
-				99690D3F2086E5E500A68431 /* ResetPasswordVC.m in Sources */,
-				99690CE32086E5E500A68431 /* CompanyVC.m in Sources */,
-				99690D102086E5E500A68431 /* MeetingListView.m in Sources */,
 				99690E972086E5E600A68431 /* FormControl.m in Sources */,
 				99690C882086E5E400A68431 /* PNRadarChart.m in Sources */,
 				99690CC62086E5E400A68431 /* UITableView+LoadEmptyOrErrorHandle.m in Sources */,
-				99690D082086E5E500A68431 /* LandSearchVC.m in Sources */,
 				99690DA12086E5E500A68431 /* ContactSectionInfo.m in Sources */,
-				99690E762086E5E500A68431 /* RTIDataService.m in Sources */,
 				99690E8C2086E5E600A68431 /* CustomSearchBar.m in Sources */,
-				99690E822086E5E600A68431 /* ContractCell.m in Sources */,
 				99690D992086E5E500A68431 /* UIView+Layout.m in Sources */,
 				99690D702086E5E500A68431 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				99690EBB2086E5E600A68431 /* UIActionSheet+DisabledButtons.m in Sources */,
-				99690CD42086E5E500A68431 /* AddSignVC.m in Sources */,
 				99690EBC2086E5E600A68431 /* UIView+MBProgressHUD.m in Sources */,
 				99690EAF2086E5E600A68431 /* PlanProjectView.m in Sources */,
 				99690CB02086E5E400A68431 /* NSObject+AWDeallocBlock.m in Sources */,
-				99690D172086E5E500A68431 /* MeetingRoomVC.m in Sources */,
 				99690E7B2086E5E500A68431 /* ButtonHelper.m in Sources */,
-				99690CFA2086E5E500A68431 /* FormVC.m in Sources */,
 				99690C892086E5E400A68431 /* PNRadarChartDataItem.m in Sources */,
 				99690D962086E5E500A68431 /* TZPhotoPreviewController.m in Sources */,
-				99690CD82086E5E500A68431 /* AttendanceFlowVC.m in Sources */,
 				99690CBF2086E5E400A68431 /* AWMediator.m in Sources */,
-				99690E892086E5E600A68431 /* ContractPayCell2.m in Sources */,
 				99690EAB2086E5E600A68431 /* PlanCell.m in Sources */,
 				99690CCF2086E5E500A68431 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				99690C9D2086E5E400A68431 /* TYImageStorage.m in Sources */,
-				99690CE72086E5E500A68431 /* ContractListVC.m in Sources */,
-				99690D4D2086E5E500A68431 /* TypeGridView.m in Sources */,
 				99690D7A2086E5E500A68431 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				99690CD02086E5E500A68431 /* UIView+Toast.m in Sources */,
 				99690C722086E5E400A68431 /* FSCalendarWeekdayView.m in Sources */,
-				99690E932086E5E600A68431 /* EmployCell.m in Sources */,
 				99690D562086E5E500A68431 /* AFURLConnectionOperation.m in Sources */,
 				99690CA32086E5E400A68431 /* AppDelegate.m in Sources */,
 				99690D9F2086E5E500A68431 /* ContactInsertHistory.m in Sources */,
 				99690EA42086E5E600A68431 /* NewsCell.m in Sources */,
-				99690CDE2086E5E500A68431 /* BaseSearchVC.m in Sources */,
-				99690D012086E5E500A68431 /* LandAnnexListVC.m in Sources */,
-				99690D2B2086E5E500A68431 /* OutputJDConfirmVC.m in Sources */,
 				99690D5C2086E5E500A68431 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				99690CB82086E5E400A68431 /* UIImageView+ProgressIndicator.m in Sources */,
-				99690E912086E5E600A68431 /* DocumentCell.m in Sources */,
 				99690CA12086E5E400A68431 /* TYTextStorage.m in Sources */,
-				99690EA82086E5E600A68431 /* OAListView.m in Sources */,
 				99690C562086E5E400A68431 /* FAKFoundationIcons.m in Sources */,
 				99690D6E2086E5E500A68431 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				99690D602086E5E500A68431 /* UIImageView+AFNetworking.m in Sources */,
 				99690C472086E5E400A68431 /* CTPersistanceVersionTable.m in Sources */,
 				99690D6F2086E5E500A68431 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
-				99690EA72086E5E600A68431 /* OACell2.m in Sources */,
 				99690CB52086E5E400A68431 /* AWHairlineView.m in Sources */,
-				99690D482086E5E500A68431 /* SignOptionsVC.m in Sources */,
 				99690C872086E5E400A68431 /* PNPieChartDataItem.m in Sources */,
-				99690E852086E5E600A68431 /* ContractDetailDeclareView.m in Sources */,
-				99690CE52086E5E500A68431 /* ContactVC.m in Sources */,
 				99690CA62086E5E400A68431 /* APIDictionaryReformer.m in Sources */,
 				99690EAC2086E5E600A68431 /* PlanCell2.m in Sources */,
 				99690CA82086E5E400A68431 /* APIError.m in Sources */,
 				99690D632086E5E500A68431 /* UIWebView+AFNetworking.m in Sources */,
 				99690E8D2086E5E600A68431 /* DatePicker.m in Sources */,
-				99690E742086E5E500A68431 /* HNNewFlowCountService.m in Sources */,
 				99690CD22086E5E500A68431 /* UIWebView+KeyValueStorage.m in Sources */,
-				99690E952086E5E600A68431 /* FlowSearchHelpView.m in Sources */,
 				99690CC72086E5E400A68431 /* UITableView+LoadNetworkData.m in Sources */,
-				99690D1C2086E5E500A68431 /* NewMeetingOrderVC.m in Sources */,
 				99690D452086E5E500A68431 /* SettingVC.m in Sources */,
 				99690CAB2086E5E400A68431 /* APIRequest.m in Sources */,
 				99690E8B2086E5E600A68431 /* CustomOpinionView.m in Sources */,
-				99690D2C2086E5E500A68431 /* OutputNodeCell.m in Sources */,
 				99690D942086E5E500A68431 /* TZPhotoPickerController.m in Sources */,
 				99690C812086E5E400A68431 /* PNColor.m in Sources */,
-				99690D0F2086E5E500A68431 /* MeetingDetailVC.m in Sources */,
-				99690D492086E5E500A68431 /* SubmitVC.m in Sources */,
 				99690D9B2086E5E500A68431 /* AddContactsModel.m in Sources */,
 				99690C772086E5E400A68431 /* JTSSimpleImageDownloader.m in Sources */,
-				99690D2E2086E5E500A68431 /* OutputQueryParams.m in Sources */,
 				99690EB92086E5E600A68431 /* SignToolbar.m in Sources */,
-				99690D372086E5E500A68431 /* PlanConfirmVC.m in Sources */,
-				99690CDC2086E5E500A68431 /* BannerView.m in Sources */,
 				99690D9E2086E5E500A68431 /* ContactInfo.m in Sources */,
 				99690C922086E5E400A68431 /* TYAlertFadeAnimation.m in Sources */,
 				99690CB12086E5E400A68431 /* NSDataAdditions.m in Sources */,
@@ -4335,23 +3466,16 @@
 				99690D952086E5E500A68431 /* TZPhotoPreviewCell.m in Sources */,
 				99690C672086E5E400A68431 /* FSCalendarCell.m in Sources */,
 				99690C982086E5E400A68431 /* UIView+TYAutoLayout.m in Sources */,
-				99690D352086E5E500A68431 /* PaymentsVC.m in Sources */,
 				99690D532086E5E500A68431 /* AFHTTPSessionManager.m in Sources */,
 				99690D862086E5E500A68431 /* NSDate+NVTimeAgo.m in Sources */,
 				99690EB22086E5E600A68431 /* SalaryPasswordUpdateView.m in Sources */,
-				99690D092086E5E500A68431 /* LoginVC.m in Sources */,
 				99690C992086E5E400A68431 /* NSMutableAttributedString+TY.m in Sources */,
 				99690E752086E5E500A68431 /* NetworkService.m in Sources */,
 				99690C8A2086E5E400A68431 /* PNScatterChart.m in Sources */,
 				99690CC32086E5E400A68431 /* AWMultipleColumnTableViewDataSource.m in Sources */,
 				99690C6E2086E5E400A68431 /* FSCalendarHeaderView.m in Sources */,
-				99690CEB2086E5E500A68431 /* DeclareSearchVC.m in Sources */,
-				99690D422086E5E500A68431 /* SalaryVC.m in Sources */,
 				99690C712086E5E400A68431 /* FSCalendarTransitionCoordinator.m in Sources */,
-				99690D002086E5E500A68431 /* KnowledgeTypeVC.m in Sources */,
-				99690D062086E5E500A68431 /* LandPlanCell.m in Sources */,
 				99690D902086E5E500A68431 /* TZImageCropManager.m in Sources */,
-				99690D1F2086E5E500A68431 /* NSDate+WeekdayRange.m in Sources */,
 				99690D7D2086E5E500A68431 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				99690C512086E5E400A68431 /* CTPersistanceTable+Insert.m in Sources */,
 				99690DA32086E5E500A68431 /* HNCache.m in Sources */,

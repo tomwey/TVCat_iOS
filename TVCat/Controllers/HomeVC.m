@@ -44,10 +44,10 @@
 - (void)initBanners
 {
     [[self apiServiceWithName:@"APIService"]
-     GET:@"/banners"
+     GET:@"banners"
      params:nil
-     completion:^(id result, NSError *error) {
-         
+     completion:^(id result, id rawData, NSError *error) {
+         NSLog(@"result: %@", result);
      }];
 }
 

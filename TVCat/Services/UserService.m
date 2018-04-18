@@ -8,7 +8,7 @@
 
 #import "UserService.h"
 #import "User.h"
-#import "NSObject+RTIDataService.h"
+//#import "NSObject+RTIDataService.h"
 #import "NetworkService.h"
 #import "StoreService.h"
 #import <CloudPushSDK/CloudPushSDK.h>
@@ -69,7 +69,7 @@
               @"uname": [[UIDevice currentDevice] name],
               @"lang_code": AWDeviceCountryLangCode(),
               @"screen": AWDeviceSizeString(),
-              } completion:^(id result, NSError *error) {
+              } completion:^(id result, id rawData, NSError *error) {
                   if (completion) {
                       if ( error ) {
                           completion(nil, error);
@@ -108,22 +108,6 @@
     }];
 }
 
-/**
- * 登录
- */
-- (void)loginWithMobile:(NSString *)mobile
-               password:(NSString *)password
-             completion:(void (^)(User *aUser, NSError *error))completion
-{
-    [self.dataService   POST:@"UserLogin"
-                      params:@{ @"loginname": mobile ?: @"",
-                                @"pwd": password ?: @""
-                                }
-                  completion:^(id result, NSError *inError)
-     {
-         [self handleResult:result error:inError completion:completion];
-     }];
-}
 
 /**
  * 获取用户个人资料
@@ -138,45 +122,6 @@
                  completion:^(id result, NSError *error)
     {
         [self handleResult:result error:error completion:completion];
-    }];
-}
-
-- (void)updateUserProfile:(NSDictionary *)params completion:(void (^)(User *aUser, NSError *error))completion
-{
-    NSMutableDictionary *newParam = [params mutableCopy];
-//    [newParam setObject:[self currentUser].token forKey:@"userid"];
-    
-    if ( [newParam[@"key"] isEqualToString:@"birthday"] ) {
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        df.dateFormat = @"yyyy-MM-dd";
-        [newParam setObject:[df stringFromDate:[params objectForKey:@"value"]] forKey:@"value"];
-    }
-    
-    [self.dataService POST:@"UpdateUserInfo" params:newParam completion:^(id result, NSError *error) {
-//        NSLog(@"");
-        if ( completion ) {
-            if ( error ) {
-                completion(nil, error);
-            } else {
-                
-                User *user = [self currentUser];
-                if ( [params[@"key"] isEqualToString:@"username"] ) {
-                    [user updateName:[params[@"value"] description]];
-                }
-                
-                if ( [params[@"key"] isEqualToString:@"sex"] ) {
-                    [user updateSex:params[@"value"]];
-                }
-                
-                if ( [params[@"key"] isEqualToString:@"birthday"] ) {
-                    [user updateBirth:params[@"value"]];
-                }
-                
-                [self saveUser:user];
-                
-                completion(user, nil);
-            }
-        }
     }];
 }
 
