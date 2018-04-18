@@ -86,6 +86,7 @@
         self.needResumeBanner = NO;
         [self.bannerView resume];
     }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -273,6 +274,9 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
         [_tableView removeBlankCells];
+        
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
         
         // 添加下拉刷新
         __weak HomeVC *weakSelf = self;

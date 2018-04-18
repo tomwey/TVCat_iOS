@@ -106,10 +106,10 @@
                                   AWSystemFontWithSize(14, NO),
                                   /*AWColorFromRGB(131, 131, 131)*/[UIColor whiteColor]);
         [self addSubview:_nickname];
-        _nickname.backgroundColor = [UIColor blackColor];
-        _nickname.alpha = 0.7;
+//        _nickname.backgroundColor = [UIColor blackColor];
+//        _nickname.alpha = 0.7;
         
-        _nickname.cornerRadius = 6;
+//        _nickname.cornerRadius = 6;
     }
     return _nickname;
 }
