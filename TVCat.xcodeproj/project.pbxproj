@@ -515,6 +515,8 @@
 		99690EC8208706CA00A68431 /* UIViewController+CreateFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EC7208706CA00A68431 /* UIViewController+CreateFactory.m */; };
 		99690ECD208707A500A68431 /* BaseNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ECA208707A500A68431 /* BaseNavBarVC.m */; };
 		99690ECE208707A500A68431 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ECB208707A500A68431 /* BaseVC.m */; };
+		99690ED1208709F100A68431 /* BannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ECF208709F000A68431 /* BannerView.m */; };
+		99690ED420871B4600A68431 /* MediaProviderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ED320871B4600A68431 /* MediaProviderView.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1346,6 +1348,10 @@
 		99690ECA208707A500A68431 /* BaseNavBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavBarVC.m; sourceTree = "<group>"; };
 		99690ECB208707A500A68431 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		99690ECC208707A500A68431 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		99690ECF208709F000A68431 /* BannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerView.m; sourceTree = "<group>"; };
+		99690ED0208709F100A68431 /* BannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerView.h; sourceTree = "<group>"; };
+		99690ED220871B4600A68431 /* MediaProviderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaProviderView.h; sourceTree = "<group>"; };
+		99690ED320871B4600A68431 /* MediaProviderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaProviderView.m; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2826,6 +2832,8 @@
 		99690BBE2086E5E400A68431 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99690ED0208709F100A68431 /* BannerView.h */,
+				99690ECF208709F000A68431 /* BannerView.m */,
 				99690BBF2086E5E400A68431 /* AWPagerTabStrip.h */,
 				99690BC02086E5E400A68431 /* AWPagerTabStrip.m */,
 				99690BC12086E5E400A68431 /* AWSectionHeaderView.h */,
@@ -2908,6 +2916,8 @@
 				99690C3C2086E5E400A68431 /* UIView+MBProgressHUD.m */,
 				99690C3D2086E5E400A68431 /* YearMonthPickerView.h */,
 				99690C3E2086E5E400A68431 /* YearMonthPickerView.m */,
+				99690ED220871B4600A68431 /* MediaProviderView.h */,
+				99690ED320871B4600A68431 /* MediaProviderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3211,6 +3221,7 @@
 				99690CA22086E5E400A68431 /* TYViewStorage.m in Sources */,
 				99690D9D2086E5E500A68431 /* Breadcrumb.m in Sources */,
 				99690DA72086E5E500A68431 /* User.m in Sources */,
+				99690ED1208709F100A68431 /* BannerView.m in Sources */,
 				99690EBD2086E5E600A68431 /* YearMonthPickerView.m in Sources */,
 				99690CAC2086E5E400A68431 /* AWButton.m in Sources */,
 				99690DA82086E5E500A68431 /* main.m in Sources */,
@@ -3301,6 +3312,7 @@
 				99690EBA2086E5E600A68431 /* SwipeView.m in Sources */,
 				99690D5D2086E5E500A68431 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				99690E7D2086E5E500A68431 /* ValuesUtils.m in Sources */,
+				99690ED420871B4600A68431 /* MediaProviderView.m in Sources */,
 				99690C572086E5E400A68431 /* FAKIcon.m in Sources */,
 				99690D872086E5E500A68431 /* SVIndefiniteAnimatedView.m in Sources */,
 				99690D852086E5E500A68431 /* MBProgressHUD.m in Sources */,
