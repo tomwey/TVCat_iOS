@@ -48,13 +48,7 @@
     
     self.needResumeBanner = NO;
     
-//    // 创建Banner
-//    [self initBanners];
-//
-//    // 创建导航区域
-//    [self initNavSections];
-    
-    [self loadData];
+    [self.tableView triggerPullToRefresh];
 }
 
 - (void)loadData
