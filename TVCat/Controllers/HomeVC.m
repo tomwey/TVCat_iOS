@@ -189,6 +189,11 @@
             
             view.frame = CGRectMake(15 + i * [self mediaItemWidth],
                                     0, [self mediaItemWidth], [self mediaItemWidth]);
+            
+            __weak typeof(self) me = self;
+            view.didSelectMediaBlock = ^(MediaProviderView *sender) {
+                [me forwardTo:sender.data];
+            };
         }
         
         NSInteger index = indexPath.row * [self numberOfCols] + i;
@@ -199,6 +204,16 @@
             view.data = self.dataSource[index];
         }
     }
+}
+
+- (void)forwardTo:(id)data
+{
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"BrowserVC"
+                                                                params:@{
+                                                                         @"title": data[@"name"] ?: @"",
+                                                                         @"url": data[@"url"] ?: @"",
+                                                                         }];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (BannerView *)bannerView

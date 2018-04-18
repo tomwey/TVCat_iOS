@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) id data;
 
+@property (nonatomic, copy) void (^didSelectMediaBlock)(MediaProviderView *sender);
+
 @end

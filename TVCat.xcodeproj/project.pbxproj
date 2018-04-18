@@ -527,6 +527,8 @@
 		99690EE62087258B00A68431 /* icon_kf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690EDC2087258A00A68431 /* icon_kf@2x.png */; };
 		99690EE72087258B00A68431 /* icon_kf@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690EDD2087258A00A68431 /* icon_kf@3x.png */; };
 		99690EE82087258B00A68431 /* icon_faq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690EDE2087258A00A68431 /* icon_faq@2x.png */; };
+		99690EEB2087497200A68431 /* BrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EEA2087497200A68431 /* BrowserVC.m */; };
+		99690EEE20874F3900A68431 /* MediaPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EED20874F3900A68431 /* MediaPlayerVC.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1372,6 +1374,10 @@
 		99690EDC2087258A00A68431 /* icon_kf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_kf@2x.png"; sourceTree = "<group>"; };
 		99690EDD2087258A00A68431 /* icon_kf@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_kf@3x.png"; sourceTree = "<group>"; };
 		99690EDE2087258A00A68431 /* icon_faq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_faq@2x.png"; sourceTree = "<group>"; };
+		99690EE92087497200A68431 /* BrowserVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowserVC.h; sourceTree = "<group>"; };
+		99690EEA2087497200A68431 /* BrowserVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserVC.m; sourceTree = "<group>"; };
+		99690EEC20874F3900A68431 /* MediaPlayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaPlayerVC.h; sourceTree = "<group>"; };
+		99690EED20874F3900A68431 /* MediaPlayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerVC.m; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2287,6 +2293,10 @@
 				99690EBF2086E9B400A68431 /* ExploreVC.m */,
 				996909FF2086E5E300A68431 /* SettingVC.h */,
 				99690A002086E5E300A68431 /* SettingVC.m */,
+				99690EE92087497200A68431 /* BrowserVC.h */,
+				99690EEA2087497200A68431 /* BrowserVC.m */,
+				99690EEC20874F3900A68431 /* MediaPlayerVC.h */,
+				99690EED20874F3900A68431 /* MediaPlayerVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3444,6 +3454,7 @@
 				99690EB72086E5E600A68431 /* SignCell.m in Sources */,
 				99690EB62086E5E600A68431 /* SettingTableHeader.m in Sources */,
 				99690D8B2086E5E500A68431 /* SVRadialGradientLayer.m in Sources */,
+				99690EEE20874F3900A68431 /* MediaPlayerVC.m in Sources */,
 				99690EA92086E5E600A68431 /* PagerTabStripper.m in Sources */,
 				99690DA52086E5E500A68431 /* OfficeDocProtocol.m in Sources */,
 				99690C832086E5E400A68431 /* PNLineChart.m in Sources */,
@@ -3490,6 +3501,7 @@
 				99690CA12086E5E400A68431 /* TYTextStorage.m in Sources */,
 				99690C562086E5E400A68431 /* FAKFoundationIcons.m in Sources */,
 				99690D6E2086E5E500A68431 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				99690EEB2087497200A68431 /* BrowserVC.m in Sources */,
 				99690D602086E5E500A68431 /* UIImageView+AFNetworking.m in Sources */,
 				99690C472086E5E400A68431 /* CTPersistanceVersionTable.m in Sources */,
 				99690D6F2086E5E500A68431 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,

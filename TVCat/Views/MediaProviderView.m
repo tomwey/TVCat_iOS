@@ -19,6 +19,14 @@
 
 @implementation MediaProviderView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if ( self = [super initWithFrame:frame] ) {
+        [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
+    }
+    return self;
+}
+
 - (void)setData:(id)data
 {
     _data = data;
@@ -27,6 +35,13 @@
     [self.iconView setImageWithURL:[NSURL URLWithString:data[@"icon"]]];
     
     self.nameLabel.text = data[@"name"];
+}
+
+- (void)tap
+{
+    if ( self.didSelectMediaBlock ) {
+        self.didSelectMediaBlock(self);
+    }
 }
 
 - (void)layoutSubviews
