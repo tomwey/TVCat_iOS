@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy) NSString *currentSessionID;
 
+@property (nonatomic, strong) id appConfig;
+
 @end
 
 @implementation CatService
@@ -186,6 +188,31 @@
             }
         }
     }];
+}
+
+- (void)fetchAppConfig:(void (^)(id result, NSError *error))completion
+{
+    if (self.appConfig) {
+        if ( completion ) {
+            completion(self.appConfig, nil);
+        }
+        
+        return;
+    }
+    
+    [[self apiServiceWithName:@"APIService"]
+     GET:@"app/config"
+     params:nil
+     completion:^(id result, id rawData, NSError *error) {
+         if ( completion ) {
+             if ( error ) {
+                 completion(nil, error);
+             } else {
+                 completion(result, nil);
+                 self.appConfig = result;
+             }
+         }
+     }];
 }
 
 @end

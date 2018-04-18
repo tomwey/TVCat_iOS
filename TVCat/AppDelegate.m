@@ -55,9 +55,11 @@
     
 //    NSLog(@"%@, %@", [self AESEncryptStringByString:@"loginname=huyue&pwd=123321"], [@"666AA4DF3533497D973D852004B975BC" md5Hash]);
     
-    [[CatService sharedInstance] sessionBeginForType:1 completion:^(BOOL succeed, NSError *error) {
-        
-    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[CatService sharedInstance] sessionBeginForType:1 completion:^(BOOL succeed, NSError *error) {
+            [[VersionCheckService sharedInstance] startCheckWithSilent:YES];
+        }];
+    });
     
     return YES;
 }

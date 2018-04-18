@@ -6,8 +6,8 @@
 //  Copyright © 2018 tomwey. All rights reserved.
 //
 
-#import "BaseNavBarVC.h"
+#import "PageVC.h"
 
-@interface ExploreVC : BaseNavBarVC
+@interface ExploreVC : PageVC
 
 @end

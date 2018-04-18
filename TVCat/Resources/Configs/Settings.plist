@@ -54,6 +54,8 @@
 			<string>检测更新</string>
 			<key>action</key>
 			<string>checkVersion</string>
+			<key>value</key>
+			<string>version</string>
 		</dict>
 		<dict>
 			<key>icon</key>

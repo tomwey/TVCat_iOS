@@ -67,16 +67,23 @@
     
     VersionCheckService * __weak weakSelf = self;
     
-    [[self apiServiceWithName:@"APIService"]
-     POST:nil
-     params:@{ @"dotype": @"GetData",
-               @"funname": @"供应商查询版本信息APP",
-               @"param1": AWAppVersion(),
-               @"param2": @"iOS",
-               }
-     completion:^(id result, id rawData, NSError *error) {
-         [weakSelf handleResult:result error:error];
-     }];
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        NSString *token = user[@"token"] ?: @"";
+        
+        [[self apiServiceWithName:@"APIService"]
+         GET:@"app/check_version"
+         params:@{
+                  @"token": token,
+                  @"bv": AWAppVersion(),
+                  @"m": AWDeviceName(),
+                  @"os": [[UIDevice currentDevice] systemName],
+                  @"osv": AWOSVersionString(),
+                  }
+         completion:^(id result, id rawData, NSError *error) {
+             [self handleResult:result error:error];
+         }];
+        
+    }];
 }
 
 - (void)handleResult:(id)result error:(NSError *)error
@@ -92,7 +99,7 @@
             
             self.checking = NO;
         } else {
-            self.appInfo = [result[@"data"] firstObject];
+            self.appInfo = result;//[result[@"data"] firstObject];
             
             [self showVersionTips];
         }
@@ -103,7 +110,7 @@
         self.checking = NO;
         
         if ( !self.silent ) {
-            [AWAppWindow() showHUDWithText:@"获取版本信息失败" succeed:NO];
+            [AWAppWindow() showHUDWithText:error.domain succeed:NO];
         } else {
             
         }

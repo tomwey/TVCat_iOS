@@ -257,17 +257,29 @@
 
 - (void)gotoKF
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"PageVC"
+                                                                params:@{ @"title": @"在线客服",
+                                                                          @"slug": @"kefu_url"
+                                                                          }];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)gotoAbout
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"PageVC"
+                                                                params:@{ @"title": @"关于我们",
+                                                                          @"slug": @"aboutus_url"
+                                                                          }];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)gotoFaq
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"PageVC"
+                                                                params:@{ @"title": @"常见问题",
+                                                                          @"slug": @"faq_url"
+                                                                          }];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)gotoUserProfile
@@ -372,8 +384,6 @@
 //    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"HelpVC" params:nil];
 //    [AWAppWindow().navController pushViewController:vc animated:YES];
     
-    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"AttachmentPreviewVC" params:@{ @"item": @{ @"filename": @"操作指南", @"isdoc": @"1", @"addr": @"http://erp20-app.heneng.cn:16681/office/erp20-annex.heneng.cn/H_WF_INST_M/2018-03-22/372801/wopi/files/372801.docx" } }];
-    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)clearCache

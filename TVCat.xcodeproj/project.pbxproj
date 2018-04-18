@@ -530,6 +530,7 @@
 		99690EEB2087497200A68431 /* BrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EEA2087497200A68431 /* BrowserVC.m */; };
 		99690EEE20874F3900A68431 /* MediaPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EED20874F3900A68431 /* MediaPlayerVC.m */; };
 		99690EF12087527500A68431 /* CatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF02087527400A68431 /* CatService.m */; };
+		99690EF520878BF500A68431 /* PageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF420878BF500A68431 /* PageVC.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1381,6 +1382,8 @@
 		99690EED20874F3900A68431 /* MediaPlayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerVC.m; sourceTree = "<group>"; };
 		99690EEF2087527400A68431 /* CatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatService.h; sourceTree = "<group>"; };
 		99690EF02087527400A68431 /* CatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatService.m; sourceTree = "<group>"; };
+		99690EF320878BF500A68431 /* PageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVC.h; sourceTree = "<group>"; };
+		99690EF420878BF500A68431 /* PageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVC.m; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2300,6 +2303,8 @@
 				99690EEA2087497200A68431 /* BrowserVC.m */,
 				99690EEC20874F3900A68431 /* MediaPlayerVC.h */,
 				99690EED20874F3900A68431 /* MediaPlayerVC.m */,
+				99690EF320878BF500A68431 /* PageVC.h */,
+				99690EF420878BF500A68431 /* PageVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3421,6 +3426,7 @@
 				99690CFD2086E5E500A68431 /* HomeVC.m in Sources */,
 				99690E7C2086E5E500A68431 /* HNAlertHelper.m in Sources */,
 				99690CCE2086E5E400A68431 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				99690EF520878BF500A68431 /* PageVC.m in Sources */,
 				99690C952086E5E400A68431 /* TYBaseAnimation.m in Sources */,
 				99690D6A2086E5E500A68431 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				99690D8F2086E5E500A68431 /* TZGifPhotoPreviewController.m in Sources */,

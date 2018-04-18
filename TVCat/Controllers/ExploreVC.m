@@ -9,7 +9,11 @@
 #import "ExploreVC.h"
 #import "Defines.h"
 
-@interface ExploreVC ()
+#import <WebKit/WebKit.h>
+
+@interface ExploreVC () <WKNavigationDelegate>
+
+@property (nonatomic, strong) WKWebView *webView;
 
 @end
 
@@ -27,26 +31,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.navBar.title = @"发现";
     
     [self addLeftItemWithView:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSString *)pageTitle
+{
+    return @"发现";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString *)pageSlug
+{
+    return @"explore_url";
 }
-*/
 
 @end

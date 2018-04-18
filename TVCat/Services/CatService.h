@@ -23,4 +23,8 @@ typedef NS_ENUM(NSInteger, SessionType) {
 - (void)fetchPlayerForURL:(NSString *)url completion:(void (^)(id result, NSError *error))completion;
 - (void)fetchUserProfile:(void (^)(id result, NSError *error))completion;
 
+//- (void)checkVersion:(void (^)(id result, NSError *error))completion;
+
+- (void)fetchAppConfig:(void (^)(id result, NSError *error))completion;
+
 @end

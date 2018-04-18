@@ -30,7 +30,7 @@
         [self addSubview:bgView];
         bgView.image = nil;//AWImageNoCached(@"setting-header.png");
         bgView.backgroundColor = MAIN_THEME_COLOR;
-        self.frame = bgView.frame = CGRectMake(0, 0, AWFullScreenWidth(), 192);
+        self.frame = bgView.frame = CGRectMake(0, 0, AWFullScreenWidth(), 200);
         bgView.contentMode = UIViewContentModeScaleAspectFill;
         bgView.clipsToBounds = YES;
         
@@ -77,6 +77,10 @@
     //currentUser ? [currentUser formatUsername] : @"唐伟";
     
     [self.expireButton setTitle:currentUser[@"left_days"] forState:UIControlStateNormal];
+    
+    CGSize size = [currentUser[@"left_days"] sizeWithAttributes:@{ NSFontAttributeName: AWSystemFontWithSize(14, NO) }];
+    
+    self.expireButton.frame = CGRectMake(0, 0, size.width + 20, 34);
 //    [self.expireButton sizeToFit];
     
 //    [self setNeedsLayout];
