@@ -8,8 +8,11 @@
 
 #import "MediaPlayerVC.h"
 #import "Defines.h"
+#import <WebKit/WebKit.h>
 
-@interface MediaPlayerVC ()
+@interface MediaPlayerVC () <WKNavigationDelegate>
+
+@property (nonatomic, strong) WKWebView *webView;
 
 @end
 
@@ -18,16 +21,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navBar.title = @"开始播放";
+    self.navBar.title = @"";
     
-    [[self apiServiceWithName:@"APIService"]
-     GET:@"media/player"
-     params:@{
-              @"url": self.params[@"url"] ?: @"",
-              @"token": @"",
-              } completion:^(id result, id rawData, NSError *error) {
-                  NSLog(@"result: %@", result);
-              }];
+    [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
+    
+    [[CatService sharedInstance] fetchPlayerForURL:self.params[@"url"]
+                                        completion:^(id result, NSError *error) {
+//                                            [HNProgressHUDHelper hideHUDForView:self.contentView
+//                                                                       animated:YES];
+                                            
+                                            if ( error ) {
+                                                [HNProgressHUDHelper hideHUDForView:self.contentView
+                                                                           animated:YES];
+                                                [self.contentView showHUDWithText:error.domain succeed:NO];
+                                            } else {
+                                                NSURLRequest *request = [NSURLRequest requestWithURL:
+                                                                         [NSURL URLWithString:result[@"url"]]];
+                                                [self.webView loadRequest:request];
+                                            }
+                                            
+                                        }];
+}
+
+- (WKWebView *)webView
+{
+    if ( !_webView ) {
+        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds];
+        [self.contentView addSubview:_webView];
+        
+        _webView.navigationDelegate = self;
+    }
+    return _webView;
+}
+
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
+{
+    //        [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
+    [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
+    
+    //    [self updateReadStatus];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
+{
+    //    [self.contentView showHUDWithText:error.localizedDescription succeed:NO];
+    [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
 }
 
 @end

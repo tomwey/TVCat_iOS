@@ -31,6 +31,9 @@
 
 - (void)shortSignup:(void (^)(id user, NSError *error))completion;
 
+// 登录注册一个用户
+- (void)loginUser:(void (^)(id user, NSError *error))completion;
+
 /**
  * 获取当前用户认证Token
  */

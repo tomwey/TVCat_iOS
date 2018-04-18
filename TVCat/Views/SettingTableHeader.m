@@ -17,6 +17,8 @@
 
 @property (nonatomic, weak, readwrite) UIView *scrollZoomableView;
 
+@property (nonatomic, strong) UIButton *expireButton;
+
 @end
 
 @implementation SettingTableHeader
@@ -69,10 +71,15 @@
 //                }];
     
     
-    self.nickname.text = currentUser[@"supname"];
+    self.nickname.text = currentUser[@"nickname"];
     
     [self.avatarView setImageWithURL:[NSURL URLWithString:currentUser[@"avatar"]]];
     //currentUser ? [currentUser formatUsername] : @"唐伟";
+    
+    [self.expireButton setTitle:currentUser[@"left_days"] forState:UIControlStateNormal];
+//    [self.expireButton sizeToFit];
+    
+//    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
@@ -83,8 +90,41 @@
     
 //    self.arrowView.center  = CGPointMake(self.width - 15 - self.arrowView.width / 2, self.avatarView.midY);
     
-    self.nickname.frame    = CGRectMake(0, 0, 80, 34);
+    self.nickname.frame    = CGRectMake(0, 0, self.width - 60, 34);
     self.nickname.center   = CGPointMake(self.width / 2, self.avatarView.bottom + 10 + self.nickname.height / 2);
+    
+//    self.expireButton.frame = CGRectMake(0, 0, 80, 40);
+//    [self.expireButton sizeToFit];
+    
+    CGSize size = [self.currentUser[@"left_days"] sizeWithAttributes:@{ NSFontAttributeName: AWSystemFontWithSize(14, NO) }];
+    
+    self.expireButton.frame = CGRectMake(0, 0, size.width + 20, 34);
+    self.expireButton.center = CGPointMake(self.width / 2, self.height - self.expireButton.height / 2 - 10);
+}
+
+- (UIButton *)expireButton
+{
+    if ( !_expireButton ) {
+        _expireButton = AWCreateTextButton(CGRectZero,
+                                           nil,
+                                           [UIColor whiteColor],
+                                           self,
+                                           @selector(btnClicked:));
+        [self addSubview:_expireButton];
+        
+        _expireButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _expireButton.layer.borderWidth = 0.88;
+        
+        _expireButton.cornerRadius = 8;
+        
+        [_expireButton titleLabel].font = AWSystemFontWithSize(14, NO);
+    }
+    return _expireButton;
+}
+
+- (void)btnClicked:(id)sender
+{
+    
 }
 
 - (UIImageView *)avatarView

@@ -55,6 +55,10 @@
     
 //    NSLog(@"%@, %@", [self AESEncryptStringByString:@"loginname=huyue&pwd=123321"], [@"666AA4DF3533497D973D852004B975BC" md5Hash]);
     
+    [[CatService sharedInstance] sessionBeginForType:1 completion:^(BOOL succeed, NSError *error) {
+        
+    }];
+    
     return YES;
 }
 
@@ -97,7 +101,17 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    [self loadUnreadMessage:YES];
+//    [self loadUnreadMessage:YES];
+    [[CatService sharedInstance] sessionBeginForType:2 completion:^(BOOL succeed, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[CatService sharedInstance] sessionEnd:^(BOOL succeed, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
 }
 
 - (void)loadUnreadMessage2

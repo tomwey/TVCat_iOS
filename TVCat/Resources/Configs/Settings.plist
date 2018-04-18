@@ -15,7 +15,7 @@
 			<key>icon</key>
 			<string>icon_vip.png</string>
 			<key>label</key>
-			<string>领取VIP</string>
+			<string>VIP充值</string>
 			<key>action</key>
 			<string>gotoVIP</string>
 		</dict>

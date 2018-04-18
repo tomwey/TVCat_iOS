@@ -154,6 +154,7 @@
 #import "AttachmentDownloadService.h"
 #import "HNBadgeService.h"
 //#import "SearchHistoryService.h"
+#import "CatService.h"
 
 // Views
 #import "SettingTableHeader.h"

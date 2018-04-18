@@ -56,6 +56,37 @@
     return [[StoreService sharedInstance] objectForKey:@"logined.user"];
 }
 
+- (void)loginUser:(void (^)(id user, NSError *error))completion
+{
+    if ( [self currentUser] ) {
+        if ( completion ) {
+            completion([self currentUser], nil);
+        }
+    } else {
+        [[self apiServiceWithName:@"APIService"]
+         POST:@"account/create"
+         params:@{
+                  @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+                  @"model": AWDeviceName(),
+                  @"os": [[UIDevice currentDevice] systemName],
+                  @"osv": AWOSVersionString(),
+                  @"uname": [[UIDevice currentDevice] name],
+                  @"lang_code": AWDeviceCountryLangCode(),
+                  @"screen": AWDeviceSizeString(),
+                  } completion:^(id result, id rawData, NSError *error) {
+                      if ( completion ) {
+                          if ( error ) {
+                              completion(nil, error);
+                          } else {
+                              [self saveUser:result];
+                              
+                              completion(result, nil);
+                          }
+                      }
+                  }];
+    }
+}
+
 - (void)shortSignup:(void (^)(id user, NSError *error))completion
 {
     
@@ -203,24 +234,24 @@
 //    self.user = aUser;
     [[StoreService sharedInstance] saveObject:aUser forKey:@"logined.user"];
     
-    [CloudPushSDK addAlias:[aUser[@"man_id"] description]
-              withCallback:^(CloudPushCallbackResult *res) {
-//        NSLog(@"res: %@", res);
-                  if ( res.success ) {
-                      
-                  } else {
-                      NSLog(@"res: %@", res.error);
-                  }
-    }];
-    
-    [CloudPushSDK bindAccount:[aUser[@"man_id"] description]
-                 withCallback:^(CloudPushCallbackResult *res) {
-                     if ( res.success ) {
-                         
-                     } else {
-                         NSLog(@"res: %@", res.error);
-                     }
-    }];
+//    [CloudPushSDK addAlias:[aUser[@"man_id"] description]
+//              withCallback:^(CloudPushCallbackResult *res) {
+////        NSLog(@"res: %@", res);
+//                  if ( res.success ) {
+//
+//                  } else {
+//                      NSLog(@"res: %@", res.error);
+//                  }
+//    }];
+//
+//    [CloudPushSDK bindAccount:[aUser[@"man_id"] description]
+//                 withCallback:^(CloudPushCallbackResult *res) {
+//                     if ( res.success ) {
+//
+//                     } else {
+//                         NSLog(@"res: %@", res.error);
+//                     }
+//    }];
 //    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:aUser];
 //    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"logined.user"];
 //    [[NSUserDefaults standardUserDefaults] synchronize];

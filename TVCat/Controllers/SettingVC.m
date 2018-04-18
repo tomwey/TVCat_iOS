@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) CGSize originalHeaderSize;
 
+@property (nonatomic, assign) BOOL needLoadUserInfo;
+
 @end
 @implementation SettingVC
 
@@ -65,7 +67,17 @@
 
 - (void)loadData
 {
-    
+    [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
+    [[CatService sharedInstance] fetchUserProfile:^(id result, NSError *error) {
+        self.tableHeader.currentUser = result;
+        [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
+        
+        if (error) {
+            self.needLoadUserInfo = YES;
+        } else {
+            self.needLoadUserInfo = NO;
+        }
+    }];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -82,6 +94,10 @@
 //    self.tableHeader.currentUser = [[UserService sharedInstance] currentUser];
 //
 //    [self.tableView reloadData];
+    
+    if ( self.needLoadUserInfo ) {
+        [self loadData];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
