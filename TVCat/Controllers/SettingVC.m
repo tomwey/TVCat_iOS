@@ -60,10 +60,12 @@
     
     self.originalHeaderSize = self.tableHeader.frame.size;
     
-//    __weak typeof(self) me = self;
-//    self.tableHeader.didSelectCallback = ^(SettingTableHeader *sender) {
-//        [me gotoUserProfile];
-//    };
+    [self loadData];
+}
+
+- (void)loadData
+{
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -77,9 +79,9 @@
     
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    self.tableHeader.currentUser = [[UserService sharedInstance] currentUser];
-    
-    [self.tableView reloadData];
+//    self.tableHeader.currentUser = [[UserService sharedInstance] currentUser];
+//
+//    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -203,6 +205,16 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.00001;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 15;
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     CGFloat y = - scrollView.contentOffset.y;
@@ -215,6 +227,31 @@
             CGPointMake(self.view.center.x,
                         self.tableHeader.center.y );
     }
+}
+
+- (void)gotoHistory
+{
+    
+}
+
+- (void)gotoVIP
+{
+    
+}
+
+- (void)gotoKF
+{
+    
+}
+
+- (void)gotoAbout
+{
+    
+}
+
+- (void)gotoFaq
+{
+    
 }
 
 - (void)gotoUserProfile

@@ -26,7 +26,7 @@
     if ( self = [super initWithFrame:frame] ) {
         UIImageView *bgView = AWCreateImageView(nil);
         [self addSubview:bgView];
-        bgView.image = AWImageNoCached(@"setting-header.png");
+        bgView.image = nil;//AWImageNoCached(@"setting-header.png");
         bgView.backgroundColor = MAIN_THEME_COLOR;
         self.frame = bgView.frame = CGRectMake(0, 0, AWFullScreenWidth(), 192);
         bgView.contentMode = UIViewContentModeScaleAspectFill;
@@ -59,17 +59,19 @@
 //    NSURL *url = !!currentUser.avatar ? [NSURL URLWithString:currentUser.avatar] : nil;
 //    [self.avatarView setImageWithURL:currentUser[@"avatar"] placeholderImage:[UIImage imageNamed:@"default_avatar.png"]];
     
-    [HNImageHelper imageForName:currentUser[@"supname"]
-                          manID:[currentUser[@"supid"] integerValue]
-                           size:CGSizeMake(60, 60)
-                completionBlock:^(UIImage *anImage, NSError *error) {
-                    if ( anImage ) {
-                        self.avatarView.image = anImage;
-                    }
-                }];
+//    [HNImageHelper imageForName:currentUser[@"supname"]
+//                          manID:[currentUser[@"supid"] integerValue]
+//                           size:CGSizeMake(60, 60)
+//                completionBlock:^(UIImage *anImage, NSError *error) {
+//                    if ( anImage ) {
+//                        self.avatarView.image = anImage;
+//                    }
+//                }];
     
     
     self.nickname.text = currentUser[@"supname"];
+    
+    [self.avatarView setImageWithURL:[NSURL URLWithString:currentUser[@"avatar"]]];
     //currentUser ? [currentUser formatUsername] : @"唐伟";
 }
 

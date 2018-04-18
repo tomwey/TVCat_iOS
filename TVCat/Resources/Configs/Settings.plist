@@ -5,67 +5,63 @@
 	<array>
 		<dict>
 			<key>icon</key>
-			<string>icon_update_pass.png</string>
+			<string>icon_history.png</string>
 			<key>label</key>
-			<string>修改密码</string>
+			<string>观看记录</string>
 			<key>action</key>
-			<string>updatePassword</string>
+			<string>gotoHistory</string>
 		</dict>
 		<dict>
 			<key>icon</key>
-			<string>icon_help.png</string>
+			<string>icon_vip.png</string>
 			<key>label</key>
-			<string>操作指南</string>
+			<string>领取VIP</string>
 			<key>action</key>
-			<string>gotoHelp</string>
-		</dict>
-		<dict>
-			<key>icon</key>
-			<string>icon_clean_cache.png</string>
-			<key>label</key>
-			<string>清除缓存</string>
-			<key>value</key>
-			<string>cache</string>
-			<key>action</key>
-			<string>clearCache</string>
-		</dict>
-		<dict>
-			<key>icon</key>
-			<string>icon_feedback.png</string>
-			<key>label</key>
-			<string>意见反馈</string>
-			<key>action</key>
-			<string>gotoFeedback</string>
-		</dict>
-		<dict>
-			<key>icon</key>
-			<string>icon_upgrade.png</string>
-			<key>label</key>
-			<string>检测更新</string>
-			<key>value</key>
-			<string>version</string>
-			<key>action</key>
-			<string>checkVersion</string>
-		</dict>
-		<dict>
-			<key>icon</key>
-			<string>icon_qrcode.png</string>
-			<key>label</key>
-			<string>扫码下载</string>
-			<key>value</key>
-			<string></string>
-			<key>action</key>
-			<string>openQRCode</string>
+			<string>gotoVIP</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>icon</key>
-			<string></string>
+			<string>icon_kf.png</string>
 			<key>label</key>
-			<string>退出登录</string>
+			<string>在线客服（9:00 - 21:00）</string>
 			<key>action</key>
-			<string>logout</string>
+			<string>gotoKF</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_aboutus.png</string>
+			<key>label</key>
+			<string>关于我们</string>
+			<key>action</key>
+			<string>gotoAbout</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_faq.png</string>
+			<key>label</key>
+			<string>常见问题</string>
+			<key>action</key>
+			<string>gotoFaq</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>icon</key>
+			<string>icon_upgrade.png</string>
+			<key>label</key>
+			<string>检测更新</string>
+			<key>action</key>
+			<string>checkVersion</string>
+		</dict>
+		<dict>
+			<key>icon</key>
+			<string>icon_clean_cache.png</string>
+			<key>label</key>
+			<string>清空缓存</string>
+			<key>action</key>
+			<string>clearCache</string>
 		</dict>
 	</array>
 </array>

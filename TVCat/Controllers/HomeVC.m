@@ -193,7 +193,7 @@
             view.tag = 100 + i;
             
             view.frame = CGRectMake(15 + i * [self mediaItemWidth],
-                                    10, [self mediaItemWidth], [self mediaItemWidth]);
+                                    0, [self mediaItemWidth], [self mediaItemWidth]);
         }
         
         NSInteger index = indexPath.row * [self numberOfCols] + i;
