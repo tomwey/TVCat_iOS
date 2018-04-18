@@ -128,7 +128,9 @@
 
 - (void)btnClicked:(id)sender
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"NewVIPChargeVC"
+                                                                params:nil];
+    [AWAppWindow().rootViewController presentViewController:vc animated:YES completion:nil];
 }
 
 - (UIImageView *)avatarView

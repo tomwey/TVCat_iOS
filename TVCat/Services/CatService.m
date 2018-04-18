@@ -215,4 +215,61 @@
      }];
 }
 
+- (void)fetchVIPChargeList:(void (^)(id result, NSError *error))completion
+{
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        if ( user[@"token"] ) {
+            [[self apiServiceWithName:@"APIService"]
+             GET:@"user/vip_charge_list"
+             params:@{
+                      @"token": user[@"token"] ?: @"",
+                      }
+             completion:^(id result, id rawData, NSError *error) {
+                 if ( completion ) {
+                     if ( error ) {
+                         completion(nil, error);
+                     } else {
+                         completion(result, nil);
+                     }
+                 }
+             }];
+        } else {
+            if ( completion ) {
+                completion(nil, [NSError errorWithDomain:@"用户未注册"
+                                                    code:-1
+                                                userInfo:nil]);
+            }
+        }
+    }];
+}
+
+- (void)activeVIPCode:(NSString *)code completion:(void (^)(id result, NSError *error))completion
+{
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        if ( user[@"token"] ) {
+            [[self apiServiceWithName:@"APIService"]
+             POST:@"user/vip/active"
+             params:@{
+                      @"token": user[@"token"] ?: @"",
+                      @"code": code
+                      }
+             completion:^(id result, id rawData, NSError *error) {
+                 if ( completion ) {
+                     if ( error ) {
+                         completion(nil, error);
+                     } else {
+                         completion(result, nil);
+                     }
+                 }
+             }];
+        } else {
+            if ( completion ) {
+                completion(nil, [NSError errorWithDomain:@"用户未注册"
+                                                    code:-1
+                                                userInfo:nil]);
+            }
+        }
+    }];
+}
+
 @end

@@ -62,6 +62,11 @@
     
     self.originalHeaderSize = self.tableHeader.frame.size;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadData)
+                                                 name:@"kVIPActiveSuccessNotification"
+                                               object:nil];
+    
     [self loadData];
 }
 
@@ -252,7 +257,9 @@
 
 - (void)gotoVIP
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"VIPChargeListVC"
+                                                                params:nil];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)gotoKF

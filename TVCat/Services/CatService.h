@@ -27,4 +27,8 @@ typedef NS_ENUM(NSInteger, SessionType) {
 
 - (void)fetchAppConfig:(void (^)(id result, NSError *error))completion;
 
+- (void)fetchVIPChargeList:(void (^)(id result, NSError *error))completion;
+
+- (void)activeVIPCode:(NSString *)code completion:(void (^)(id result, NSError *error))completion;
+
 @end

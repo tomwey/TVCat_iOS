@@ -531,6 +531,8 @@
 		99690EEE20874F3900A68431 /* MediaPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EED20874F3900A68431 /* MediaPlayerVC.m */; };
 		99690EF12087527500A68431 /* CatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF02087527400A68431 /* CatService.m */; };
 		99690EF520878BF500A68431 /* PageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF420878BF500A68431 /* PageVC.m */; };
+		99690EF82087900500A68431 /* VIPChargeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF72087900500A68431 /* VIPChargeListVC.m */; };
+		99690EFB208790E100A68431 /* NewVIPChargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EFA208790E100A68431 /* NewVIPChargeVC.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1384,6 +1386,10 @@
 		99690EF02087527400A68431 /* CatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatService.m; sourceTree = "<group>"; };
 		99690EF320878BF500A68431 /* PageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVC.h; sourceTree = "<group>"; };
 		99690EF420878BF500A68431 /* PageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVC.m; sourceTree = "<group>"; };
+		99690EF62087900500A68431 /* VIPChargeListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIPChargeListVC.h; sourceTree = "<group>"; };
+		99690EF72087900500A68431 /* VIPChargeListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPChargeListVC.m; sourceTree = "<group>"; };
+		99690EF9208790E100A68431 /* NewVIPChargeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewVIPChargeVC.h; sourceTree = "<group>"; };
+		99690EFA208790E100A68431 /* NewVIPChargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewVIPChargeVC.m; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2305,6 +2311,10 @@
 				99690EED20874F3900A68431 /* MediaPlayerVC.m */,
 				99690EF320878BF500A68431 /* PageVC.h */,
 				99690EF420878BF500A68431 /* PageVC.m */,
+				99690EF62087900500A68431 /* VIPChargeListVC.h */,
+				99690EF72087900500A68431 /* VIPChargeListVC.m */,
+				99690EF9208790E100A68431 /* NewVIPChargeVC.h */,
+				99690EFA208790E100A68431 /* NewVIPChargeVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3314,6 +3324,7 @@
 				99690C582086E5E400A68431 /* FAKIonIcons.m in Sources */,
 				99690CAD2086E5E400A68431 /* UIButton+UserData.m in Sources */,
 				99690D732086E5E500A68431 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
+				99690EFB208790E100A68431 /* NewVIPChargeVC.m in Sources */,
 				99690EA02086E5E600A68431 /* LoadingView.m in Sources */,
 				99690DA42086E5E500A68431 /* HNResultData.m in Sources */,
 				99690C6D2086E5E400A68431 /* FSCalendarExtensions.m in Sources */,
@@ -3527,6 +3538,7 @@
 				99690CD22086E5E500A68431 /* UIWebView+KeyValueStorage.m in Sources */,
 				99690CC72086E5E400A68431 /* UITableView+LoadNetworkData.m in Sources */,
 				99690D452086E5E500A68431 /* SettingVC.m in Sources */,
+				99690EF82087900500A68431 /* VIPChargeListVC.m in Sources */,
 				99690CAB2086E5E400A68431 /* APIRequest.m in Sources */,
 				99690E8B2086E5E600A68431 /* CustomOpinionView.m in Sources */,
 				99690D942086E5E500A68431 /* TZPhotoPickerController.m in Sources */,
