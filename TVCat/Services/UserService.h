@@ -29,6 +29,8 @@
 
 - (void)saveUser: (id)aUser;
 
+- (void)shortSignup:(void (^)(id user, NSError *error))completion;
+
 /**
  * 获取当前用户认证Token
  */

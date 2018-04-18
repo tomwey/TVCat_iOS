@@ -12,6 +12,8 @@
 #import "NetworkService.h"
 #import "StoreService.h"
 #import <CloudPushSDK/CloudPushSDK.h>
+#import "APIService.h"
+#import "Defines.h"
 
 @interface UserService ()
 
@@ -52,6 +54,31 @@
 //#endif
 //    return user;
     return [[StoreService sharedInstance] objectForKey:@"logined.user"];
+}
+
+- (void)shortSignup:(void (^)(id user, NSError *error))completion
+{
+    
+    [[self apiServiceWithName:@"APIService"]
+     POST:@"/account/create"
+     params:@{
+              @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+              @"model": AWDeviceName(),
+              @"os": [[UIDevice currentDevice] systemName],
+              @"osv": AWOSVersionString(),
+              @"uname": [[UIDevice currentDevice] name],
+              @"lang_code": AWDeviceCountryLangCode(),
+              @"screen": AWDeviceSizeString(),
+              } completion:^(id result, NSError *error) {
+                  if (completion) {
+                      if ( error ) {
+                          completion(nil, error);
+                      } else {
+                          completion(result[@"data"], nil);
+                      }
+                  }
+                  
+              }];
 }
 
 - (NSString *)currentUserAuthToken
