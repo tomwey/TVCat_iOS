@@ -85,6 +85,8 @@
 
 - (void)close
 {
+    [self.codeField resignFirstResponder];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
