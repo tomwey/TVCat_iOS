@@ -9,11 +9,9 @@
 #import "PageVC.h"
 #import "Defines.h"
 
-#import <WebKit/WebKit.h>
-
 @interface PageVC () <WKNavigationDelegate>
 
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong, readwrite) WKWebView *webView;
 
 @end
 

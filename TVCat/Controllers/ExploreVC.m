@@ -11,9 +11,10 @@
 
 #import <WebKit/WebKit.h>
 
-@interface ExploreVC () <WKNavigationDelegate>
+@interface ExploreVC ()
 
-@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) UIButton *backBtn;
+@property (nonatomic, strong) UIButton *reloadBtn;
 
 @end
 
@@ -32,7 +33,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self addLeftItemWithView:nil];
+    self.backBtn = AWCreateTextButton(CGRectMake(0, 0, 50, 40),
+                                      @"返回",
+                                      [UIColor whiteColor],
+                                      self,
+                                      @selector(back));
+    [self addLeftItemWithView:self.backBtn leftMargin:10];
+    
+    self.backBtn.hidden = YES;
+    
+    self.reloadBtn = HNReloadButton(34, self, @selector(reload));
+//    self.reloadBtn.enabled = NO;
+    
+    [self addRightItemWithView:self.reloadBtn
+                   rightMargin:5];
+    
+}
+
+- (void)reload
+{
+//    self.reloadBtn.enabled = NO;
+    
+    [self.webView reload];
+}
+
+- (void)back
+{
+    if ( self.webView.canGoBack ) {
+        [self.webView goBack];
+    }
 }
 
 - (NSString *)pageTitle
@@ -43,6 +72,13 @@
 - (NSString *)pageSlug
 {
     return @"explore_url";
+}
+
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
+{
+    [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
+    //    self.navBar.title = @"正在加载...";
+    self.backBtn.hidden = !self.webView.canGoBack;
 }
 
 @end

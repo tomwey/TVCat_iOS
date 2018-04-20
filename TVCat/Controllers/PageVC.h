@@ -7,8 +7,11 @@
 //
 
 #import "BaseNavBarVC.h"
+#import <WebKit/WebKit.h>
 
 @interface PageVC : BaseNavBarVC
+
+@property (nonatomic, strong, readonly) WKWebView *webView;
 
 - (NSString *)pageTitle;
 
