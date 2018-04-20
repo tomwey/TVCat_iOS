@@ -27,7 +27,7 @@
     self.navBar.title = @"观看历史";
     
     self.pageNum = 1;
-    self.pageSize = 20;
+    self.pageSize = 15;
     
     [self loadDataForPage:self.pageNum];
 }
@@ -109,7 +109,9 @@
             [self.tableView reloadData];
         }
                                                
-        self.tableView.showsInfiniteScrolling = self.dataSource.count >= self.pageSize;
+//        self.tableView.showsInfiniteScrolling = self.dataSource.count >= self.pageSize;
+                                               
+        self.tableView.showsInfiniteScrolling = [result count] > 0;
     }];
 }
 
