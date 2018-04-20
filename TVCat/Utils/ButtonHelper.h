@@ -15,6 +15,8 @@ UIButton * HNCloseButton(CGFloat btnSize, id target, SEL action);
 
 UIButton * HNAddButton(CGFloat btnSize, id target, SEL action);
 
+UIButton * HNReloadButton(CGFloat btnSize, id target, SEL action);
+
 UIButton * HNSearchButton(CGFloat btnSize, id target, SEL action);
 
 UIButton * HNCloseButtonWithSize(CGFloat iconSize, CGSize btnSize, id target, SEL action);

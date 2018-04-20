@@ -53,6 +53,21 @@ UIButton * HNAddButton(CGFloat btnSize, id target, SEL action)
     return closeBtn;
 }
 
+UIButton * HNReloadButton(CGFloat btnSize, id target, SEL action)
+{
+    FAKIonIcons *closeIcon = [FAKIonIcons iosRefreshEmptyIconWithSize:btnSize];
+    [closeIcon addAttributes:@{ NSForegroundColorAttributeName: [UIColor whiteColor] }];
+    UIImage  *closeImage = [closeIcon imageWithSize:CGSizeMake(37, 37)];
+    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    closeBtn.backgroundColor = [UIColor redColor];
+    [closeBtn setImage:closeImage forState:UIControlStateNormal];
+    [closeBtn sizeToFit];
+    [closeBtn addTarget:target
+                 action:action
+       forControlEvents:UIControlEventTouchUpInside];
+    return closeBtn;
+}
+
 UIButton * HNSearchButton(CGFloat btnSize, id target, SEL action)
 {
     FAKIonIcons *closeIcon = [FAKIonIcons iosSearchIconWithSize:btnSize];

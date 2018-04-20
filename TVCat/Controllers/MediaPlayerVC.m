@@ -64,6 +64,9 @@
     [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
     
     //    [self updateReadStatus];
+//    [self.webView evaluateJavaScript:@"alert(123);" completionHandler:^(id _Nullable res, NSError * _Nullable error) {
+//        NSLog(@"res: %@, error: %@", res, error);
+//    }];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
