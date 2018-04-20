@@ -10,7 +10,7 @@
 #import "Defines.h"
 #import <WebKit/WebKit.h>
 
-@interface MediaPlayerVC () <WKNavigationDelegate>
+@interface MediaPlayerVC () <WKNavigationDelegate, WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -41,15 +41,58 @@
                                             }
                                             
                                         }];
+    
+//    [self.webView addObserver:self
+//                     forKeyPath:@"estimatedProgress"
+//                        options:NSKeyValueObservingOptionNew
+//                        context:nil];
+//    [self.webView addObserver:self
+//                     forKeyPath:@"title"
+//                        options:NSKeyValueObservingOptionNew
+//                        context:nil];
+//    [self.webView addObserver:self
+//                     forKeyPath:@"loading"
+//                        options:NSKeyValueObservingOptionNew
+//                        context:nil];
+    
+    
 }
+
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+//    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+//        NSLog(@"progress: %f", self.webView.estimatedProgress);
+//    }else if([keyPath isEqualToString:@"title"]){
+//        NSLog(@"title: %@", change[@"new"]);
+//    }else if([keyPath isEqualToString:@"loading"]){
+//        //做一些加载的事
+//    }else{
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
+//
+//    if(!self.webView.loading){
+//        NSLog(@"加载完成");
+//    }
+//}
 
 - (WKWebView *)webView
 {
     if ( !_webView ) {
-        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds];
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        WKUserContentController *controller = [[WKUserContentController alloc] init];
+        
+        NSString *js = @"$('div[id^=qgDiv]').hide();";
+        
+        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                   forMainFrameOnly:false];
+        [controller addUserScript:script];
+        
+        configuration.userContentController = controller;
+        
+        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds configuration:configuration];
         [self.contentView addSubview:_webView];
         
         _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
     }
     return _webView;
 }

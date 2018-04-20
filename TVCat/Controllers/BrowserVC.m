@@ -135,6 +135,11 @@
     NSLog(@"redirect: %@", navigation);
 }
 
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
+{
+    NSLog(@"start: %@", navigation);
+}
+
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
 //        [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
