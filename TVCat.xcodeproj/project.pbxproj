@@ -534,6 +534,8 @@
 		99690EF82087900500A68431 /* VIPChargeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF72087900500A68431 /* VIPChargeListVC.m */; };
 		99690EFB208790E100A68431 /* NewVIPChargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EFA208790E100A68431 /* NewVIPChargeVC.m */; };
 		99690F0920899B0D00A68431 /* MediaHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690F0820899B0D00A68431 /* MediaHistoryVC.m */; };
+		99690F0C2089B4C400A68431 /* default_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0A2089B4C200A68431 /* default_icon@2x.png */; };
+		99690F0D2089B4C400A68431 /* default_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0B2089B4C300A68431 /* default_icon@3x.png */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1393,6 +1395,8 @@
 		99690EFA208790E100A68431 /* NewVIPChargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewVIPChargeVC.m; sourceTree = "<group>"; };
 		99690F0720899B0D00A68431 /* MediaHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaHistoryVC.h; sourceTree = "<group>"; };
 		99690F0820899B0D00A68431 /* MediaHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaHistoryVC.m; sourceTree = "<group>"; };
+		99690F0A2089B4C200A68431 /* default_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_icon@2x.png"; sourceTree = "<group>"; };
+		99690F0B2089B4C300A68431 /* default_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_icon@3x.png"; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2673,6 +2677,8 @@
 		99690AF42086E5E400A68431 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				99690F0A2089B4C200A68431 /* default_icon@2x.png */,
+				99690F0B2089B4C300A68431 /* default_icon@3x.png */,
 				99690ED62087258800A68431 /* icon_aboutus@2x.png */,
 				99690ED82087258900A68431 /* icon_aboutus@3x.png */,
 				99690EDE2087258A00A68431 /* icon_faq@2x.png */,
@@ -3209,6 +3215,7 @@
 				99690E322086E5E500A68431 /* msg_icon_todo@2x.png in Resources */,
 				99690E582086E5E500A68431 /* work_icon_document@3x.png in Resources */,
 				99690E132086E5E500A68431 /* icon_ppt@2x.png in Resources */,
+				99690F0D2089B4C400A68431 /* default_icon@3x.png in Resources */,
 				99690E422086E5E500A68431 /* tab_oa_click@2x.png in Resources */,
 				99690DFF2086E5E500A68431 /* icon_end@3x.png in Resources */,
 				99690E452086E5E500A68431 /* tab_plan@3x.png in Resources */,
@@ -3226,6 +3233,7 @@
 				99690E592086E5E500A68431 /* work_icon_feedback@2x.png in Resources */,
 				99690E0A2086E5E500A68431 /* icon_invest@2x.png in Resources */,
 				99690DE52086E5E500A68431 /* icon_arrow-right@3x.png in Resources */,
+				99690F0C2089B4C400A68431 /* default_icon@2x.png in Resources */,
 				99690C612086E5E400A68431 /* octicons.ttf in Resources */,
 				99690E172086E5E500A68431 /* icon_read1@2x.png in Resources */,
 				99690DAC2086E5E500A68431 /* 29@2x.png in Resources */,

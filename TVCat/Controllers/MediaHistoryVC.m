@@ -49,7 +49,7 @@
     id item = self.dataSource[indexPath.row];
     
 //    cell.imageView.image = nil;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:item[@"provider"][@"icon"]] placeholderImage:[UIImage imageNamed:@"default_avatar.png"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:item[@"provider"][@"icon"]] placeholderImage:[UIImage imageNamed:@"default_icon.png"]];
 
     cell.textLabel.text = item[@"title"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"观看时间: %@", item[@"time"]];
