@@ -111,7 +111,7 @@
                                                
 //        self.tableView.showsInfiniteScrolling = self.dataSource.count >= self.pageSize;
                                                
-        self.tableView.showsInfiniteScrolling = [result count] > 0;
+        self.tableView.showsInfiniteScrolling = [result count] >= self.pageSize;
     }];
 }
 
