@@ -533,6 +533,7 @@
 		99690EF520878BF500A68431 /* PageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF420878BF500A68431 /* PageVC.m */; };
 		99690EF82087900500A68431 /* VIPChargeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EF72087900500A68431 /* VIPChargeListVC.m */; };
 		99690EFB208790E100A68431 /* NewVIPChargeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690EFA208790E100A68431 /* NewVIPChargeVC.m */; };
+		99690F0920899B0D00A68431 /* MediaHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690F0820899B0D00A68431 /* MediaHistoryVC.m */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
@@ -1390,6 +1391,8 @@
 		99690EF72087900500A68431 /* VIPChargeListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIPChargeListVC.m; sourceTree = "<group>"; };
 		99690EF9208790E100A68431 /* NewVIPChargeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewVIPChargeVC.h; sourceTree = "<group>"; };
 		99690EFA208790E100A68431 /* NewVIPChargeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewVIPChargeVC.m; sourceTree = "<group>"; };
+		99690F0720899B0D00A68431 /* MediaHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaHistoryVC.h; sourceTree = "<group>"; };
+		99690F0820899B0D00A68431 /* MediaHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaHistoryVC.m; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
@@ -2315,6 +2318,8 @@
 				99690EF72087900500A68431 /* VIPChargeListVC.m */,
 				99690EF9208790E100A68431 /* NewVIPChargeVC.h */,
 				99690EFA208790E100A68431 /* NewVIPChargeVC.m */,
+				99690F0720899B0D00A68431 /* MediaHistoryVC.h */,
+				99690F0820899B0D00A68431 /* MediaHistoryVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3401,6 +3406,7 @@
 				99690CAA2086E5E400A68431 /* APIManager.m in Sources */,
 				99690CB42086E5E400A68431 /* UIView+AWGeometry.m in Sources */,
 				99690EB12086E5E600A68431 /* ReportCell.m in Sources */,
+				99690F0920899B0D00A68431 /* MediaHistoryVC.m in Sources */,
 				99690D842086E5E500A68431 /* DGActivityIndicatorView.m in Sources */,
 				99690D8A2086E5E500A68431 /* SVProgressHUD.m in Sources */,
 				99690C5B2086E5E400A68431 /* FAKZocial.m in Sources */,

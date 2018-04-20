@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, SessionType) {
 - (void)saveHistory:(NSDictionary *)params completion:(void (^)(id result, NSError *error))completion;
 
 - (void)loadHistoriesForPage:(NSInteger)pageNum
+                    pageSize:(NSInteger)pageSize
                   completion:(void (^)(id result, NSError *error))completion;
 
 @end

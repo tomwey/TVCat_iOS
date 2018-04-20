@@ -252,7 +252,9 @@
 
 - (void)gotoHistory
 {
-    
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"MediaHistoryVC"
+                                                                params:nil];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
 }
 
 - (void)gotoVIP

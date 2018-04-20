@@ -305,15 +305,17 @@
 }
 
 - (void)loadHistoriesForPage:(NSInteger)pageNum
+                    pageSize:(NSInteger)pageSize
                   completion:(void (^)(id result, NSError *error))completion
 {
     [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
         if ( user[@"token"] ) {
             [[self apiServiceWithName:@"APIService"]
-             POST:@"media/history/create"
+             GET:@"media/histories"
              params:@{
                       @"token": user[@"token"] ?: @"",
                       @"page": @(pageNum),
+                      @"size": @(pageSize),
                       }
              completion:^(id result, id rawData, NSError *error) {
                  if ( completion ) {
