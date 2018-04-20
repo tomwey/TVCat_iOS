@@ -212,6 +212,7 @@
                                                                 params:@{
                                                                          @"title": data[@"name"] ?: @"",
                                                                          @"url": data[@"url"] ?: @"",
+                                                                         @"mp_id": data[@"id"] ?: @"",
                                                                          }];
     [AWAppWindow().navController pushViewController:vc animated:YES];
 }

@@ -272,4 +272,66 @@
     }];
 }
 
+- (void)saveHistory:(NSDictionary *)params completion:(void (^)(id result, NSError *error))completion
+{
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        if ( user[@"token"] ) {
+            [[self apiServiceWithName:@"APIService"]
+             POST:@"media/history/create"
+             params:@{
+                      @"token": user[@"token"] ?: @"",
+                      @"mp_id": params[@"mp_id"],
+                      @"title": params[@"title"],
+                      @"source_url": params[@"source_url"],
+                      @"progress": params[@"progress"]
+                      }
+             completion:^(id result, id rawData, NSError *error) {
+                 if ( completion ) {
+                     if ( error ) {
+                         completion(nil, error);
+                     } else {
+                         completion(result, nil);
+                     }
+                 }
+             }];
+        } else {
+            if ( completion ) {
+                completion(nil, [NSError errorWithDomain:@"用户未注册"
+                                                    code:-1
+                                                userInfo:nil]);
+            }
+        }
+    }];
+}
+
+- (void)loadHistoriesForPage:(NSInteger)pageNum
+                  completion:(void (^)(id result, NSError *error))completion
+{
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        if ( user[@"token"] ) {
+            [[self apiServiceWithName:@"APIService"]
+             POST:@"media/history/create"
+             params:@{
+                      @"token": user[@"token"] ?: @"",
+                      @"page": @(pageNum),
+                      }
+             completion:^(id result, id rawData, NSError *error) {
+                 if ( completion ) {
+                     if ( error ) {
+                         completion(nil, error);
+                     } else {
+                         completion(result, nil);
+                     }
+                 }
+             }];
+        } else {
+            if ( completion ) {
+                completion(nil, [NSError errorWithDomain:@"用户未注册"
+                                                    code:-1
+                                                userInfo:nil]);
+            }
+        }
+    }];
+}
+
 @end

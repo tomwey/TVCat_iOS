@@ -31,4 +31,9 @@ typedef NS_ENUM(NSInteger, SessionType) {
 
 - (void)activeVIPCode:(NSString *)code completion:(void (^)(id result, NSError *error))completion;
 
+- (void)saveHistory:(NSDictionary *)params completion:(void (^)(id result, NSError *error))completion;
+
+- (void)loadHistoriesForPage:(NSInteger)pageNum
+                  completion:(void (^)(id result, NSError *error))completion;
+
 @end

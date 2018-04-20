@@ -40,39 +40,20 @@
                                                 [self.webView loadRequest:request];
                                             }
                                             
+                                            [[CatService sharedInstance] saveHistory:
+                                             @{
+                                               @"title": result[@"title"] ?: @"",
+                                               @"mp_id": self.params[@"mp_id"],
+                                               @"source_url": self.params[@"url"] ?: @"",
+                                               @"progress": @""
+                                               }
+                                                                          completion:^(id result, NSError *error) {
+                                                                              
+                                                                          }];
+                                            
                                         }];
     
-//    [self.webView addObserver:self
-//                     forKeyPath:@"estimatedProgress"
-//                        options:NSKeyValueObservingOptionNew
-//                        context:nil];
-//    [self.webView addObserver:self
-//                     forKeyPath:@"title"
-//                        options:NSKeyValueObservingOptionNew
-//                        context:nil];
-//    [self.webView addObserver:self
-//                     forKeyPath:@"loading"
-//                        options:NSKeyValueObservingOptionNew
-//                        context:nil];
-    
-    
 }
-
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-//    if ([keyPath isEqualToString:@"estimatedProgress"]) {
-//        NSLog(@"progress: %f", self.webView.estimatedProgress);
-//    }else if([keyPath isEqualToString:@"title"]){
-//        NSLog(@"title: %@", change[@"new"]);
-//    }else if([keyPath isEqualToString:@"loading"]){
-//        //做一些加载的事
-//    }else{
-//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-//    }
-//
-//    if(!self.webView.loading){
-//        NSLog(@"加载完成");
-//    }
-//}
 
 - (WKWebView *)webView
 {
