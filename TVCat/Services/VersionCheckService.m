@@ -145,6 +145,8 @@
         }]];
     }
     
+    alertView.buttonDestructiveBgColor = MAIN_THEME_COLOR;
+    
     [alertView addAction:[TYAlertAction actionWithTitle:@"立即更新" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
         NSLog(@"%@",action.title);
         self.checking = NO;
@@ -172,9 +174,14 @@
 
 @implementation TYAlertController (HideStatusBar)
 
-- (BOOL)prefersStatusBarHidden
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return YES;
+    return UIStatusBarStyleLightContent;
 }
 
 @end

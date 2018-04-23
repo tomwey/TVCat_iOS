@@ -59,18 +59,18 @@
 - (WKWebView *)webView
 {
     if ( !_webView ) {
-//        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-//        WKUserContentController *controller = [[WKUserContentController alloc] init];
-//
-//        NSString *js = @"$('div[id^=qgDiv]').hide();";
-//
-//        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-//                                                   forMainFrameOnly:false];
-//        [controller addUserScript:script];
-//
-//        configuration.userContentController = controller;
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        WKUserContentController *controller = [[WKUserContentController alloc] init];
+
+        NSString *js = @"var $el = $('a[id^=__a_z_]'); $el.hide();$el.nextSibling && $el.nextSibling.hide();";
+
+        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                   forMainFrameOnly:false];
+        [controller addUserScript:script];
+
+        configuration.userContentController = controller;
         
-        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds];
+        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds configuration:configuration];
         [self.contentView addSubview:_webView];
         
         _webView.navigationDelegate = self;
