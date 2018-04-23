@@ -62,7 +62,9 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
         WKUserContentController *controller = [[WKUserContentController alloc] init];
 
-        NSString *js = @"var $el = $('a[id^=__a_z_]'); $el.hide();";
+        id config = [CatService sharedInstance].appConfig;
+        
+        NSString *js = [config[@"ad_script"] description];//@"var $el = $('a[id^=__a_z_]'); $el.hide();";
 
         WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
                                                    forMainFrameOnly:false];
