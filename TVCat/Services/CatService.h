@@ -17,10 +17,13 @@ typedef NS_ENUM(NSInteger, SessionType) {
 
 + (instancetype)sharedInstance;
 
-- (void)sessionBeginForType:(NSInteger)type completion:(void (^)(BOOL succeed, NSError *error))completion;
+- (void)sessionBeginForType:(NSInteger)type completion:(void (^)(id result, NSError *error))completion;
+
 - (void)sessionEnd:(void (^)(BOOL succeed, NSError *error))completion;
 
-- (void)fetchPlayerForURL:(NSString *)url completion:(void (^)(id result, NSError *error))completion;
+- (void)fetchPlayerForURL:(NSString *)url
+                     mpid:(id)mpid
+               completion:(void (^)(id result, NSError *error))completion;
 - (void)fetchUserProfile:(void (^)(id result, NSError *error))completion;
 
 //- (void)checkVersion:(void (^)(id result, NSError *error))completion;
@@ -36,5 +39,7 @@ typedef NS_ENUM(NSInteger, SessionType) {
 - (void)loadHistoriesForPage:(NSInteger)pageNum
                     pageSize:(NSInteger)pageSize
                   completion:(void (^)(id result, NSError *error))completion;
+
+@property (nonatomic, strong, readonly) id appConfig;
 
 @end

@@ -68,7 +68,7 @@
          params:@{
                   @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
                   @"model": AWDeviceName(),
-                  @"os": [[UIDevice currentDevice] systemName],
+                  @"os": @"iOS",
                   @"osv": AWOSVersionString(),
                   @"uname": [[UIDevice currentDevice] name],
                   @"lang_code": AWDeviceCountryLangCode(),
@@ -95,7 +95,7 @@
      params:@{
               @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
               @"model": AWDeviceName(),
-              @"os": [[UIDevice currentDevice] systemName],
+              @"os": @"iOS",
               @"osv": AWOSVersionString(),
               @"uname": [[UIDevice currentDevice] name],
               @"lang_code": AWDeviceCountryLangCode(),

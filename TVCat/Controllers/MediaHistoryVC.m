@@ -102,6 +102,10 @@
         } else {
             if ( page == 1 ) {
                 self.dataSource = [result mutableCopy];
+                
+                if (self.dataSource.count == 0) {
+                    [self.tableView showErrorOrEmptyMessage:@"暂无观看历史~" reloadDelegate:nil];
+                }
             } else {
                 [self.dataSource addObjectsFromArray:result];
             }

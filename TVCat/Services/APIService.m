@@ -95,6 +95,8 @@
               forTask:(NSURLSessionDataTask *)task
       completionBlock:(void (^)(id result, id rawData, NSError *error))completion
 {
+    NSLog(@"rawData: %@", responseObject);
+    
     NSInteger code = [responseObject[@"code"] integerValue];
     if ( code == 0 ) {
         if ( completion ) {
@@ -167,11 +169,13 @@
     
     NSMutableDictionary *newParams = [params ?: @{} mutableCopy];
     
-    NSString *i = [NSString stringWithFormat:@"%d%d", [[NSDate date] timeIntervalSince1970], arc4random_uniform(100)];
+    NSString *i = [NSString stringWithFormat:@"%d%d", (int)[[NSDate date] timeIntervalSince1970], arc4random_uniform(100)];
     NSString *ak = [[NSString stringWithFormat:@"c6c8fd23676b4f039330e9107285ab59%@", i] md5Hash];
     
     newParams[@"i"] = i;
     newParams[@"ak"] = ak;
+    
+    NSLog(@"params: %@", newParams);
     
     return newParams;
 }

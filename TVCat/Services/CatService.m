@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSString *currentSessionID;
 
-@property (nonatomic, strong) id appConfig;
+//@property (nonatomic, strong) id appConfig;
 
 @end
 
@@ -46,7 +46,7 @@
     }
 }
 
-- (void)sessionBeginForType:(NSInteger)type completion:(void (^)(BOOL succeed, NSError *error))completion
+- (void)sessionBeginForType:(NSInteger)type completion:(void (^)(id result, NSError *error))completion
 {
     
     if (self.currentSessionID.length > 0) return;
@@ -69,7 +69,7 @@
                           @"network": [self getNetworkType],
                           @"version": AWAppVersion(),
                           @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
-                          @"os": [[UIDevice currentDevice] systemName],
+                          @"os": @"iOS",
                           @"osv": AWOSVersionString(),
                           @"model": AWDeviceName(),
                           @"screen": AWDeviceSizeString(),
@@ -79,9 +79,13 @@
                  completion:^(id result, id rawData, NSError *error) {
                      if ( completion ) {
                          if ( error ) {
-                             completion(NO, error);
+                             completion(nil, error);
                          } else {
-                             completion(YES, nil);
+                             completion(result, nil);
+                             
+                             // 保存全局配置
+                             [[NSUserDefaults standardUserDefaults] setObject:result[@"config"] forKey:@"app.config"];
+                             [[NSUserDefaults standardUserDefaults] synchronize];
                          }
                      }
                      
@@ -89,7 +93,7 @@
                  }];
             } else {
                 if ( completion ) {
-                    completion(NO, [NSError errorWithDomain:@"用户未注册"
+                    completion(nil, [NSError errorWithDomain:@"用户未注册"
                                                        code:-1
                                                    userInfo:nil]);
                 }
@@ -133,7 +137,9 @@
     }];
 }
 
-- (void)fetchPlayerForURL:(NSString *)url completion:(void (^)(id result, NSError *error))completion
+- (void)fetchPlayerForURL:(NSString *)url
+                     mpid:(id)mpid
+               completion:(void (^)(id result, NSError *error))completion
 {
     [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
         if ( user[@"token"] ) {
@@ -142,6 +148,7 @@
              params:@{
                       @"token": user[@"token"] ?: @"",
                       @"url": url,
+                      @"mp_id": [mpid description],
                       }
              completion:^(id result, id rawData, NSError *error) {
                  if ( completion ) {
@@ -192,13 +199,14 @@
 
 - (void)fetchAppConfig:(void (^)(id result, NSError *error))completion
 {
-    if (self.appConfig) {
-        if ( completion ) {
-            completion(self.appConfig, nil);
-        }
-        
-        return;
-    }
+//    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+//    if (self.appConfig) {
+//        if ( completion ) {
+//            completion(self.appConfig, nil);
+//        }
+//
+//        return;
+//    }
     
     [[self apiServiceWithName:@"APIService"]
      GET:@"app/config"
@@ -209,10 +217,18 @@
                  completion(nil, error);
              } else {
                  completion(result, nil);
-                 self.appConfig = result;
+//                 self.appConfig = result;
+                 
+                 [[NSUserDefaults standardUserDefaults] setObject:result forKey:@"app.config"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
              }
          }
      }];
+}
+
+- (id)appConfig
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"app.config"];
 }
 
 - (void)fetchVIPChargeList:(void (^)(id result, NSError *error))completion

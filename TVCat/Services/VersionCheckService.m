@@ -76,43 +76,49 @@
                   @"token": token,
                   @"bv": AWAppVersion(),
                   @"m": AWDeviceName(),
-                  @"os": [[UIDevice currentDevice] systemName],
+                  @"os": @"iOS",
                   @"osv": AWOSVersionString(),
                   }
          completion:^(id result, id rawData, NSError *error) {
-             [self handleResult:result error:error];
+             [self handleResult:result rawData:rawData error:error];
          }];
         
     }];
 }
 
-- (void)handleResult:(id)result error:(NSError *)error
+- (void)handleResult:(id)result rawData:(id)rawData error:(NSError *)error
 {
     [HNProgressHUDHelper hideHUDForView:AWAppWindow() animated:YES];
     
     if ( !error ) {
 //        self.appInfo = result;
-        if ( [result[@"rowcount"] integerValue] == 0 ) {
-            if ( !self.silent ) {
-                [AWAppWindow() showHUDWithText:@"已经是最新版本" offset:CGPointMake(0,20)];
-            }
-            
-            self.checking = NO;
-        } else {
+//        if ( [result[@"rowcount"] integerValue] == 0 ) {
+//            if ( !self.silent ) {
+//                [AWAppWindow() showHUDWithText:@"已经是最新版本" offset:CGPointMake(0,20)];
+//            }
+//
+//            self.checking = NO;
+//        } else {
             self.appInfo = result;//[result[@"data"] firstObject];
             
             [self showVersionTips];
-        }
+//        }
         
         
 //        [self checkVersion];
     } else {
         self.checking = NO;
         
-        if ( !self.silent ) {
-            [AWAppWindow() showHUDWithText:error.domain succeed:NO];
+        if ( [rawData[@"code"] integerValue] == 4004 ) {
+            if ( !self.silent ) {
+                [AWAppWindow() showHUDWithText:@"已经是最新版本" offset:CGPointMake(0,20)];
+            }
         } else {
-            
+            if ( !self.silent ) {
+                [AWAppWindow() showHUDWithText:error.domain succeed:NO];
+            } else {
+                
+            }
         }
     }
 }
@@ -123,8 +129,9 @@
     if ( title.length == 0 || [title isEqualToString:@"NULL"] ) {
         title = @"有新版本可用";
     }
+    NSString *msg = [self.appInfo[@"changelog"] componentsJoinedByString:@"\n"];
     TYAlertView *alertView = [TYAlertView alertViewWithTitle:title
-                                                     message:[self.appInfo[@"changelog"] description]];
+                                                     message:msg];
     
     alertView.messageLabel.textAlignment = NSTextAlignmentLeft;
 //    alertView.contentViewSpace = 30;
@@ -143,7 +150,7 @@
         self.checking = NO;
 //        itms-services://?action=download-manifest&url=https://erp20.heneng.cn:16666/IOS/HN_ERP.plist
 //        https://erp20.heneng.cn:16666/IOS
-        BOOL flag = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-services://?action=download-manifest&url=https://erp20.heneng.cn:16666/IOS/HN_Vendor.plist"]];
+        BOOL flag = [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.appInfo[@"app_url"]]];
         [[UIApplication sharedApplication] close];
         
         if ( flag ) {

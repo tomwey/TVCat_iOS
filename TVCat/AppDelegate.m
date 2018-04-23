@@ -40,8 +40,6 @@
     
     [self.window makeKeyAndVisible];
     
-//    [[VersionCheckService sharedInstance] startCheckWithSilent:YES];
-    
     if ( !canShow ) {
 //        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
     }
@@ -55,8 +53,12 @@
     
 //    NSLog(@"%@, %@", [self AESEncryptStringByString:@"loginname=huyue&pwd=123321"], [@"666AA4DF3533497D973D852004B975BC" md5Hash]);
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[CatService sharedInstance] sessionBeginForType:1 completion:^(BOOL succeed, NSError *error) {
+//    [[CatService sharedInstance] fetchAppConfig:^(id result, NSError *error) {
+//        
+//    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[CatService sharedInstance] sessionBeginForType:1 completion:^(id result, NSError *error) {
             [[VersionCheckService sharedInstance] startCheckWithSilent:YES];
         }];
     });
@@ -104,7 +106,11 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
 //    [self loadUnreadMessage:YES];
-    [[CatService sharedInstance] sessionBeginForType:2 completion:^(BOOL succeed, NSError *error) {
+//    [[CatService sharedInstance] fetchAppConfig:^(id result, NSError *error) {
+//
+//    }];
+    
+    [[CatService sharedInstance] sessionBeginForType:2 completion:^(id result, NSError *error) {
         NSLog(@"error: %@", error);
     }];
 }

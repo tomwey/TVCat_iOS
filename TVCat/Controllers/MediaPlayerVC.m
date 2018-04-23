@@ -26,6 +26,7 @@
     [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
     
     [[CatService sharedInstance] fetchPlayerForURL:self.params[@"url"]
+                                              mpid:self.params[@"mp_id"]
                                         completion:^(id result, NSError *error) {
 //                                            [HNProgressHUDHelper hideHUDForView:self.contentView
 //                                                                       animated:YES];
@@ -40,16 +41,16 @@
                                                 [self.webView loadRequest:request];
                                             }
                                             
-                                            [[CatService sharedInstance] saveHistory:
-                                             @{
-                                               @"title": result[@"title"] ?: @"",
-                                               @"mp_id": self.params[@"mp_id"],
-                                               @"source_url": self.params[@"url"] ?: @"",
-                                               @"progress": @""
-                                               }
-                                                                          completion:^(id result, NSError *error) {
-                                                                              
-                                                                          }];
+//                                            [[CatService sharedInstance] saveHistory:
+//                                             @{
+//                                               @"title": result[@"title"] ?: @"",
+//                                               @"mp_id": self.params[@"mp_id"],
+//                                               @"source_url": self.params[@"url"] ?: @"",
+//                                               @"progress": @""
+//                                               }
+//                                                                          completion:^(id result, NSError *error) {
+//
+//                                                                          }];
                                             
                                         }];
     
@@ -58,24 +59,46 @@
 - (WKWebView *)webView
 {
     if ( !_webView ) {
-        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-        WKUserContentController *controller = [[WKUserContentController alloc] init];
-
-        NSString *js = @"$('div[id^=qgDiv]').hide();";
-
-        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-                                                   forMainFrameOnly:false];
-        [controller addUserScript:script];
-
-        configuration.userContentController = controller;
+//        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+//        WKUserContentController *controller = [[WKUserContentController alloc] init];
+//
+//        NSString *js = @"$('div[id^=qgDiv]').hide();";
+//
+//        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+//                                                   forMainFrameOnly:false];
+//        [controller addUserScript:script];
+//
+//        configuration.userContentController = controller;
         
-        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds configuration:configuration];
+        _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds];
         [self.contentView addSubview:_webView];
         
         _webView.navigationDelegate = self;
-        _webView.UIDelegate = self;
+//        _webView.UIDelegate = self;
     }
     return _webView;
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
+{
+    NSURLRequest *request = navigationAction.request;
+    NSLog(@"request: %@", request);
+    
+//    NSString *url = [request.URL absoluteString];
+    
+//    if ( [[CatService sharedInstance] appConfig] ) {
+//        NSArray *blackList = [[[CatService sharedInstance] appConfig] objectForKey:@"ad_blacklist"];
+//        NSLog(@"blacklist: %@", blackList);
+//
+//        for (NSString *prefix in blackList) {
+//            if ( [url hasPrefix:prefix] ) {
+//                decisionHandler(WKNavigationActionPolicyCancel);
+//                return;
+//            }
+//        }
+//    }
+
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
