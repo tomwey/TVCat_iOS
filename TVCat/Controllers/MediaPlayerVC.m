@@ -62,7 +62,7 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
         WKUserContentController *controller = [[WKUserContentController alloc] init];
 
-        NSString *js = @"var $el = $('a[id^=__a_z_]'); $el.hide();$el.nextSibling && $el.nextSibling.hide();";
+        NSString *js = @"var $el = $('a[id^=__a_z_]'); $el.hide();";
 
         WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
                                                    forMainFrameOnly:false];
