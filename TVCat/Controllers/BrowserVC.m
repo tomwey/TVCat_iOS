@@ -171,6 +171,7 @@
                                @"http://m.iqiyi.com/v_",
                                @"https://m.iqiyi.com/v_",
                                @"https://m.youku.com/video/id_",
+                               @"http://m.youku.com/video/id_",
                                @"http://m.le.com/vplay_",
                                @"https://m.le.com/vplay_",
                                @"https://m.mgtv.com/b/",

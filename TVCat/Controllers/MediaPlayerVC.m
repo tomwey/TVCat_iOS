@@ -39,30 +39,28 @@
     
     [[CatService sharedInstance] fetchPlayerForURL:self.params[@"url"]
                                               mpid:self.params[@"mp_id"]
-                                        completion:^(id result, NSError *error) {
-//                                            [HNProgressHUDHelper hideHUDForView:self.contentView
-//                                                                       animated:YES];
-                                            
-                                            if ( error ) {
-                                                [HNProgressHUDHelper hideHUDForView:self.contentView
-                                                                           animated:YES];
-                                                [self.contentView showHUDWithText:error.domain succeed:NO];
-                                            } else {
+                                        completion:^(id result, NSError *error)
+    {
+        if ( error ) {
+            [HNProgressHUDHelper hideHUDForView:self.contentView
+                                       animated:YES];
+            [self.contentView showHUDWithText:error.domain succeed:NO];
+        } else {
 
-                                                if (  [[result[@"type"] description] isEqualToString:@"url"] ) {
-                                                        NSURLRequest *request = [NSURLRequest requestWithURL:
-                                                                                 [NSURL URLWithString:result[@"url"]]];
-                                                                                                    [self.webView loadRequest:request];
-                                                } else {
-                                                    [HNProgressHUDHelper hideHUDForView:self.contentView
-                                                                               animated:YES];
-                                                    // 使用原生的方式播放
-                                                    self.navBar.title = result[@"title"];
-                                                    
-                                                    [self playVideo:result];
-                                                }
-                                            }
-                                        }];
+            if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ) {
+                [HNProgressHUDHelper hideHUDForView:self.contentView
+                                           animated:YES];
+                // 使用原生的方式播放
+                self.navBar.title = result[@"title"];
+                
+                [self playVideo:result];
+            } else {
+                NSURLRequest *request = [NSURLRequest requestWithURL:
+                                         [NSURL URLWithString:result[@"url"]]];
+                [self.webView loadRequest:request];
+            }
+        }
+    }];
     
 }
 
@@ -125,7 +123,7 @@
 - (ZFPlayerControlView *)controlView {
     if (!_controlView) {
         _controlView = [ZFPlayerControlView new];
-        _controlView.backgroundColor = [UIColor blackColor];
+//        _controlView.backgroundColor = [UIColor blackColor];
         [_controlView showTitle:@"视频标题"
                  coverURLString:nil
                  fullScreenMode:ZFFullScreenModePortrait];

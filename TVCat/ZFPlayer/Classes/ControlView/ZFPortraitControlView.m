@@ -187,12 +187,14 @@
     self.fullScreenBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.fullScreenBtn.centerY = self.currentTimeLabel.centerY;
     
-    min_w = 48;
+    min_w = 66;
     min_h = 28;
     min_x = self.fullScreenBtn.left - min_w - 4;
     min_y = 0;
     self.totalTimeLabel.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.totalTimeLabel.centerY = self.currentTimeLabel.centerY;
+    
+//    self.totalTimeLabel.backgroundColor = [UIColor redColor];
     
     min_x = self.currentTimeLabel.right + min_margin;
     min_y = 0;
