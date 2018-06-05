@@ -169,13 +169,18 @@
     if ( !_videoURLPrefixes ) {
         _videoURLPrefixes = [@[
                                @"http://m.iqiyi.com/v_",
+                               @"https://m.iqiyi.com/v_",
                                @"https://m.youku.com/video/id_",
                                @"http://m.le.com/vplay_",
+                               @"https://m.le.com/vplay_",
                                @"https://m.mgtv.com/b/",
                                @"http://m.pptv.com/show/",
                                @"http://m.fun.tv/mplay/",
+                               @"https://m.pptv.com/show/",
+                               @"https://m.fun.tv/mplay/",
                                @"https://m.film.sohu.com/album/",
                                @"http://m.v.qq.com/x/cover/",
+                               @"https://m.v.qq.com/x/cover/",
                                ] copy];
     }
     return _videoURLPrefixes;

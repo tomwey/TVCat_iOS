@@ -9,14 +9,26 @@
 #import "MediaPlayerVC.h"
 #import "Defines.h"
 #import <WebKit/WebKit.h>
+//#import <IJKMediaFramework/IJKMediaFramework.h>
+#import "ZFPlayer.h"
+#import "ZFPlayerControlView.h"
+#import "ZFAVPlayerManager.h"
 
 @interface MediaPlayerVC () <WKNavigationDelegate, WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *webView;
 
+@property (nonatomic, strong) ZFPlayerController *player;
+@property (nonatomic, strong) ZFPlayerControlView *controlView;
+
 @end
 
 @implementation MediaPlayerVC
+
+- (void)dealloc
+{
+    [self.player stop];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,24 +48,89 @@
                                                                            animated:YES];
                                                 [self.contentView showHUDWithText:error.domain succeed:NO];
                                             } else {
-                                                NSURLRequest *request = [NSURLRequest requestWithURL:
-                                                                         [NSURL URLWithString:result[@"url"]]];
-                                                [self.webView loadRequest:request];
+
+                                                if (  [[result[@"type"] description] isEqualToString:@"url"] ) {
+                                                        NSURLRequest *request = [NSURLRequest requestWithURL:
+                                                                                 [NSURL URLWithString:result[@"url"]]];
+                                                                                                    [self.webView loadRequest:request];
+                                                } else {
+                                                    [HNProgressHUDHelper hideHUDForView:self.contentView
+                                                                               animated:YES];
+                                                    // 使用原生的方式播放
+                                                    self.navBar.title = result[@"title"];
+                                                    
+                                                    [self playVideo:result];
+                                                }
                                             }
-                                            
-//                                            [[CatService sharedInstance] saveHistory:
-//                                             @{
-//                                               @"title": result[@"title"] ?: @"",
-//                                               @"mp_id": self.params[@"mp_id"],
-//                                               @"source_url": self.params[@"url"] ?: @"",
-//                                               @"progress": @""
-//                                               }
-//                                                                          completion:^(id result, NSError *error) {
-//
-//                                                                          }];
-                                            
                                         }];
     
+}
+
+- (void)playVideo:(id)result
+{
+    [self.controlView resetControlView];
+    ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
+    /// 播放器相关
+    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.contentView];
+    self.player.controlView = self.controlView;
+    @weakify(self)
+    self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
+        @strongify(self)
+        [self.view endEditing:YES];
+        [self setNeedsStatusBarAppearanceUpdate];
+    };
+    self.player.playerDidToEnd = ^(id  _Nonnull asset) {
+        @strongify(self)
+        [self.player enterFullScreen:NO animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.player.orientationObserver.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.player stop];
+        });
+    };
+    
+    [self.controlView showTitle:result[@"title"] coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
+//    NSString *URLString = [@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+//    NSString *proxyURLString = [KTVHTTPCache proxyURLStringWithOriginalURLString:URLString];
+    playerManager.assetURL = [NSURL URLWithString:result[@"url"]];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+//    if (self.player.isFullScreen) {
+        return UIStatusBarStyleLightContent;
+//    }
+//    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return self.player.isStatusBarHidden;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationSlide;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+#pragma mark - about keyboard orientation
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+- (ZFPlayerControlView *)controlView {
+    if (!_controlView) {
+        _controlView = [ZFPlayerControlView new];
+        _controlView.backgroundColor = [UIColor blackColor];
+        [_controlView showTitle:@"视频标题"
+                 coverURLString:nil
+                 fullScreenMode:ZFFullScreenModePortrait];
+    }
+    return _controlView;
 }
 
 - (WKWebView *)webView
@@ -65,7 +142,7 @@
         id config = [CatService sharedInstance].appConfig;
         
         NSString *js = [config[@"ad_script"] description];//@"var $el = $('a[id^=__a_z_]'); $el.hide();";
-
+        
         WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
                                                    forMainFrameOnly:false];
         [controller addUserScript:script];
