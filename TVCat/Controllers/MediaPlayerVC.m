@@ -13,6 +13,8 @@
 #import "ZFPlayer.h"
 #import "ZFPlayerControlView.h"
 #import "ZFAVPlayerManager.h"
+#import "TYAlertView.h"
+#import "TYAlertController.h"
 
 @interface MediaPlayerVC () <WKNavigationDelegate, WKUIDelegate>
 
@@ -37,33 +39,78 @@
     
     self.navBar.title = @"";
     
+    [self loadPlayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadPlayer)
+                                                 name:@"kVIPActiveSuccessNotification"
+                                               object:nil];
+}
+
+- (void)loadPlayer
+{
     [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
     
     [[CatService sharedInstance] fetchPlayerForURL:self.params[@"url"]
                                               mpid:self.params[@"mp_id"]
                                         completion:^(id result, NSError *error)
-    {
-        if ( error ) {
-            [HNProgressHUDHelper hideHUDForView:self.contentView
-                                       animated:YES];
-            [self.contentView showHUDWithText:error.domain succeed:NO];
-        } else {
+     {
+         if ( error ) {
+             [HNProgressHUDHelper hideHUDForView:self.contentView
+                                        animated:YES];
+             if ( error.code == 6008 ) {
+                 // vip已过期
+                 [self showChargeAlert];
+             } else {
+                 [self.contentView showHUDWithText:error.domain succeed:NO];
+             }
+         } else {
+             
+             if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ) {
+                 [HNProgressHUDHelper hideHUDForView:self.contentView
+                                            animated:YES];
+                 // 使用原生的方式播放
+                 self.navBar.title = result[@"title"];
+                 
+                 [self playVideo:result];
+             } else {
+                 NSURLRequest *request = [NSURLRequest requestWithURL:
+                                          [NSURL URLWithString:result[@"url"]]];
+                 [self.webView loadRequest:request];
+             }
+         }
+     }];
+}
 
-            if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ) {
-                [HNProgressHUDHelper hideHUDForView:self.contentView
-                                           animated:YES];
-                // 使用原生的方式播放
-                self.navBar.title = result[@"title"];
-                
-                [self playVideo:result];
-            } else {
-                NSURLRequest *request = [NSURLRequest requestWithURL:
-                                         [NSURL URLWithString:result[@"url"]]];
-                [self.webView loadRequest:request];
-            }
-        }
-    }];
+- (void)showChargeAlert
+{
+    TYAlertView *alertView = [TYAlertView alertViewWithTitle:@"VIP充值提示"
+                                                     message:@"您还不是VIP会员或会员已过期，请充值"];
     
+    alertView.messageLabel.textAlignment = NSTextAlignmentCenter;
+    //    alertView.contentViewSpace = 30;
+    alertView.textLabelSpace   = 20;
+    alertView.textLabelContentViewEdge = 35;
+    
+    [alertView addAction:[TYAlertAction actionWithTitle:@"取消" style:TYAlertActionStyleCancel handler:^(TYAlertAction *action) {
+        NSLog(@"%@",action.title);
+//        self.checking = NO;
+    }]];
+    
+    alertView.buttonDestructiveBgColor = MAIN_THEME_COLOR;
+    
+    __weak typeof(self) me = self;
+    [alertView addAction:[TYAlertAction actionWithTitle:@"去充值" style:TYAlertActionStyleDestructive handler:^(TYAlertAction *action) {
+        UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"NewVIPChargeVC" params:nil];
+        [me presentViewController:vc animated:YES completion:nil];
+    }]];
+    
+    alertView.buttonDestructiveBgColor = MAIN_THEME_COLOR;
+    
+    // first way to show
+    TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:alertView preferredStyle:TYAlertControllerStyleAlert];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
