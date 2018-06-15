@@ -21,6 +21,8 @@
 @property (nonatomic, strong) ZFPlayerController *player;
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
 
+@property (nonatomic, strong) id result;
+
 @end
 
 @implementation MediaPlayerVC
@@ -64,13 +66,33 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if ( self.player && self.player.currentTime > 0 ) {
+        [[CatService sharedInstance] uploadPlayProgress: self.player.currentTime
+                                                 forUrl: self.params[@"url"]
+         ];
+    }
+    
+}
+
 - (void)playVideo:(id)result
 {
+    self.result = result;
+    
     [self.controlView resetControlView];
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
     /// 播放器相关
     self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.contentView];
     self.player.controlView = self.controlView;
+    
+    NSTimeInterval progress = [result[@"progress"] doubleValue];
+    if ( progress > 0 ) {
+        playerManager.seekTime = progress;
+    }
+    
     @weakify(self)
     self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
         @strongify(self)
@@ -84,6 +106,8 @@
             [self.player stop];
         });
     };
+    
+//    [self.player enterFullScreen:YES animated:YES];
     
     [self.controlView showTitle:result[@"title"] coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
 //    NSString *URLString = [@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];

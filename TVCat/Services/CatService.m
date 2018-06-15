@@ -169,6 +169,26 @@
     }];
 }
 
+- (void)uploadPlayProgress:(NSTimeInterval)progress forUrl:(NSString *)url
+{
+    [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
+        if ( user[@"token"] ) {
+            [[self apiServiceWithName:@"APIService"]
+             POST:@"media/play/progress"
+             params:@{
+                      @"token": user[@"token"] ?: @"",
+                      @"url": url ?: @"",
+                      @"progress": [@(progress) description],
+                      }
+             completion:^(id result, id rawData, NSError *error) {
+                 
+             }];
+        } else {
+            
+        }
+    }];
+}
+
 - (void)fetchUserProfile:(void (^)(id result, NSError *error))completion
 {
     [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
