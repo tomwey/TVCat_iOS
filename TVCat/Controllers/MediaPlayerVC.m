@@ -66,7 +66,13 @@
              }
          } else {
              
-             if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ) {
+//             NSString *url = [result[@"url"] description];
+//
+//             //                 SString *encoded = @"fields=ID%2CdeviceToken";
+//             NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
+             
+             if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ||
+                [[result[@"type"] description] isEqualToString:@"m3u8"]) {
                  [HNProgressHUDHelper hideHUDForView:self.contentView
                                             animated:YES];
                  // 使用原生的方式播放
@@ -74,8 +80,15 @@
                  
                  [self playVideo:result];
              } else {
+                 self.navBar.title = result[@"title"];
+                 
+                 NSString *url = [result[@"url"] description];
+                 
+//                 SString *encoded = @"fields=ID%2CdeviceToken";
+                 NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
+                 
                  NSURLRequest *request = [NSURLRequest requestWithURL:
-                                          [NSURL URLWithString:result[@"url"]]];
+                                          [NSURL URLWithString:decoded]];
                  [self.webView loadRequest:request];
              }
          }
@@ -136,7 +149,7 @@
     self.player.controlView = self.controlView;
     
     NSTimeInterval progress = [result[@"progress"] doubleValue];
-    if ( progress > 0 ) {
+    if ( progress > 0 && [result[@"type"] isEqualToString:@"h5mp4"] ) {
         playerManager.seekTime = progress;
     }
     
@@ -159,7 +172,18 @@
     [self.controlView showTitle:result[@"title"] coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
 //    NSString *URLString = [@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 //    NSString *proxyURLString = [KTVHTTPCache proxyURLStringWithOriginalURLString:URLString];
-    playerManager.assetURL = [NSURL URLWithString:result[@"url"]];
+    
+    NSString *url = [result[@"url"] description];
+
+ //                 SString *encoded = @"fields=ID%2CdeviceToken";
+    NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
+    
+    playerManager.assetURL = [NSURL URLWithString:decoded];
+}
+
+- (BOOL)supportsSwipeToBack
+{
+    return NO;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
