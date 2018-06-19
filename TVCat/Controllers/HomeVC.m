@@ -120,7 +120,7 @@
         [self.bannerView reloadData];
         
         if ( self.dataError ) {
-            [self.tableView showErrorOrEmptyMessage:self.dataError.domain reloadDelegate:nil];
+            [self.tableView showErrorOrEmptyMessage:self.dataError.localizedDescription reloadDelegate:nil];
         } else {
             [self.tableView removeErrorOrEmptyTips];
         }
