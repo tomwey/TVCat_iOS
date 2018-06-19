@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97341D291DE6C1730087FCD7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18A31DC075BA00ED8A73 /* libc++.tbd */; };
+		97341D291DE6C1730087FCD7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18A31DC075BA00ED8A73 /* libc++.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		97341D2B1DE6C1DB0087FCD7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97341D2A1DE6C1DB0087FCD7 /* CoreText.framework */; };
 		97341D2D1DE6C1FF0087FCD7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97341D2C1DE6C1FF0087FCD7 /* CoreMotion.framework */; };
 		97341D2F1DE6C2060087FCD7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97341D2E1DE6C2060087FCD7 /* CFNetwork.framework */; };
 		975821031DC83F2A00CA1476 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 975821021DC83F2A00CA1476 /* libstdc++.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		97CF18681DC0742F00ED8A73 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18671DC0742F00ED8A73 /* libsqlite3.0.tbd */; };
+		97CF18681DC0742F00ED8A73 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18671DC0742F00ED8A73 /* libsqlite3.0.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		97CF186C1DC0744500ED8A73 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF186B1DC0744500ED8A73 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		97CF186E1DC0744E00ED8A73 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF186D1DC0744E00ED8A73 /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		97CF18A61DC075C300ED8A73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18A51DC075C300ED8A73 /* SystemConfiguration.framework */; };
-		97CF18D51DC0851400ED8A73 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D41DC0851400ED8A73 /* libicucore.tbd */; };
-		97CF18D71DC088E100ED8A73 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D61DC088E100ED8A73 /* JavaScriptCore.framework */; };
+		97CF18D51DC0851400ED8A73 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D41DC0851400ED8A73 /* libicucore.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		97CF18D71DC088E100ED8A73 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D61DC088E100ED8A73 /* JavaScriptCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		996285F820D8895900D41AC2 /* icon_download@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F620D8895800D41AC2 /* icon_download@3x.png */; };
 		996285F920D8895900D41AC2 /* icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F720D8895800D41AC2 /* icon_download@2x.png */; };
+		996285FC20D8B18D00D41AC2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996285FB20D8B18D00D41AC2 /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		99690C3F2086E5E400A68431 /* CTPersistanceAsyncExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */; };
 		99690C402086E5E400A68431 /* NSArray+CTPersistanceRecordTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B62086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.m */; };
 		99690C412086E5E400A68431 /* NSString+ReqularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907BA2086E5E300A68431 /* NSString+ReqularExpression.m */; };
@@ -79,9 +80,6 @@
 		99690C772086E5E400A68431 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969083C2086E5E300A68431 /* JTSSimpleImageDownloader.m */; };
 		99690C782086E5E400A68431 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969083E2086E5E300A68431 /* UIApplication+JTSImageViewController.m */; };
 		99690C792086E5E400A68431 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 996908402086E5E300A68431 /* UIImage+JTSImageEffects.m */; };
-		99690C7A2086E5E400A68431 /* AlicloudUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996908422086E5E300A68431 /* AlicloudUtils.framework */; };
-		99690C7B2086E5E400A68431 /* CloudPushSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996908432086E5E300A68431 /* CloudPushSDK.framework */; };
-		99690C7C2086E5E400A68431 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996908442086E5E300A68431 /* UTDID.framework */; };
 		99690C7D2086E5E400A68431 /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 996908472086E5E300A68431 /* PNBar.m */; };
 		99690C7E2086E5E400A68431 /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 996908492086E5E300A68431 /* PNBarChart.m */; };
 		99690C7F2086E5E400A68431 /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9969084D2086E5E300A68431 /* PNChartLabel.m */; };
@@ -538,7 +536,7 @@
 		99690F0920899B0D00A68431 /* MediaHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690F0820899B0D00A68431 /* MediaHistoryVC.m */; };
 		99690F0C2089B4C400A68431 /* default_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0A2089B4C200A68431 /* default_icon@2x.png */; };
 		99690F0D2089B4C400A68431 /* default_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0B2089B4C300A68431 /* default_icon@3x.png */; };
-		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; };
+		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		997D366D20C65BA3007548BF /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D363E20C65BA2007548BF /* ZFAVPlayerManager.m */; };
 		997D366E20C65BA3007548BF /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364120C65BA2007548BF /* UIImageView+ZFCache.m */; };
 		997D366F20C65BA3007548BF /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364320C65BA2007548BF /* UIView+ZFFrame.m */; };
@@ -562,7 +560,6 @@
 		997D368120C65BA3007548BF /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366A20C65BA2007548BF /* ZFPlayerView.m */; };
 		997D368220C65BA3007548BF /* ZFReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366C20C65BA2007548BF /* ZFReachabilityManager.m */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D484571E56EB4B00510687 /* libz.1.2.5.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -594,6 +591,7 @@
 		97F12FEA1DAB15AA00806E8A /* TVCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996285F620D8895800D41AC2 /* icon_download@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@3x.png"; sourceTree = "<group>"; };
 		996285F720D8895800D41AC2 /* icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@2x.png"; sourceTree = "<group>"; };
+		996285FB20D8B18D00D41AC2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		996907B02086E5E300A68431 /* CTPersistanceAsyncExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPersistanceAsyncExecutor.h; sourceTree = "<group>"; };
 		996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPersistanceAsyncExecutor.m; sourceTree = "<group>"; };
 		996907B52086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CTPersistanceRecordTransform.h"; sourceTree = "<group>"; };
@@ -709,9 +707,6 @@
 		9969083E2086E5E300A68431 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
 		9969083F2086E5E300A68431 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
 		996908402086E5E300A68431 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
-		996908422086E5E300A68431 /* AlicloudUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlicloudUtils.framework; sourceTree = "<group>"; };
-		996908432086E5E300A68431 /* CloudPushSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudPushSDK.framework; sourceTree = "<group>"; };
-		996908442086E5E300A68431 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		996908462086E5E300A68431 /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		996908472086E5E300A68431 /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		996908482086E5E300A68431 /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -1479,23 +1474,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996285FC20D8B18D00D41AC2 /* libz.tbd in Frameworks */,
 				996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */,
-				99D484581E56EB4B00510687 /* libz.1.2.5.tbd in Frameworks */,
 				998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */,
 				97341D2F1DE6C2060087FCD7 /* CFNetwork.framework in Frameworks */,
 				97341D2D1DE6C1FF0087FCD7 /* CoreMotion.framework in Frameworks */,
 				97341D2B1DE6C1DB0087FCD7 /* CoreText.framework in Frameworks */,
 				97341D291DE6C1730087FCD7 /* libc++.tbd in Frameworks */,
 				975821031DC83F2A00CA1476 /* libstdc++.tbd in Frameworks */,
-				99690C7C2086E5E400A68431 /* UTDID.framework in Frameworks */,
 				97CF18D71DC088E100ED8A73 /* JavaScriptCore.framework in Frameworks */,
 				97CF18D51DC0851400ED8A73 /* libicucore.tbd in Frameworks */,
 				97CF18A61DC075C300ED8A73 /* SystemConfiguration.framework in Frameworks */,
-				99690C7B2086E5E400A68431 /* CloudPushSDK.framework in Frameworks */,
 				97CF186E1DC0744E00ED8A73 /* CoreTelephony.framework in Frameworks */,
 				97CF186C1DC0744500ED8A73 /* Security.framework in Frameworks */,
 				97CF18681DC0742F00ED8A73 /* libsqlite3.0.tbd in Frameworks */,
-				99690C7A2086E5E400A68431 /* AlicloudUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1505,6 +1497,7 @@
 		97579ABD1DC031CB00D99981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				996285FB20D8B18D00D41AC2 /* libz.tbd */,
 				996E64411E7146F7001EC40D /* libresolv.tbd */,
 				99D484571E56EB4B00510687 /* libz.1.2.5.tbd */,
 				998604F21E540A2D00CE5D4B /* Contacts.framework */,
@@ -1575,7 +1568,6 @@
 				996908102086E5E300A68431 /* FSCalendar */,
 				996908322086E5E300A68431 /* FTPKit */,
 				996908342086E5E300A68431 /* JTSImageViewer */,
-				996908412086E5E300A68431 /* OneSDK */,
 				996908452086E5E300A68431 /* PNChart */,
 				996908682086E5E300A68431 /* TYAlertController */,
 				996908812086E5E300A68431 /* TYAttributedLabel */,
@@ -1947,16 +1939,6 @@
 				996908402086E5E300A68431 /* UIImage+JTSImageEffects.m */,
 			);
 			path = JTSImageViewer;
-			sourceTree = "<group>";
-		};
-		996908412086E5E300A68431 /* OneSDK */ = {
-			isa = PBXGroup;
-			children = (
-				996908422086E5E300A68431 /* AlicloudUtils.framework */,
-				996908432086E5E300A68431 /* CloudPushSDK.framework */,
-				996908442086E5E300A68431 /* UTDID.framework */,
-			);
-			path = OneSDK;
 			sourceTree = "<group>";
 		};
 		996908452086E5E300A68431 /* PNChart */ = {

@@ -11,7 +11,7 @@
 //#import "NSObject+RTIDataService.h"
 #import "NetworkService.h"
 #import "StoreService.h"
-#import <CloudPushSDK/CloudPushSDK.h>
+//#import <CloudPushSDK/CloudPushSDK.h>
 #import "APIService.h"
 #import "Defines.h"
 
@@ -182,9 +182,9 @@
 
 - (void)logout:(void (^)(id result, NSError *error))completion
 {
-    [CloudPushSDK unbindAccount:^(CloudPushCallbackResult *res) {
-        
-    }];
+//    [CloudPushSDK unbindAccount:^(CloudPushCallbackResult *res) {
+//        
+//    }];
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"logined.user"];
     [[NSUserDefaults standardUserDefaults] synchronize];

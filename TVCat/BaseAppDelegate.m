@@ -8,7 +8,7 @@
 
 #import "BaseAppDelegate.h"
 #import "AFNetworkReachabilityManager.h"
-#import <CloudPushSDK/CloudPushSDK.h>
+//#import <CloudPushSDK/CloudPushSDK.h>
 #import "VersionCheckService.h"
 #import "Defines.h"
 
@@ -84,13 +84,13 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 - (void)initCloudPush
 {
-    [CloudPushSDK asyncInit:@"23674975" appSecret:@"a5d10fd0bcd569b323fcbc8ab1657195" callback:^(CloudPushCallbackResult *res) {
-        if ( res.success ) {
-            NSLog(@"Push SDK init success, device id: %@", [CloudPushSDK getDeviceId]);
-        } else {
-            NSLog(@"Push SDK init failed, error: %@", res.error);
-        }
-    }];
+//    [CloudPushSDK asyncInit:@"23674975" appSecret:@"a5d10fd0bcd569b323fcbc8ab1657195" callback:^(CloudPushCallbackResult *res) {
+//        if ( res.success ) {
+//            NSLog(@"Push SDK init success, device id: %@", [CloudPushSDK getDeviceId]);
+//        } else {
+//            NSLog(@"Push SDK init failed, error: %@", res.error);
+//        }
+//    }];
 }
 
 #pragma mark Channel Opened
@@ -179,13 +179,13 @@ void uncaughtExceptionHandler(NSException *exception) {
  */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSLog(@"Upload deviceToken to CloudPush server.");
-    [CloudPushSDK registerDevice:deviceToken withCallback:^(CloudPushCallbackResult *res) {
-        if (res.success) {
-            NSLog(@"Register deviceToken success, deviceToken: %@", [CloudPushSDK getApnsDeviceToken]);
-        } else {
-            NSLog(@"Register deviceToken failed, error: %@", res.error);
-        }
-    }];
+//    [CloudPushSDK registerDevice:deviceToken withCallback:^(CloudPushCallbackResult *res) {
+//        if (res.success) {
+//            NSLog(@"Register deviceToken success, deviceToken: %@", [CloudPushSDK getApnsDeviceToken]);
+//        } else {
+//            NSLog(@"Register deviceToken failed, error: %@", res.error);
+//        }
+//    }];
 }
 
 /*
@@ -210,12 +210,12 @@ void uncaughtExceptionHandler(NSException *exception) {
  *    @param     notification
  */
 - (void)onMessageReceived:(NSNotification *)notification {
-    CCPSysMessage *message = [notification object];
-    NSString *title = [[NSString alloc] initWithData:message.title encoding:NSUTF8StringEncoding];
-    NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
-    NSLog(@"Receive message title: %@, content: %@.", title, body);
-    
-    HNBaseAlert(@"新通知提示", body, nil);
+//    CCPSysMessage *message = [notification object];
+//    NSString *title = [[NSString alloc] initWithData:message.title encoding:NSUTF8StringEncoding];
+//    NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+//    NSLog(@"Receive message title: %@, content: %@.", title, body);
+//
+//    HNBaseAlert(@"新通知提示", body, nil);
 }
 
 /*
@@ -238,7 +238,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     application.applicationIconBadgeNumber = 0;
     // 通知打开回执上报
     // [CloudPushSDK handleReceiveRemoteNotification:userInfo];(Deprecated from v1.8.1)
-    [CloudPushSDK sendNotificationAck:userInfo];
+//    [CloudPushSDK sendNotificationAck:userInfo];
     
     HNBaseAlert(@"新通知提示", content, nil);
 }
@@ -263,7 +263,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     // 取得通知自定义字段内容，例：获取key为"Extras"的内容
     NSString *extras = [userInfo valueForKey:@"Extras"];
     // 通知打开回执上报
-    [CloudPushSDK sendNotificationAck:userInfo];
+//    [CloudPushSDK sendNotificationAck:userInfo];
     NSLog(@"Notification, date: %@, title: %@, subtitle: %@, body: %@, badge: %d, extras: %@.", noticeDate, title, subtitle, body, badge, extras);
 }
 
