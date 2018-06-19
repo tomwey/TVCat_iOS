@@ -78,6 +78,11 @@
     
 }
 
+- (BOOL)supportsSwipeToBack
+{
+    return NO;
+}
+
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
     //        [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
