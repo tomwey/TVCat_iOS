@@ -21,6 +21,9 @@
 		996285F820D8895900D41AC2 /* icon_download@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F620D8895800D41AC2 /* icon_download@3x.png */; };
 		996285F920D8895900D41AC2 /* icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F720D8895800D41AC2 /* icon_download@2x.png */; };
 		996285FC20D8B18D00D41AC2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996285FB20D8B18D00D41AC2 /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9962860220D8FD1100D41AC2 /* FCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 996285FF20D8FD1100D41AC2 /* FCUUID.m */; };
+		9962860320D8FD1100D41AC2 /* UIDevice+FCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9962860120D8FD1100D41AC2 /* UIDevice+FCUUID.m */; };
+		9962860620D8FF7300D41AC2 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9962860420D8FF7300D41AC2 /* UICKeyChainStore.m */; };
 		99690C3F2086E5E400A68431 /* CTPersistanceAsyncExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */; };
 		99690C402086E5E400A68431 /* NSArray+CTPersistanceRecordTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B62086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.m */; };
 		99690C412086E5E400A68431 /* NSString+ReqularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907BA2086E5E300A68431 /* NSString+ReqularExpression.m */; };
@@ -242,7 +245,6 @@
 		99690D972086E5E500A68431 /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690AB02086E5E400A68431 /* TZProgressView.m */; };
 		99690D982086E5E500A68431 /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690AB22086E5E400A68431 /* TZVideoPlayerController.m */; };
 		99690D992086E5E500A68431 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690AB42086E5E400A68431 /* UIView+Layout.m */; };
-		99690D9A2086E5E500A68431 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99690AB52086E5E400A68431 /* Info.plist */; };
 		99690D9B2086E5E500A68431 /* AddContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690AB82086E5E400A68431 /* AddContactsModel.m */; };
 		99690D9C2086E5E500A68431 /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ABA2086E5E400A68431 /* AppManager.m */; };
 		99690D9D2086E5E500A68431 /* Breadcrumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 99690ABC2086E5E400A68431 /* Breadcrumb.m */; };
@@ -592,6 +594,12 @@
 		996285F620D8895800D41AC2 /* icon_download@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@3x.png"; sourceTree = "<group>"; };
 		996285F720D8895800D41AC2 /* icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@2x.png"; sourceTree = "<group>"; };
 		996285FB20D8B18D00D41AC2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		996285FE20D8FD1100D41AC2 /* FCUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCUUID.h; sourceTree = "<group>"; };
+		996285FF20D8FD1100D41AC2 /* FCUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCUUID.m; sourceTree = "<group>"; };
+		9962860020D8FD1100D41AC2 /* UIDevice+FCUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FCUUID.h"; sourceTree = "<group>"; };
+		9962860120D8FD1100D41AC2 /* UIDevice+FCUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FCUUID.m"; sourceTree = "<group>"; };
+		9962860420D8FF7300D41AC2 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICKeyChainStore.m; sourceTree = "<group>"; };
+		9962860520D8FF7300D41AC2 /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICKeyChainStore.h; sourceTree = "<group>"; };
 		996907B02086E5E300A68431 /* CTPersistanceAsyncExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPersistanceAsyncExecutor.h; sourceTree = "<group>"; };
 		996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPersistanceAsyncExecutor.m; sourceTree = "<group>"; };
 		996907B52086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CTPersistanceRecordTransform.h"; sourceTree = "<group>"; };
@@ -1534,6 +1542,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		996285FD20D8FD1100D41AC2 /* FCUUID */ = {
+			isa = PBXGroup;
+			children = (
+				9962860520D8FF7300D41AC2 /* UICKeyChainStore.h */,
+				9962860420D8FF7300D41AC2 /* UICKeyChainStore.m */,
+				996285FE20D8FD1100D41AC2 /* FCUUID.h */,
+				996285FF20D8FD1100D41AC2 /* FCUUID.m */,
+				9962860020D8FD1100D41AC2 /* UIDevice+FCUUID.h */,
+				9962860120D8FD1100D41AC2 /* UIDevice+FCUUID.m */,
+			);
+			path = FCUUID;
+			sourceTree = "<group>";
+		};
 		996907AC2086E5E300A68431 /* TVCat */ = {
 			isa = PBXGroup;
 			children = (
@@ -1563,6 +1584,7 @@
 		996907AD2086E5E300A68431 /* 3rdLib */ = {
 			isa = PBXGroup;
 			children = (
+				996285FD20D8FD1100D41AC2 /* FCUUID */,
 				996907AE2086E5E300A68431 /* CTPersistance */,
 				996907F92086E5E300A68431 /* FontAwesomeKit */,
 				996908102086E5E300A68431 /* FSCalendar */,
@@ -3352,7 +3374,6 @@
 				99690DBA2086E5E500A68431 /* 76@2x.png in Resources */,
 				99690DF12086E5E500A68431 /* icon_checkbox_click@3x.png in Resources */,
 				99690E4E2086E5E500A68431 /* tab_work_click@2x.png in Resources */,
-				99690D9A2086E5E500A68431 /* Info.plist in Resources */,
 				99690DD52086E5E500A68431 /* create_sub_dept_line@3x.png in Resources */,
 				99690DEF2086E5E500A68431 /* icon_checkbox@3x.png in Resources */,
 				99690E042086E5E500A68431 /* icon_folder@2x.png in Resources */,
@@ -3512,8 +3533,10 @@
 				99690D912086E5E500A68431 /* TZImageManager.m in Sources */,
 				99690C452086E5E400A68431 /* CTPersistanceDatabasePool.m in Sources */,
 				99690D752086E5E500A68431 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
+				9962860620D8FF7300D41AC2 /* UICKeyChainStore.m in Sources */,
 				99690D982086E5E500A68431 /* TZVideoPlayerController.m in Sources */,
 				99690C9C2086E5E400A68431 /* TYImageCache.m in Sources */,
+				9962860220D8FD1100D41AC2 /* FCUUID.m in Sources */,
 				99690D512086E5E500A68431 /* AFHTTPRequestOperation.m in Sources */,
 				99690C4D2086E5E400A68431 /* CTPersistanceQueryCommand.m in Sources */,
 				99690C942086E5E400A68431 /* TYAlertView.m in Sources */,
@@ -3679,6 +3702,7 @@
 				99690CB02086E5E400A68431 /* NSObject+AWDeallocBlock.m in Sources */,
 				99690E7B2086E5E500A68431 /* ButtonHelper.m in Sources */,
 				99690C892086E5E400A68431 /* PNRadarChartDataItem.m in Sources */,
+				9962860320D8FD1100D41AC2 /* UIDevice+FCUUID.m in Sources */,
 				99690D962086E5E500A68431 /* TZPhotoPreviewController.m in Sources */,
 				99690CBF2086E5E400A68431 /* AWMediator.m in Sources */,
 				99690EAB2086E5E600A68431 /* PlanCell.m in Sources */,

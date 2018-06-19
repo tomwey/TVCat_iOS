@@ -9,6 +9,7 @@
 #import "CatService.h"
 #import "Defines.h"
 #import "UserService.h"
+#import "FCUUID.h"
 
 @interface CatService ()
 
@@ -68,7 +69,7 @@
                           @"loc": loc,
                           @"network": [self getNetworkType],
                           @"version": AWAppVersion(),
-                          @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+                          @"uuid": [FCUUID uuidForDevice],
                           @"os": @"iOS",
                           @"osv": AWOSVersionString(),
                           @"model": AWDeviceName(),

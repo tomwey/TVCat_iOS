@@ -66,7 +66,7 @@
         [[self apiServiceWithName:@"APIService"]
          POST:@"account/create"
          params:@{
-                  @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+                  @"uuid":  [FCUUID uuidForDevice],
                   @"model": AWDeviceName(),
                   @"os": @"iOS",
                   @"osv": AWOSVersionString(),
@@ -93,7 +93,7 @@
     [[self apiServiceWithName:@"APIService"]
      POST:@"/account/create"
      params:@{
-              @"uuid": [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+              @"uuid":  [FCUUID uuidForDevice],
               @"model": AWDeviceName(),
               @"os": @"iOS",
               @"osv": AWOSVersionString(),
