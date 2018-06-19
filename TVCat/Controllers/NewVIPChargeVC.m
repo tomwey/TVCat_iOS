@@ -8,8 +8,12 @@
 
 #import "NewVIPChargeVC.h"
 #import "Defines.h"
+#import <WebKit/WebKit.h>
 
-@interface NewVIPChargeVC ()
+
+@interface NewVIPChargeVC () <WKNavigationDelegate>
+
+@property (nonatomic, strong, readwrite) WKWebView *webView;
 
 @property (nonatomic, weak) UITextField *codeField;
 
@@ -21,41 +25,76 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navBar.title = @"新增VIP充值";
+    self.navBar.title = @"VIP充值";
     
-    [self addLeftItemWithView:HNCloseButton(34, self, @selector(close))];
+    if (!self.navigationController) {
+        [self addLeftItemWithView:HNCloseButton(34, self, @selector(close))];
+    }
     
-    UIView *boxView = [[UIView alloc] initWithFrame:CGRectMake(15, 15, self.contentView.width - 30, 120)];
-    [self.contentView addSubview:boxView];
-    boxView.backgroundColor = [UIColor whiteColor];
+    self.webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds];
+    [self.contentView addSubview:self.webView];
+    self.webView.navigationDelegate = self;
     
-    AWTextField *textField = [[AWTextField alloc] initWithFrame:CGRectMake(10, 10, boxView.width - 20,
-                                                                           40)];
-    [boxView addSubview:textField];
+    id user = [[UserService sharedInstance] currentUser];
     
-    textField.tintColor = MAIN_THEME_COLOR;
+    NSString *url = [@"http://tvcat.small-best.com/cards?uid=" stringByAppendingString:[user[@"id"] description]];
     
-    self.codeField = textField;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
+    [self.webView loadRequest:request];
     
-    textField.cornerRadius = 0;
+    [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
     
-    textField.placeholder = @"输入VIP激活码";
-    textField.keyboardType = UIKeyboardTypeNumberPad;
+//    UIView *boxView = [[UIView alloc] initWithFrame:CGRectMake(15, 15, self.contentView.width - 30, 120)];
+//    [self.contentView addSubview:boxView];
+//    boxView.backgroundColor = [UIColor whiteColor];
+//
+//    AWTextField *textField = [[AWTextField alloc] initWithFrame:CGRectMake(10, 10, boxView.width - 20,
+//                                                                           40)];
+//    [boxView addSubview:textField];
+//
+//    textField.tintColor = MAIN_THEME_COLOR;
+//
+//    self.codeField = textField;
+//
+//    textField.cornerRadius = 0;
+//
+//    textField.placeholder = @"输入VIP激活码";
+//    textField.keyboardType = UIKeyboardTypeNumberPad;
+//
+//    textField.layer.borderColor = AWColorFromHex(@"#e6e6e6").CGColor;
+//    textField.layer.borderWidth = 0.88;
+//
+//    UIButton *okButton = AWCreateTextButton(textField.frame, @"确认激活",
+//                                      [UIColor whiteColor],
+//                                      self,
+//                                      @selector(commit));
+//    [boxView addSubview:okButton];
+//
+//    okButton.top = textField.bottom + 20;
+//
+//    okButton.backgroundColor = MAIN_THEME_COLOR;
+//    okButton.titleLabel.font = AWSystemFontWithSize(14, NO);
     
-    textField.layer.borderColor = AWColorFromHex(@"#e6e6e6").CGColor;
-    textField.layer.borderWidth = 0.88;
+}
+
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
+{
+    //        [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
+    //    self.navBar.title = @"正在加载...";
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
+    [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
     
-    UIButton *okButton = AWCreateTextButton(textField.frame, @"确认激活",
-                                      [UIColor whiteColor],
-                                      self,
-                                      @selector(commit));
-    [boxView addSubview:okButton];
-    
-    okButton.top = textField.bottom + 20;
-    
-    okButton.backgroundColor = MAIN_THEME_COLOR;
-    okButton.titleLabel.font = AWSystemFontWithSize(14, NO);
-    
+//    self.navBar.title = [self pageTitle];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
+{
+    [self.contentView showHUDWithText:error.localizedDescription succeed:NO];
+    [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
 }
 
 - (void)commit

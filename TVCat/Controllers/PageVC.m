@@ -68,7 +68,9 @@
     [self.contentView addSubview:self.webView];
     self.webView.navigationDelegate = self;
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:result[[self pageSlug]]]];
+    NSString *url = [[self pageSlug] isEqualToString:@"download_url"] ? @"http://tvcat.small-best.com/p/app_qrcode" : result[[self pageSlug]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
     [self.webView loadRequest:request];
     

@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIImageView *avatarView;
 @property (nonatomic, strong) UILabel     *nickname;
+@property (nonatomic, strong) UILabel     *idLabel;
 @property (nonatomic, strong) UIImageView *arrowView;
 
 @property (nonatomic, weak, readwrite) UIView *scrollZoomableView;
@@ -73,6 +74,8 @@
     
     self.nickname.text = currentUser[@"nickname"];
     
+    self.idLabel.text = [NSString stringWithFormat:@"ID: %@", currentUser[@"id"]];
+    
     [self.avatarView setImageWithURL:[NSURL URLWithString:currentUser[@"avatar"]]];
     //currentUser ? [currentUser formatUsername] : @"唐伟";
     
@@ -90,12 +93,16 @@
 {
     [super layoutSubviews];
     
-    self.avatarView.center = CGPointMake(self.width / 2, self.height / 2 - 20);
+    self.avatarView.center = CGPointMake(self.width / 2, self.height / 2 - 30);
     
 //    self.arrowView.center  = CGPointMake(self.width - 15 - self.arrowView.width / 2, self.avatarView.midY);
     
-    self.nickname.frame    = CGRectMake(0, 0, self.width - 60, 34);
-    self.nickname.center   = CGPointMake(self.width / 2, self.avatarView.bottom + 10 + self.nickname.height / 2);
+    self.nickname.frame    = CGRectMake(0, 0, self.width - 60, 25);
+    self.nickname.center   = CGPointMake(self.width / 2, self.avatarView.bottom + self.nickname.height / 2);
+    
+    self.idLabel.frame  = self.nickname.frame;
+//    self.idLabel.height = 25;
+    self.idLabel.top = self.nickname.bottom - 5;
     
 //    self.expireButton.frame = CGRectMake(0, 0, 80, 40);
 //    [self.expireButton sizeToFit];
@@ -158,6 +165,22 @@
 //        _nickname.cornerRadius = 6;
     }
     return _nickname;
+}
+
+- (UILabel *)idLabel
+{
+    if ( !_idLabel ) {
+        _idLabel = AWCreateLabel(CGRectZero, nil,
+                                  NSTextAlignmentCenter,
+                                  AWSystemFontWithSize(14, NO),
+                                  /*AWColorFromRGB(131, 131, 131)*/[UIColor whiteColor]);
+        [self addSubview:_idLabel];
+        //        _nickname.backgroundColor = [UIColor blackColor];
+        //        _nickname.alpha = 0.7;
+        
+        //        _nickname.cornerRadius = 6;
+    }
+    return _idLabel;
 }
 
 @end

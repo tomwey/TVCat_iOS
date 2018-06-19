@@ -259,7 +259,7 @@
 
 - (void)gotoVIP
 {
-    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"VIPChargeListVC"
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"NewVIPChargeVC"
                                                                 params:nil];
     [AWAppWindow().navController pushViewController:vc animated:YES];
 }
@@ -269,6 +269,15 @@
     UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"PageVC"
                                                                 params:@{ @"title": @"在线客服",
                                                                           @"slug": @"kefu_url"
+                                                                          }];
+    [AWAppWindow().navController pushViewController:vc animated:YES];
+}
+
+- (void)gotoDownload
+{
+    UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"PageVC"
+                                                                params:@{ @"title": @"APP扫码下载",
+                                                                          @"slug": @"download_url"
                                                                           }];
     [AWAppWindow().navController pushViewController:vc animated:YES];
 }

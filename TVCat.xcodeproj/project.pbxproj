@@ -18,6 +18,8 @@
 		97CF18A61DC075C300ED8A73 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18A51DC075C300ED8A73 /* SystemConfiguration.framework */; };
 		97CF18D51DC0851400ED8A73 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D41DC0851400ED8A73 /* libicucore.tbd */; };
 		97CF18D71DC088E100ED8A73 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CF18D61DC088E100ED8A73 /* JavaScriptCore.framework */; };
+		996285F820D8895900D41AC2 /* icon_download@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F620D8895800D41AC2 /* icon_download@3x.png */; };
+		996285F920D8895900D41AC2 /* icon_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 996285F720D8895800D41AC2 /* icon_download@2x.png */; };
 		99690C3F2086E5E400A68431 /* CTPersistanceAsyncExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */; };
 		99690C402086E5E400A68431 /* NSArray+CTPersistanceRecordTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907B62086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.m */; };
 		99690C412086E5E400A68431 /* NSString+ReqularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 996907BA2086E5E300A68431 /* NSString+ReqularExpression.m */; };
@@ -590,6 +592,8 @@
 		97CF18D41DC0851400ED8A73 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		97CF18D61DC088E100ED8A73 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		97F12FEA1DAB15AA00806E8A /* TVCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		996285F620D8895800D41AC2 /* icon_download@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@3x.png"; sourceTree = "<group>"; };
+		996285F720D8895800D41AC2 /* icon_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_download@2x.png"; sourceTree = "<group>"; };
 		996907B02086E5E300A68431 /* CTPersistanceAsyncExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPersistanceAsyncExecutor.h; sourceTree = "<group>"; };
 		996907B12086E5E300A68431 /* CTPersistanceAsyncExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPersistanceAsyncExecutor.m; sourceTree = "<group>"; };
 		996907B52086E5E300A68431 /* NSArray+CTPersistanceRecordTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CTPersistanceRecordTransform.h"; sourceTree = "<group>"; };
@@ -2746,6 +2750,8 @@
 		99690AF42086E5E400A68431 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				996285F720D8895800D41AC2 /* icon_download@2x.png */,
+				996285F620D8895800D41AC2 /* icon_download@3x.png */,
 				99690F0A2089B4C200A68431 /* default_icon@2x.png */,
 				99690F0B2089B4C300A68431 /* default_icon@3x.png */,
 				99690ED62087258800A68431 /* icon_aboutus@2x.png */,
@@ -3339,6 +3345,7 @@
 				99690EC52086EC6600A68431 /* tab_explore@3x.png in Resources */,
 				99690E3A2086E5E500A68431 /* tab_flow_click_1@2x.png in Resources */,
 				99690E642086E5E500A68431 /* work_icon_meeting@3x.png in Resources */,
+				996285F820D8895900D41AC2 /* icon_download@3x.png in Resources */,
 				99690DEB2086E5E500A68431 /* icon_calendar_no_done@3x.png in Resources */,
 				99690C5F2086E5E400A68431 /* ionicons.ttf in Resources */,
 				99690E252086E5E500A68431 /* icon_upgrade@2x.png in Resources */,
@@ -3409,6 +3416,7 @@
 				99690DBC2086E5E500A68431 /* guide_2.png in Resources */,
 				99690E1C2086E5E500A68431 /* icon_read_nop@3x.png in Resources */,
 				99690DCA2086E5E500A68431 /* btn_search2@2x.png in Resources */,
+				996285F920D8895900D41AC2 /* icon_download@2x.png in Resources */,
 				99690DF32086E5E500A68431 /* icon_checkbox_disabled@3x.png in Resources */,
 				99690DAF2086E5E500A68431 /* 40@2x.png in Resources */,
 				99690E0E2086E5E500A68431 /* icon_more@2x.png in Resources */,

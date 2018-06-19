@@ -23,6 +23,14 @@
 	<array>
 		<dict>
 			<key>icon</key>
+			<string>icon_download.png</string>
+			<key>label</key>
+			<string>APP扫码下载</string>
+			<key>action</key>
+			<string>gotoDownload</string>
+		</dict>
+		<dict>
+			<key>icon</key>
 			<string>icon_kf.png</string>
 			<key>label</key>
 			<string>在线客服（9:00 - 21:00）</string>
