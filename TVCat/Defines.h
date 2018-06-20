@@ -65,7 +65,7 @@
 #define APP_NAME @"TV 猫"
 
 ////// API接口
-#define API_HOST      @"http://tvcat.small-best.com/api/v1"
+#define API_HOST      @"http://m.tvcat.co/api/v1"//@"http://tvcat.small-best.com/api/v1"
 #define H5_HOST       @"http://erp20.heneng.cn:16669"//@"http://erp2017-mobile.heneng.cn:8088" // @"https://erp20.heneng.cn:16669"
 
 #define API_KEY    @"27654725447"

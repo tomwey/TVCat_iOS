@@ -37,7 +37,8 @@
     
     id user = [[UserService sharedInstance] currentUser];
     
-    NSString *url = [@"http://tvcat.small-best.com/cards?uid=" stringByAppendingString:[user[@"id"] description]];
+    NSString *url = [[[CatService sharedInstance] appConfig][@"vip_charge_url"]
+                     stringByAppendingString:[user[@"id"] description]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     request.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
