@@ -100,9 +100,9 @@
 //
 //    [self.tableView reloadData];
     
-    if ( self.needLoadUserInfo ) {
+//    if ( self.needLoadUserInfo ) {
         [self loadData];
-    }
+//    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

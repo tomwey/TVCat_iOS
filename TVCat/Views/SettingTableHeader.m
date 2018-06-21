@@ -83,7 +83,9 @@
     
     CGSize size = [currentUser[@"left_days"] sizeWithAttributes:@{ NSFontAttributeName: AWSystemFontWithSize(14, NO) }];
     
-    self.expireButton.frame = CGRectMake(0, 0, size.width + 20, 34);
+    CGFloat width = MAX(60, size.width);
+    self.expireButton.frame = CGRectMake(0, 0, width + 20, 34);
+    self.expireButton.center = CGPointMake(self.width / 2, self.height - self.expireButton.height / 2 - 10);
 //    [self.expireButton sizeToFit];
     
 //    [self setNeedsLayout];
@@ -109,7 +111,8 @@
     
     CGSize size = [self.currentUser[@"left_days"] sizeWithAttributes:@{ NSFontAttributeName: AWSystemFontWithSize(14, NO) }];
     
-    self.expireButton.frame = CGRectMake(0, 0, size.width + 20, 34);
+    CGFloat width = MAX(60, size.width);
+    self.expireButton.frame = CGRectMake(0, 0, width + 20, 34);
     self.expireButton.center = CGPointMake(self.width / 2, self.height - self.expireButton.height / 2 - 10);
 }
 
@@ -117,7 +120,7 @@
 {
     if ( !_expireButton ) {
         _expireButton = AWCreateTextButton(CGRectZero,
-                                           nil,
+                                           @"成为会员",
                                            [UIColor whiteColor],
                                            self,
                                            @selector(btnClicked:));
@@ -170,7 +173,7 @@
 - (UILabel *)idLabel
 {
     if ( !_idLabel ) {
-        _idLabel = AWCreateLabel(CGRectZero, nil,
+        _idLabel = AWCreateLabel(CGRectZero, @"ID: --",
                                   NSTextAlignmentCenter,
                                   AWSystemFontWithSize(14, NO),
                                   /*AWColorFromRGB(131, 131, 131)*/[UIColor whiteColor]);

@@ -120,7 +120,8 @@
         [self.bannerView reloadData];
         
         if ( self.dataError ) {
-            [self.tableView showErrorOrEmptyMessage:self.dataError.localizedDescription reloadDelegate:nil];
+            NSString *msg = self.dataError.code > 1000 ? self.dataError.domain : @"服务器出错了，下拉刷新试试~";
+            [self.tableView showErrorOrEmptyMessage:msg reloadDelegate:nil];
         } else {
             [self.tableView removeErrorOrEmptyTips];
         }
