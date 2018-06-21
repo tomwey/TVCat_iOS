@@ -17,6 +17,8 @@
 
 @property (nonatomic, weak) UITextField *codeField;
 
+@property (nonatomic, assign) BOOL needNotify;
+
 @end
 
 @implementation NewVIPChargeVC
@@ -26,6 +28,8 @@
     // Do any additional setup after loading the view.
     
     self.navBar.title = @"VIP充值";
+    
+    self.needNotify = NO;
     
     if (!self.navigationController) {
         [self addLeftItemWithView:HNCloseButton(34, self, @selector(close))];
@@ -84,6 +88,28 @@
     return NO;
 }
 
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
+{
+    NSURLRequest *request = navigationAction.request;
+    NSLog(@"request: %@", request);
+    
+    NSString *url = [request.URL absoluteString];
+    
+    NSDictionary *params = [url queryDictionaryUsingEncoding:NSUTF8StringEncoding];
+    
+    if (params[@"code"]) {
+        self.needNotify = YES;
+        
+        if ( [params[@"code"] integerValue] == 0 ) {
+            [self.contentView showHUDWithText:@"VIP激活成功" succeed:YES];
+        } else {
+            [self.contentView showHUDWithText:@"VIP激活失败" succeed:NO];
+        }
+    }
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation
 {
     //        [HNProgressHUDHelper showHUDAddedTo:self.contentView animated:YES];
@@ -133,6 +159,11 @@
     [self.codeField resignFirstResponder];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if ( self.needNotify ) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kNeedReloadForVIPNotification"
+                                                            object:nil];
+    }
 }
 
 @end

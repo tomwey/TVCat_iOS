@@ -45,6 +45,11 @@
                                              selector:@selector(loadPlayer)
                                                  name:@"kVIPActiveSuccessNotification"
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadPlayer)
+                                                 name:@"kNeedReloadForVIPNotification"
+                                               object:nil];
 }
 
 - (void)loadPlayer
