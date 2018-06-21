@@ -259,6 +259,8 @@
 
 - (void)gotoVIP
 {
+    self.needLoadUserInfo = YES;
+    
     UIViewController *vc = [[AWMediator sharedInstance] openVCWithName:@"NewVIPChargeVC"
                                                                 params:nil];
     [AWAppWindow().navController pushViewController:vc animated:YES];
