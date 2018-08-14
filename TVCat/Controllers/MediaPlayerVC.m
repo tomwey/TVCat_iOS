@@ -25,6 +25,8 @@
 
 @property (nonatomic, strong) id result;
 
+@property (nonatomic, copy) NSString *titleString;
+
 @end
 
 @implementation MediaPlayerVC
@@ -38,6 +40,10 @@
     [super viewDidLoad];
     
     self.navBar.title = @"";
+    
+    [self addRightItemWithTitle:@"全屏" size:CGSizeMake(60,40) callback:^{
+        
+    }];
     
     [self loadPlayer];
     
@@ -75,19 +81,19 @@
 //
 //             //                 SString *encoded = @"fields=ID%2CdeviceToken";
 //             NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
-             
+             /*
              if (  [[result[@"type"] description] isEqualToString:@"h5mp4"] ||
                 [[result[@"type"] description] isEqualToString:@"m3u8"]) {
                  [HNProgressHUDHelper hideHUDForView:self.contentView
                                             animated:YES];
                  // 使用原生的方式播放
                  self.navBar.title = result[@"title"];
-                 
+
                  [self playVideo:result];
              } else {
                  self.navBar.title = result[@"title"];
                  
-                 NSString *url = [result[@"url"] description];
+             NSString *url = [result[@"url"] description];
                  
 //                 SString *encoded = @"fields=ID%2CdeviceToken";
                  NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
@@ -95,7 +101,18 @@
                  NSURLRequest *request = [NSURLRequest requestWithURL:
                                           [NSURL URLWithString:decoded]];
                  [self.webView loadRequest:request];
-             }
+             }*/
+             
+             self.result = result;
+             
+             NSString *url = [result[@"url"] description];
+             
+             NSString *decoded = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (CFStringRef)url, CFSTR(""), kCFStringEncodingUTF8);
+
+             NSURLRequest *request = [NSURLRequest requestWithURL:
+                                      [NSURL URLWithString:decoded]];
+             [self.webView loadRequest:request];
+//             [self playVideo:@{ @"url": @"https://youku.com-youku.com/20180330/W8XENbyc/index.m3u8" }];
          }
      }];
 }
@@ -137,6 +154,7 @@
     
     if ( self.player && self.player.currentTime > 0 ) {
         [[CatService sharedInstance] uploadPlayProgress: self.player.currentTime
+                                                  title: self.titleString ?: @"     "
                                                  forUrl: self.params[@"url"]
          ];
     }
@@ -145,7 +163,7 @@
 
 - (void)playVideo:(id)result
 {
-    self.result = result;
+//    self.result = result;
     
     [self.controlView resetControlView];
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
@@ -154,7 +172,7 @@
     self.player.controlView = self.controlView;
     
     NSTimeInterval progress = [result[@"progress"] doubleValue];
-    if ( progress > 0 && [result[@"type"] isEqualToString:@"h5mp4"] ) {
+    if ( progress > 0 && ([result[@"type"] isEqualToString:@"h5mp4"] || [result[@"type"] isEqualToString:@"m3u8"]) ) {
         playerManager.seekTime = progress;
     }
     
@@ -174,7 +192,9 @@
     
 //    [self.player enterFullScreen:YES animated:YES];
     
-    [self.controlView showTitle:result[@"title"] coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
+    [self.controlView showTitle:result[@"title"] ?: self.titleString
+                 coverURLString:nil
+                 fullScreenMode:ZFFullScreenModePortrait];
 //    NSString *URLString = [@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 //    NSString *proxyURLString = [KTVHTTPCache proxyURLStringWithOriginalURLString:URLString];
     
@@ -237,18 +257,22 @@
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
         WKUserContentController *controller = [[WKUserContentController alloc] init];
 
-        id config = [CatService sharedInstance].appConfig;
-        
-        NSString *js = [config[@"ad_script"] description];//@"var $el = $('a[id^=__a_z_]'); $el.hide();";
-        
-        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-                                                   forMainFrameOnly:false];
-        [controller addUserScript:script];
+//        id config = [CatService sharedInstance].appConfig;
+//
+//        NSString *js = [config[@"ad_script"] description];//@"var $el = $('a[id^=__a_z_]'); $el.hide();";
+//
+//        WKUserScript *script = [[WKUserScript alloc] initWithSource:js injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+//                                                   forMainFrameOnly:false];
+//        [controller addUserScript:script];
 
         configuration.userContentController = controller;
         
         _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds configuration:configuration];
         [self.contentView addSubview:_webView];
+        
+        _webView.translatesAutoresizingMaskIntoConstraints = YES;
+        
+//        _webView.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36";
         
         _webView.navigationDelegate = self;
 //        _webView.UIDelegate = self;
@@ -261,19 +285,31 @@
     NSURLRequest *request = navigationAction.request;
     NSLog(@"request: %@", request);
     
-//    NSString *url = [request.URL absoluteString];
-    
-//    if ( [[CatService sharedInstance] appConfig] ) {
-//        NSArray *blackList = [[[CatService sharedInstance] appConfig] objectForKey:@"ad_blacklist"];
-//        NSLog(@"blacklist: %@", blackList);
-//
-//        for (NSString *prefix in blackList) {
-//            if ( [url hasPrefix:prefix] ) {
-//                decisionHandler(WKNavigationActionPolicyCancel);
-//                return;
-//            }
-//        }
-//    }
+    NSString *url = [request.URL absoluteString];
+    if ( [url rangeOfString:@".m3u8"].location != NSNotFound ) {
+        NSDictionary *dict = [url queryDictionaryUsingEncoding:NSUTF8StringEncoding];
+        NSString *playingURL;
+        for (NSString *key in dict) {
+            NSString *value = dict[key];
+            if ([value rangeOfString:@".m3u8"].location != NSNotFound) {
+                playingURL = value;
+                break;
+            }
+        }
+        
+        if (playingURL) {
+            NSMutableDictionary *result = [self.result mutableCopy];
+            result[@"url"] = playingURL ?: @"";
+            
+            [self playVideo:result];
+            
+            self.webView.hidden = YES;
+            
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
+        
+    }
 
     decisionHandler(WKNavigationActionPolicyAllow);
 }
@@ -287,10 +323,19 @@
 {
     [HNProgressHUDHelper hideHUDForView:self.contentView animated:YES];
     
-    //    [self updateReadStatus];
-//    [self.webView evaluateJavaScript:@"alert(123);" completionHandler:^(id _Nullable res, NSError * _Nullable error) {
-//        NSLog(@"res: %@, error: %@", res, error);
-//    }];
+    __weak typeof(self) me = self;
+    [self.webView evaluateJavaScript:@"document.title"
+                   completionHandler:^(id result, NSError * _Nullable error) {
+//                       NSLog(@"%@",result);
+                       [me updateTitle:result];
+                   }];
+}
+
+- (void)updateTitle:(id)result
+{
+    self.titleString = result;
+    self.navBar.title = result;
+//    [self.controlView showTitle:result coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error

@@ -170,7 +170,9 @@
     }];
 }
 
-- (void)uploadPlayProgress:(NSTimeInterval)progress forUrl:(NSString *)url
+- (void)uploadPlayProgress:(NSTimeInterval)progress
+                     title:(NSString *)title
+                    forUrl:(NSString *)url
 {
     [[UserService sharedInstance] loginUser:^(id user, NSError *error) {
         if ( user[@"token"] ) {
@@ -180,6 +182,7 @@
                       @"token": user[@"token"] ?: @"",
                       @"url": url ?: @"",
                       @"progress": [@(progress) description],
+                      @"title": title ?: @"",
                       }
              completion:^(id result, id rawData, NSError *error) {
                  

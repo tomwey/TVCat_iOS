@@ -40,7 +40,9 @@ typedef NS_ENUM(NSInteger, SessionType) {
                     pageSize:(NSInteger)pageSize
                   completion:(void (^)(id result, NSError *error))completion;
 
-- (void)uploadPlayProgress:(NSTimeInterval)progress forUrl:(NSString *)url;
+- (void)uploadPlayProgress:(NSTimeInterval)progress
+                     title:(NSString *)title
+                    forUrl:(NSString *)url;
 
 @property (nonatomic, strong, readonly) id appConfig;
 
