@@ -69,6 +69,8 @@
 	<string>用于获取跟位置相关的数据</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>用于获取相册图片</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>用于获取跟位置相关的数据</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
