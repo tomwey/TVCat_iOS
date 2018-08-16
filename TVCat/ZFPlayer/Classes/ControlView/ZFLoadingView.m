@@ -1,10 +1,26 @@
 //
 //  ZFLoadingView.m
-//  ZFLoadingView
+//  ZFPlayer
 //
-//  Created by 任子丰 on 2018/2/24.
-//  Copyright © 2018年 任子丰. All rights reserved.
+// Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "ZFLoadingView.h"
 
@@ -65,22 +81,22 @@
 
 - (void)startAnimating {
     if (self.animating) return;
-	self.animating = YES;
+    self.animating = YES;
     if (self.animType == ZFLoadingTypeFadeOut) [self fadeOutShow];
     CABasicAnimation *rotationAnim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnim.toValue = [NSNumber numberWithFloat:2 * M_PI];
     rotationAnim.duration = self.duration;
     rotationAnim.repeatCount = CGFLOAT_MAX;
-	rotationAnim.removedOnCompletion = NO;
+    rotationAnim.removedOnCompletion = NO;
     [self.shapeLayer addAnimation:rotationAnim forKey:@"rotation"];
     if (self.hidesWhenStopped) {
-		self.hidden = NO;
+        self.hidden = NO;
     }
 }
 
 - (void)stopAnimating {
     if (!self.animating) return;
-	self.animating = NO;
+    self.animating = NO;
     [self.shapeLayer removeAllAnimations];
     if (self.hidesWhenStopped) {
         self.hidden = YES;
@@ -93,34 +109,34 @@
     headAnimation.duration = self.duration / 1.5f;
     headAnimation.fromValue = @(0.f);
     headAnimation.toValue = @(0.25f);
-
+    
     CABasicAnimation *tailAnimation = [CABasicAnimation animation];
     tailAnimation.keyPath = @"strokeEnd";
     tailAnimation.duration = self.duration / 1.5f;
     tailAnimation.fromValue = @(0.f);
     tailAnimation.toValue = @(1.f);
-
+    
     CABasicAnimation *endHeadAnimation = [CABasicAnimation animation];
     endHeadAnimation.keyPath = @"strokeStart";
     endHeadAnimation.beginTime = self.duration / 1.5f;
     endHeadAnimation.duration = self.duration / 3.0f;
     endHeadAnimation.fromValue = @(0.25f);
     endHeadAnimation.toValue = @(1.f);
-
+    
     CABasicAnimation *endTailAnimation = [CABasicAnimation animation];
     endTailAnimation.keyPath = @"strokeEnd";
     endTailAnimation.beginTime = self.duration / 1.5f;
     endTailAnimation.duration = self.duration / 3.0f;
     endTailAnimation.fromValue = @(1.f);
     endTailAnimation.toValue = @(1.f);
-
+    
     CAAnimationGroup *animations = [CAAnimationGroup animation];
     [animations setDuration:self.duration];
     [animations setAnimations:@[headAnimation, tailAnimation, endHeadAnimation, endTailAnimation]];
     animations.repeatCount = INFINITY;
     animations.removedOnCompletion = NO;
     [self.shapeLayer addAnimation:animations forKey:@"strokeAnim"];
-
+    
     if (self.hidesWhenStopped) {
         self.hidden = NO;
     }
@@ -165,4 +181,3 @@
 }
 
 @end
-

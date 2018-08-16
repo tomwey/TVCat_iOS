@@ -74,6 +74,11 @@ FOUNDATION_EXPORT const unsigned char ZFPlayerVersionString[];
 #endif
 #endif
 
+// Screen width
+#define ZFPlayerScreenWidth     [[UIScreen mainScreen] bounds].size.width
+// Screen height
+#define ZFPlayerScreenHeight    [[UIScreen mainScreen] bounds].size.height
+
 #import "ZFPlayerController.h"
 #import "ZFPlayerGestureControl.h"
 #import "ZFPlayerMediaPlayback.h"
@@ -81,3 +86,4 @@ FOUNDATION_EXPORT const unsigned char ZFPlayerVersionString[];
 #import "ZFOrientationObserver.h"
 #import "ZFKVOController.h"
 #import "UIScrollView+ZFPlayer.h"
+#import "ZFPlayerLogManager.h"

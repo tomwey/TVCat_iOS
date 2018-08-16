@@ -39,28 +39,30 @@ typedef NS_OPTIONS(NSUInteger, ZFPlayerLoadState) {
     ZFPlayerLoadStateUnknown        = 0,
     ZFPlayerLoadStatePrepare        = 1 << 0,
     ZFPlayerLoadStatePlayable       = 1 << 1,
-    ZFPlayerLoadStatePlaythroughOK  = 1 << 2, // Playback will be automatically started in this state when shouldAutoplay is YES
-    ZFPlayerLoadStateStalled        = 1 << 3, // Playback will be automatically paused in this state, if started
+    ZFPlayerLoadStatePlaythroughOK  = 1 << 2, // Playback will be automatically started.
+    ZFPlayerLoadStateStalled        = 1 << 3, // Playback will be automatically paused in this state, if started.
 };
 
 typedef NS_ENUM(NSInteger, ZFPlayerScalingMode) {
-    ZFPlayerScalingModeNone,       // No scaling
-    ZFPlayerScalingModeAspectFit,  // Uniform scale until one dimension fits
-    ZFPlayerScalingModeAspectFill, // Uniform scale until the movie fills the visible bounds. One dimension may have clipped contents
-    ZFPlayerScalingModeFill        // Non-uniform scale. Both render dimensions will exactly match the visible bounds
+    ZFPlayerScalingModeNone,       // No scaling.
+    ZFPlayerScalingModeAspectFit,  // Uniform scale until one dimension fits.
+    ZFPlayerScalingModeAspectFill, // Uniform scale until the movie fills the visible bounds. One dimension may have clipped contents.
+    ZFPlayerScalingModeFill        // Non-uniform scale. Both render dimensions will exactly match the visible bounds.
 };
 
 @protocol ZFPlayerMediaPlayback <NSObject>
 
-/// The view must inherited `ZFPlayerView`,this view deals with some gesture conflicts
+@required
+/// The view must inherited `ZFPlayerView`,this view deals with some gesture conflicts.
 @property (nonatomic) ZFPlayerView *view;
 
+@optional
 /// The player volume, 0...1.0
 /// Only affects audio volume for the player instance and not for the device.
 /// You can change device volume or player volume as needed,change the player volume you can folllow the `ZFPlayerMediaPlayback` protocol.
 @property (nonatomic) float volume;
 
-/// The player muted
+/// The player muted.
 /// indicates whether or not audio output of the player is muted. Only affects audio muting for the player instance and not for the device.
 /// You can change device volume or player muted as needed,change the player muted you can folllow the `ZFPlayerMediaPlayback` protocol.
 @property (nonatomic, getter=isMuted) BOOL muted;
@@ -108,23 +110,35 @@ typedef NS_ENUM(NSInteger, ZFPlayerScalingMode) {
 /// The player load state.
 @property (nonatomic, readonly) ZFPlayerLoadState loadState;
 
+///------------------------------------
+/// If you don't point the controlView, you can called the following block.
+/// If you point the controlView, The following block cannot be called outside, only for `ZFPlayerController` calls.
+///------------------------------------
+
 /// The block invoked when the player is Ready to play.
 @property (nonatomic, copy, nullable) void(^playerPrepareToPlay)(id<ZFPlayerMediaPlayback> asset, NSURL *assetURL);
 
 /// The block invoked when the player play progress changed.
-@property (nonatomic, copy, nullable) void(^playerPlayTimeChanged)(id<ZFPlayerMediaPlayback>  asset, NSTimeInterval currentTime, NSTimeInterval duration);
+@property (nonatomic, copy, nullable) void(^playerPlayTimeChanged)(id<ZFPlayerMediaPlayback> asset, NSTimeInterval currentTime, NSTimeInterval duration);
 
 /// The block invoked when the player play buffer changed.
-@property (nonatomic, copy, nullable) void(^playerBufferTimeChanged)(id<ZFPlayerMediaPlayback>  asset, NSTimeInterval bufferTime);
+@property (nonatomic, copy, nullable) void(^playerBufferTimeChanged)(id<ZFPlayerMediaPlayback> asset, NSTimeInterval bufferTime);
 
 /// The block invoked when the player playback state changed.
-@property (nonatomic, copy, nullable) void(^playerPlayStatChanged)(id<ZFPlayerMediaPlayback>  asset, ZFPlayerPlaybackState playState);
+@property (nonatomic, copy, nullable) void(^playerPlayStateChanged)(id<ZFPlayerMediaPlayback> asset, ZFPlayerPlaybackState playState);
 
 /// The block invoked when the player load state changed.
-@property (nonatomic, copy, nullable) void(^playerLoadStatChanged)(id<ZFPlayerMediaPlayback>  asset, ZFPlayerLoadState loadState);
+@property (nonatomic, copy, nullable) void(^playerLoadStateChanged)(id<ZFPlayerMediaPlayback> asset, ZFPlayerLoadState loadState);
+
+/// The block invoked when the player play failed.
+@property (nonatomic, copy, nullable) void(^playerPlayFailed)(id<ZFPlayerMediaPlayback> asset, id error);
 
 /// The block invoked when the player play end.
-@property (nonatomic, copy, nullable) void(^playerDidToEnd)(id asset);
+@property (nonatomic, copy, nullable) void(^playerDidToEnd)(id<ZFPlayerMediaPlayback> asset);
+
+///------------------------------------
+/// end
+///------------------------------------
 
 /// Prepares the current queue for playback, interrupting any active (non-mixible) audio sessions.
 - (void)prepareToPlay;
@@ -147,12 +161,14 @@ typedef NS_ENUM(NSInteger, ZFPlayerScalingMode) {
 /// Video UIImage at the current time.
 - (UIImage *)thumbnailImageAtCurrentTime;
 
-/// Replace the current playback address.
-- (void)replaceCurrentAssetURL:(NSURL *)assetURL;
-
 /// Use this method to seek to a specified time for the current player and to be notified when the seek operation is complete.
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^ __nullable)(BOOL finished))completionHandler;
 
+/// Replace the current playback URL.
+- (void)replaceCurrentAssetURL:(NSURL *)assetURL __attribute__((deprecated("use the property `assetURL` instead.")));;
+
 @end
+
+
 
 NS_ASSUME_NONNULL_END

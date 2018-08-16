@@ -1,5 +1,6 @@
 //
 //  ZFPortraitControlView.m
+//  ZFPlayer
 //
 // Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
 //
@@ -23,12 +24,14 @@
 
 #import "ZFPortraitControlView.h"
 #import "UIView+ZFFrame.h"
-#import "ZFSliderView.h"
 #import "ZFUtilities.h"
+#if __has_include(<ZFPlayer/ZFPlayer.h>)
+#import <ZFPlayer/ZFPlayer.h>
+#else
+#import "ZFPlayer.h"
+#endif
 
 @interface ZFPortraitControlView () <ZFSliderViewDelegate>
-/// 返回按钮
-@property (nonatomic, strong) UIButton *backBtn;
 /// 底部工具栏
 @property (nonatomic, strong) UIView *bottomToolView;
 /// 顶部工具栏
@@ -37,7 +40,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 /// 播放或暂停按钮
 @property (nonatomic, strong) UIButton *playOrPauseBtn;
-/// 播放的当前时间label
+/// 播放的当前时间 
 @property (nonatomic, strong) UILabel *currentTimeLabel;
 /// 滑杆
 @property (nonatomic, strong) ZFSliderView *slider;
@@ -45,10 +48,6 @@
 @property (nonatomic, strong) UILabel *totalTimeLabel;
 /// 全屏按钮
 @property (nonatomic, strong) UIButton *fullScreenBtn;
-
-@property (nonatomic, assign) double durationTime;
-
-@property (nonatomic, weak) ZFPlayerController *player;
 
 @property (nonatomic, assign) BOOL isShow;
 
@@ -61,7 +60,6 @@
         // 添加子控件
         [self addSubview:self.topToolView];
         [self addSubview:self.bottomToolView];
-        [self addSubview:self.topToolView];
         [self addSubview:self.playOrPauseBtn];
         [self.topToolView addSubview:self.titleLabel];
         [self.bottomToolView addSubview:self.currentTimeLabel];
@@ -79,26 +77,37 @@
 }
 
 - (void)makeSubViewsAction {
-    [self.backBtn addTarget:self action:@selector(backBtnClickAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.playOrPauseBtn addTarget:self action:@selector(playPauseButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.fullScreenBtn addTarget:self action:@selector(fullScreenButtonClickAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - ZFSliderViewDelegate
 
-- (void)sliderTouchBegin:(float)value {
+- (void)sliderTouchBegan:(float)value {
     self.slider.isdragging = YES;
 }
 
 - (void)sliderTouchEnded:(float)value {
-    self.slider.isdragging = YES;
-    [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
+    if (self.player.totalTime > 0) {
+        @weakify(self)
+        [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
+            @strongify(self)
+            if (finished) {
+                self.slider.isdragging = NO;
+                [self.player.currentPlayerManager play];
+            }
+        }];
+    } else {
         self.slider.isdragging = NO;
-    }];
+    }
     if (self.sliderValueChanged) self.sliderValueChanged(value);
 }
 
 - (void)sliderValueChanged:(float)value {
+    if (self.player.totalTime == 0) {
+        self.slider.value = 0;
+        return;
+    }
     self.slider.isdragging = YES;
     NSString *currentTimeString = [ZFUtilities convertTimeSecond:self.player.totalTime*value];
     self.currentTimeLabel.text = currentTimeString;
@@ -106,17 +115,23 @@
 }
 
 - (void)sliderTapped:(float)value {
-    self.slider.isdragging = YES;
-    [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
+    if (self.player.totalTime > 0) {
+        self.slider.isdragging = YES;
+        @weakify(self)
+        [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
+            @strongify(self)
+            if (finished) {
+                self.slider.isdragging = NO;
+                [self.player.currentPlayerManager play];
+            }
+        }];
+    } else {
         self.slider.isdragging = NO;
-    }];
+        self.slider.value = 0;
+    }
 }
 
 #pragma mark - action
-
-- (void)backBtnClickAction:(UIButton *)sender {
-
-}
 
 - (void)playPauseButtonClickAction:(UIButton *)sender {
     [self playOrPause];
@@ -174,8 +189,8 @@
     self.playOrPauseBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.playOrPauseBtn.center = self.center;
     
-    min_x = 10;
-    min_w = 48;
+    min_x = min_margin;
+    min_w = 62;
     min_h = 28;
     min_y = (self.bottomToolView.height - min_h)/2;
     self.currentTimeLabel.frame = CGRectMake(min_x, min_y, min_w, min_h);
@@ -187,22 +202,20 @@
     self.fullScreenBtn.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.fullScreenBtn.centerY = self.currentTimeLabel.centerY;
     
-    min_w = 66;
+    min_w = 62;
     min_h = 28;
     min_x = self.fullScreenBtn.left - min_w - 4;
     min_y = 0;
     self.totalTimeLabel.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.totalTimeLabel.centerY = self.currentTimeLabel.centerY;
     
-//    self.totalTimeLabel.backgroundColor = [UIColor redColor];
-    
-    min_x = self.currentTimeLabel.right + min_margin;
+    min_x = self.currentTimeLabel.right + 4;
     min_y = 0;
-    min_w = self.totalTimeLabel.left - min_x - min_margin;
+    min_w = self.totalTimeLabel.left - min_x - 4;
     min_h = 30;
     self.slider.frame = CGRectMake(min_x, min_y, min_w, min_h);
     self.slider.centerY = self.currentTimeLabel.centerY;
- 
+    
     if (!self.isShow) {
         self.topToolView.y = -self.topToolView.height;
         self.bottomToolView.y = self.height;
@@ -225,7 +238,6 @@
     self.totalTimeLabel.text         = @"00:00";
     self.backgroundColor             = [UIColor clearColor];
     self.playOrPauseBtn.selected     = YES;
-    self.backBtn.alpha               = 1;
     self.titleLabel.text             = @"";
 }
 
@@ -249,23 +261,15 @@
     self.bottomToolView.alpha = 0;
 }
 
-- (void)zf_playDidEnd {
-    self.backBtn.alpha = 1;
-    self.bottomToolView.alpha = 0;
-}
-
 - (BOOL)shouldResponseGestureWithPoint:(CGPoint)point withGestureType:(ZFPlayerGestureType)type touch:(nonnull UITouch *)touch {
-    if (point.y > self.bottomToolView.y || [touch.view isKindOfClass:[UIButton class]]) {
+    CGRect sliderRect = [self.bottomToolView convertRect:self.slider.frame toView:self];
+    if (CGRectContainsPoint(sliderRect, point)) {
         return NO;
     }
     if (type == ZFPlayerGestureTypePan && self.player.scrollView) {
         return NO;
     }
     return YES;
-}
-
-- (void)videoPlayer:(ZFPlayerController *)videoPlayer prepareToPlay:(NSURL *)assetURL {
-    self.player = videoPlayer;
 }
 
 - (void)videoPlayer:(ZFPlayerController *)videoPlayer currentTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime {
@@ -288,14 +292,6 @@
 }
 
 #pragma mark - getter
-
-- (UIButton *)backBtn {
-    if (!_backBtn) {
-        _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_backBtn setImage:ZFPlayer_Image(@"ZFPlayer_back_full") forState:UIControlStateNormal];
-    }
-    return _backBtn;
-}
 
 - (UIView *)topToolView {
     if (!_topToolView) {
@@ -339,7 +335,6 @@
         _currentTimeLabel.textColor = [UIColor whiteColor];
         _currentTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _currentTimeLabel.textAlignment = NSTextAlignmentCenter;
-        _currentTimeLabel.text = @"00:00";
     }
     return _currentTimeLabel;
 }
@@ -363,7 +358,6 @@
         _totalTimeLabel.textColor = [UIColor whiteColor];
         _totalTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _totalTimeLabel.textAlignment = NSTextAlignmentCenter;
-        _totalTimeLabel.text = @"00:00";
     }
     return _totalTimeLabel;
 }
@@ -375,6 +369,5 @@
     }
     return _fullScreenBtn;
 }
-
 
 @end

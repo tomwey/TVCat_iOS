@@ -1,5 +1,6 @@
 //
 //  ZFSliderView.h
+//  ZFPlayer
 //
 // Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
 //
@@ -80,5 +81,3 @@
 - (void)setThumbImage:(UIImage *)image forState:(UIControlState)state;
 
 @end
-
-

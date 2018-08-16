@@ -356,28 +356,33 @@
 		99690F0C2089B4C400A68431 /* default_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0A2089B4C200A68431 /* default_icon@2x.png */; };
 		99690F0D2089B4C400A68431 /* default_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99690F0B2089B4C300A68431 /* default_icon@3x.png */; };
 		996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 996E64411E7146F7001EC40D /* libresolv.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
-		997D366D20C65BA3007548BF /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D363E20C65BA2007548BF /* ZFAVPlayerManager.m */; };
-		997D366E20C65BA3007548BF /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364120C65BA2007548BF /* UIImageView+ZFCache.m */; };
-		997D366F20C65BA3007548BF /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364320C65BA2007548BF /* UIView+ZFFrame.m */; };
-		997D367020C65BA3007548BF /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364520C65BA2007548BF /* ZFLandScapeControlView.m */; };
-		997D367120C65BA3007548BF /* ZFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364720C65BA2007548BF /* ZFLoadingView.m */; };
-		997D367220C65BA3007548BF /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 997D364820C65BA2007548BF /* ZFPlayer.bundle */; };
-		997D367320C65BA3007548BF /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364A20C65BA2007548BF /* ZFPlayerControlView.m */; };
-		997D367420C65BA3007548BF /* ZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364C20C65BA2007548BF /* ZFPortraitControlView.m */; };
-		997D367520C65BA3007548BF /* ZFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D364E20C65BA2007548BF /* ZFSliderView.m */; };
-		997D367620C65BA3007548BF /* ZFSmallFloatControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365020C65BA2007548BF /* ZFSmallFloatControlView.m */; };
-		997D367720C65BA3007548BF /* ZFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365220C65BA2007548BF /* ZFUtilities.m */; };
-		997D367820C65BA3007548BF /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365420C65BA2007548BF /* ZFVolumeBrightnessView.m */; };
-		997D367920C65BA3007548BF /* UIScrollView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365720C65BA2007548BF /* UIScrollView+ZFPlayer.m */; };
-		997D367A20C65BA3007548BF /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365920C65BA2007548BF /* UIViewController+ZFPlayerRotation.m */; };
-		997D367B20C65BA3007548BF /* ZFFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365B20C65BA2007548BF /* ZFFloatView.m */; };
-		997D367C20C65BA3007548BF /* ZFKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365D20C65BA2007548BF /* ZFKVOController.m */; };
-		997D367D20C65BA3007548BF /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D365F20C65BA2007548BF /* ZFOrientationObserver.m */; };
-		997D367E20C65BA3007548BF /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366220C65BA2007548BF /* ZFPlayerController.m */; };
-		997D367F20C65BA3007548BF /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366420C65BA2007548BF /* ZFPlayerGestureControl.m */; };
-		997D368020C65BA3007548BF /* ZFPlayerNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366820C65BA2007548BF /* ZFPlayerNotification.m */; };
-		997D368120C65BA3007548BF /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366A20C65BA2007548BF /* ZFPlayerView.m */; };
-		997D368220C65BA3007548BF /* ZFReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D366C20C65BA2007548BF /* ZFReachabilityManager.m */; };
+		997903312125154C005DBCA9 /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997902F72125154C005DBCA9 /* ZFAVPlayerManager.m */; };
+		997903322125154C005DBCA9 /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 997902FA2125154C005DBCA9 /* UIImageView+ZFCache.m */; };
+		997903332125154C005DBCA9 /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 997902FC2125154C005DBCA9 /* UIView+ZFFrame.m */; };
+		997903342125154C005DBCA9 /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997902FE2125154C005DBCA9 /* ZFLandScapeControlView.m */; };
+		997903352125154C005DBCA9 /* ZFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903002125154C005DBCA9 /* ZFLoadingView.m */; };
+		997903362125154C005DBCA9 /* ZFNetworkSpeedMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903022125154C005DBCA9 /* ZFNetworkSpeedMonitor.m */; };
+		997903372125154C005DBCA9 /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 997903032125154C005DBCA9 /* ZFPlayer.bundle */; };
+		997903382125154C005DBCA9 /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903052125154C005DBCA9 /* ZFPlayerControlView.m */; };
+		997903392125154C005DBCA9 /* ZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903072125154C005DBCA9 /* ZFPortraitControlView.m */; };
+		9979033A2125154C005DBCA9 /* ZFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903092125154C005DBCA9 /* ZFSliderView.m */; };
+		9979033B2125154C005DBCA9 /* ZFSmallFloatControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979030B2125154C005DBCA9 /* ZFSmallFloatControlView.m */; };
+		9979033C2125154C005DBCA9 /* ZFSpeedLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979030D2125154C005DBCA9 /* ZFSpeedLoadingView.m */; };
+		9979033D2125154C005DBCA9 /* ZFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979030F2125154C005DBCA9 /* ZFUtilities.m */; };
+		9979033E2125154C005DBCA9 /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903112125154C005DBCA9 /* ZFVolumeBrightnessView.m */; };
+		9979033F2125154C005DBCA9 /* UIScrollView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903142125154C005DBCA9 /* UIScrollView+ZFPlayer.m */; };
+		997903402125154C005DBCA9 /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903152125154C005DBCA9 /* UIViewController+ZFPlayerRotation.m */; };
+		997903412125154C005DBCA9 /* ZFFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903172125154C005DBCA9 /* ZFFloatView.m */; };
+		997903422125154C005DBCA9 /* ZFKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903192125154C005DBCA9 /* ZFKVOController.m */; };
+		997903432125154C005DBCA9 /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979031B2125154C005DBCA9 /* ZFOrientationObserver.m */; };
+		997903442125154C005DBCA9 /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979031E2125154C005DBCA9 /* ZFPlayerController.m */; };
+		997903452125154C005DBCA9 /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903202125154C005DBCA9 /* ZFPlayerGestureControl.m */; };
+		997903462125154C005DBCA9 /* ZFPlayerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903222125154C005DBCA9 /* ZFPlayerLogManager.m */; };
+		997903472125154C005DBCA9 /* ZFPlayerNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903262125154C005DBCA9 /* ZFPlayerNotification.m */; };
+		997903482125154C005DBCA9 /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 997903282125154C005DBCA9 /* ZFPlayerView.m */; };
+		997903492125154C005DBCA9 /* ZFReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9979032A2125154C005DBCA9 /* ZFReachabilityManager.m */; };
+		9979034D21251592005DBCA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9979034C21251591005DBCA9 /* UIKit.framework */; };
+		9979034F2125159C005DBCA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9979034E2125159B005DBCA9 /* Foundation.framework */; };
 		998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998604F21E540A2D00CE5D4B /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -1023,52 +1028,59 @@
 		99690F0A2089B4C200A68431 /* default_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_icon@2x.png"; sourceTree = "<group>"; };
 		99690F0B2089B4C300A68431 /* default_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_icon@3x.png"; sourceTree = "<group>"; };
 		996E64411E7146F7001EC40D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		997D363D20C65BA2007548BF /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAVPlayerManager.h; sourceTree = "<group>"; };
-		997D363E20C65BA2007548BF /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAVPlayerManager.m; sourceTree = "<group>"; };
-		997D364020C65BA2007548BF /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZFCache.h"; sourceTree = "<group>"; };
-		997D364120C65BA2007548BF /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZFCache.m"; sourceTree = "<group>"; };
-		997D364220C65BA2007548BF /* UIView+ZFFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZFFrame.h"; sourceTree = "<group>"; };
-		997D364320C65BA2007548BF /* UIView+ZFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFFrame.m"; sourceTree = "<group>"; };
-		997D364420C65BA2007548BF /* ZFLandScapeControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLandScapeControlView.h; sourceTree = "<group>"; };
-		997D364520C65BA2007548BF /* ZFLandScapeControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLandScapeControlView.m; sourceTree = "<group>"; };
-		997D364620C65BA2007548BF /* ZFLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLoadingView.h; sourceTree = "<group>"; };
-		997D364720C65BA2007548BF /* ZFLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLoadingView.m; sourceTree = "<group>"; };
-		997D364820C65BA2007548BF /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
-		997D364920C65BA2007548BF /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
-		997D364A20C65BA2007548BF /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
-		997D364B20C65BA2007548BF /* ZFPortraitControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPortraitControlView.h; sourceTree = "<group>"; };
-		997D364C20C65BA2007548BF /* ZFPortraitControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPortraitControlView.m; sourceTree = "<group>"; };
-		997D364D20C65BA2007548BF /* ZFSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSliderView.h; sourceTree = "<group>"; };
-		997D364E20C65BA2007548BF /* ZFSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSliderView.m; sourceTree = "<group>"; };
-		997D364F20C65BA2007548BF /* ZFSmallFloatControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSmallFloatControlView.h; sourceTree = "<group>"; };
-		997D365020C65BA2007548BF /* ZFSmallFloatControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSmallFloatControlView.m; sourceTree = "<group>"; };
-		997D365120C65BA2007548BF /* ZFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFUtilities.h; sourceTree = "<group>"; };
-		997D365220C65BA2007548BF /* ZFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFUtilities.m; sourceTree = "<group>"; };
-		997D365320C65BA2007548BF /* ZFVolumeBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVolumeBrightnessView.h; sourceTree = "<group>"; };
-		997D365420C65BA2007548BF /* ZFVolumeBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFVolumeBrightnessView.m; sourceTree = "<group>"; };
-		997D365620C65BA2007548BF /* UIScrollView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZFPlayer.h"; sourceTree = "<group>"; };
-		997D365720C65BA2007548BF /* UIScrollView+ZFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZFPlayer.m"; sourceTree = "<group>"; };
-		997D365820C65BA2007548BF /* UIViewController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
-		997D365920C65BA2007548BF /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
-		997D365A20C65BA2007548BF /* ZFFloatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFFloatView.h; sourceTree = "<group>"; };
-		997D365B20C65BA2007548BF /* ZFFloatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFFloatView.m; sourceTree = "<group>"; };
-		997D365C20C65BA2007548BF /* ZFKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFKVOController.h; sourceTree = "<group>"; };
-		997D365D20C65BA2007548BF /* ZFKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFKVOController.m; sourceTree = "<group>"; };
-		997D365E20C65BA2007548BF /* ZFOrientationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFOrientationObserver.h; sourceTree = "<group>"; };
-		997D365F20C65BA2007548BF /* ZFOrientationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFOrientationObserver.m; sourceTree = "<group>"; };
-		997D366020C65BA2007548BF /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
-		997D366120C65BA2007548BF /* ZFPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerController.h; sourceTree = "<group>"; };
-		997D366220C65BA2007548BF /* ZFPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerController.m; sourceTree = "<group>"; };
-		997D366320C65BA2007548BF /* ZFPlayerGestureControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerGestureControl.h; sourceTree = "<group>"; };
-		997D366420C65BA2007548BF /* ZFPlayerGestureControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerGestureControl.m; sourceTree = "<group>"; };
-		997D366520C65BA2007548BF /* ZFPlayerMediaControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerMediaControl.h; sourceTree = "<group>"; };
-		997D366620C65BA2007548BF /* ZFPlayerMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerMediaPlayback.h; sourceTree = "<group>"; };
-		997D366720C65BA2007548BF /* ZFPlayerNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerNotification.h; sourceTree = "<group>"; };
-		997D366820C65BA2007548BF /* ZFPlayerNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerNotification.m; sourceTree = "<group>"; };
-		997D366920C65BA2007548BF /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
-		997D366A20C65BA2007548BF /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
-		997D366B20C65BA2007548BF /* ZFReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFReachabilityManager.h; sourceTree = "<group>"; };
-		997D366C20C65BA2007548BF /* ZFReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFReachabilityManager.m; sourceTree = "<group>"; };
+		997902F62125154C005DBCA9 /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAVPlayerManager.h; sourceTree = "<group>"; };
+		997902F72125154C005DBCA9 /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAVPlayerManager.m; sourceTree = "<group>"; };
+		997902F92125154C005DBCA9 /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZFCache.h"; sourceTree = "<group>"; };
+		997902FA2125154C005DBCA9 /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZFCache.m"; sourceTree = "<group>"; };
+		997902FB2125154C005DBCA9 /* UIView+ZFFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZFFrame.h"; sourceTree = "<group>"; };
+		997902FC2125154C005DBCA9 /* UIView+ZFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFFrame.m"; sourceTree = "<group>"; };
+		997902FD2125154C005DBCA9 /* ZFLandScapeControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLandScapeControlView.h; sourceTree = "<group>"; };
+		997902FE2125154C005DBCA9 /* ZFLandScapeControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLandScapeControlView.m; sourceTree = "<group>"; };
+		997902FF2125154C005DBCA9 /* ZFLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLoadingView.h; sourceTree = "<group>"; };
+		997903002125154C005DBCA9 /* ZFLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLoadingView.m; sourceTree = "<group>"; };
+		997903012125154C005DBCA9 /* ZFNetworkSpeedMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNetworkSpeedMonitor.h; sourceTree = "<group>"; };
+		997903022125154C005DBCA9 /* ZFNetworkSpeedMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFNetworkSpeedMonitor.m; sourceTree = "<group>"; };
+		997903032125154C005DBCA9 /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
+		997903042125154C005DBCA9 /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
+		997903052125154C005DBCA9 /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
+		997903062125154C005DBCA9 /* ZFPortraitControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPortraitControlView.h; sourceTree = "<group>"; };
+		997903072125154C005DBCA9 /* ZFPortraitControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPortraitControlView.m; sourceTree = "<group>"; };
+		997903082125154C005DBCA9 /* ZFSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSliderView.h; sourceTree = "<group>"; };
+		997903092125154C005DBCA9 /* ZFSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSliderView.m; sourceTree = "<group>"; };
+		9979030A2125154C005DBCA9 /* ZFSmallFloatControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSmallFloatControlView.h; sourceTree = "<group>"; };
+		9979030B2125154C005DBCA9 /* ZFSmallFloatControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSmallFloatControlView.m; sourceTree = "<group>"; };
+		9979030C2125154C005DBCA9 /* ZFSpeedLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSpeedLoadingView.h; sourceTree = "<group>"; };
+		9979030D2125154C005DBCA9 /* ZFSpeedLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSpeedLoadingView.m; sourceTree = "<group>"; };
+		9979030E2125154C005DBCA9 /* ZFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFUtilities.h; sourceTree = "<group>"; };
+		9979030F2125154C005DBCA9 /* ZFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFUtilities.m; sourceTree = "<group>"; };
+		997903102125154C005DBCA9 /* ZFVolumeBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFVolumeBrightnessView.h; sourceTree = "<group>"; };
+		997903112125154C005DBCA9 /* ZFVolumeBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFVolumeBrightnessView.m; sourceTree = "<group>"; };
+		997903132125154C005DBCA9 /* UIScrollView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ZFPlayer.h"; sourceTree = "<group>"; };
+		997903142125154C005DBCA9 /* UIScrollView+ZFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZFPlayer.m"; sourceTree = "<group>"; };
+		997903152125154C005DBCA9 /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		997903162125154C005DBCA9 /* ZFFloatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFFloatView.h; sourceTree = "<group>"; };
+		997903172125154C005DBCA9 /* ZFFloatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFFloatView.m; sourceTree = "<group>"; };
+		997903182125154C005DBCA9 /* ZFKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFKVOController.h; sourceTree = "<group>"; };
+		997903192125154C005DBCA9 /* ZFKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFKVOController.m; sourceTree = "<group>"; };
+		9979031A2125154C005DBCA9 /* ZFOrientationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFOrientationObserver.h; sourceTree = "<group>"; };
+		9979031B2125154C005DBCA9 /* ZFOrientationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFOrientationObserver.m; sourceTree = "<group>"; };
+		9979031C2125154C005DBCA9 /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
+		9979031D2125154C005DBCA9 /* ZFPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerController.h; sourceTree = "<group>"; };
+		9979031E2125154C005DBCA9 /* ZFPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerController.m; sourceTree = "<group>"; };
+		9979031F2125154C005DBCA9 /* ZFPlayerGestureControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerGestureControl.h; sourceTree = "<group>"; };
+		997903202125154C005DBCA9 /* ZFPlayerGestureControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerGestureControl.m; sourceTree = "<group>"; };
+		997903212125154C005DBCA9 /* ZFPlayerLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerLogManager.h; sourceTree = "<group>"; };
+		997903222125154C005DBCA9 /* ZFPlayerLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerLogManager.m; sourceTree = "<group>"; };
+		997903232125154C005DBCA9 /* ZFPlayerMediaControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerMediaControl.h; sourceTree = "<group>"; };
+		997903242125154C005DBCA9 /* ZFPlayerMediaPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerMediaPlayback.h; sourceTree = "<group>"; };
+		997903252125154C005DBCA9 /* ZFPlayerNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerNotification.h; sourceTree = "<group>"; };
+		997903262125154C005DBCA9 /* ZFPlayerNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerNotification.m; sourceTree = "<group>"; };
+		997903272125154C005DBCA9 /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
+		997903282125154C005DBCA9 /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
+		997903292125154C005DBCA9 /* ZFReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFReachabilityManager.h; sourceTree = "<group>"; };
+		9979032A2125154C005DBCA9 /* ZFReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFReachabilityManager.m; sourceTree = "<group>"; };
+		9979034C21251591005DBCA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9979034E2125159B005DBCA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		998604F21E540A2D00CE5D4B /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		99D484571E56EB4B00510687 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -1078,6 +1090,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9979034F2125159C005DBCA9 /* Foundation.framework in Frameworks */,
+				9979034D21251592005DBCA9 /* UIKit.framework in Frameworks */,
 				996285FC20D8B18D00D41AC2 /* libz.tbd in Frameworks */,
 				996E64421E7146F7001EC40D /* libresolv.tbd in Frameworks */,
 				998604F31E540A2D00CE5D4B /* Contacts.framework in Frameworks */,
@@ -1101,6 +1115,8 @@
 		97579ABD1DC031CB00D99981 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9979034E2125159B005DBCA9 /* Foundation.framework */,
+				9979034C21251591005DBCA9 /* UIKit.framework */,
 				996285FB20D8B18D00D41AC2 /* libz.tbd */,
 				996E64411E7146F7001EC40D /* libresolv.tbd */,
 				99D484571E56EB4B00510687 /* libz.1.2.5.tbd */,
@@ -1154,7 +1170,7 @@
 		996907AC2086E5E300A68431 /* TVCat */ = {
 			isa = PBXGroup;
 			children = (
-				997D363A20C65BA2007548BF /* ZFPlayer */,
+				997902F32125154C005DBCA9 /* ZFPlayer */,
 				996907AD2086E5E300A68431 /* 3rdLib */,
 				99690A182086E5E300A68431 /* External */,
 				9969089A2086E5E300A68431 /* Components */,
@@ -2431,87 +2447,92 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		997D363A20C65BA2007548BF /* ZFPlayer */ = {
+		997902F32125154C005DBCA9 /* ZFPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				997D363B20C65BA2007548BF /* Classes */,
+				997902F42125154C005DBCA9 /* Classes */,
 			);
 			path = ZFPlayer;
 			sourceTree = "<group>";
 		};
-		997D363B20C65BA2007548BF /* Classes */ = {
+		997902F42125154C005DBCA9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				997D363C20C65BA2007548BF /* AVPlayer */,
-				997D363F20C65BA2007548BF /* ControlView */,
-				997D365520C65BA2007548BF /* Core */,
+				997902F52125154C005DBCA9 /* AVPlayer */,
+				997902F82125154C005DBCA9 /* ControlView */,
+				997903122125154C005DBCA9 /* Core */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		997D363C20C65BA2007548BF /* AVPlayer */ = {
+		997902F52125154C005DBCA9 /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				997D363D20C65BA2007548BF /* ZFAVPlayerManager.h */,
-				997D363E20C65BA2007548BF /* ZFAVPlayerManager.m */,
+				997902F62125154C005DBCA9 /* ZFAVPlayerManager.h */,
+				997902F72125154C005DBCA9 /* ZFAVPlayerManager.m */,
 			);
 			path = AVPlayer;
 			sourceTree = "<group>";
 		};
-		997D363F20C65BA2007548BF /* ControlView */ = {
+		997902F82125154C005DBCA9 /* ControlView */ = {
 			isa = PBXGroup;
 			children = (
-				997D364020C65BA2007548BF /* UIImageView+ZFCache.h */,
-				997D364120C65BA2007548BF /* UIImageView+ZFCache.m */,
-				997D364220C65BA2007548BF /* UIView+ZFFrame.h */,
-				997D364320C65BA2007548BF /* UIView+ZFFrame.m */,
-				997D364420C65BA2007548BF /* ZFLandScapeControlView.h */,
-				997D364520C65BA2007548BF /* ZFLandScapeControlView.m */,
-				997D364620C65BA2007548BF /* ZFLoadingView.h */,
-				997D364720C65BA2007548BF /* ZFLoadingView.m */,
-				997D364820C65BA2007548BF /* ZFPlayer.bundle */,
-				997D364920C65BA2007548BF /* ZFPlayerControlView.h */,
-				997D364A20C65BA2007548BF /* ZFPlayerControlView.m */,
-				997D364B20C65BA2007548BF /* ZFPortraitControlView.h */,
-				997D364C20C65BA2007548BF /* ZFPortraitControlView.m */,
-				997D364D20C65BA2007548BF /* ZFSliderView.h */,
-				997D364E20C65BA2007548BF /* ZFSliderView.m */,
-				997D364F20C65BA2007548BF /* ZFSmallFloatControlView.h */,
-				997D365020C65BA2007548BF /* ZFSmallFloatControlView.m */,
-				997D365120C65BA2007548BF /* ZFUtilities.h */,
-				997D365220C65BA2007548BF /* ZFUtilities.m */,
-				997D365320C65BA2007548BF /* ZFVolumeBrightnessView.h */,
-				997D365420C65BA2007548BF /* ZFVolumeBrightnessView.m */,
+				997902F92125154C005DBCA9 /* UIImageView+ZFCache.h */,
+				997902FA2125154C005DBCA9 /* UIImageView+ZFCache.m */,
+				997902FB2125154C005DBCA9 /* UIView+ZFFrame.h */,
+				997902FC2125154C005DBCA9 /* UIView+ZFFrame.m */,
+				997902FD2125154C005DBCA9 /* ZFLandScapeControlView.h */,
+				997902FE2125154C005DBCA9 /* ZFLandScapeControlView.m */,
+				997902FF2125154C005DBCA9 /* ZFLoadingView.h */,
+				997903002125154C005DBCA9 /* ZFLoadingView.m */,
+				997903012125154C005DBCA9 /* ZFNetworkSpeedMonitor.h */,
+				997903022125154C005DBCA9 /* ZFNetworkSpeedMonitor.m */,
+				997903032125154C005DBCA9 /* ZFPlayer.bundle */,
+				997903042125154C005DBCA9 /* ZFPlayerControlView.h */,
+				997903052125154C005DBCA9 /* ZFPlayerControlView.m */,
+				997903062125154C005DBCA9 /* ZFPortraitControlView.h */,
+				997903072125154C005DBCA9 /* ZFPortraitControlView.m */,
+				997903082125154C005DBCA9 /* ZFSliderView.h */,
+				997903092125154C005DBCA9 /* ZFSliderView.m */,
+				9979030A2125154C005DBCA9 /* ZFSmallFloatControlView.h */,
+				9979030B2125154C005DBCA9 /* ZFSmallFloatControlView.m */,
+				9979030C2125154C005DBCA9 /* ZFSpeedLoadingView.h */,
+				9979030D2125154C005DBCA9 /* ZFSpeedLoadingView.m */,
+				9979030E2125154C005DBCA9 /* ZFUtilities.h */,
+				9979030F2125154C005DBCA9 /* ZFUtilities.m */,
+				997903102125154C005DBCA9 /* ZFVolumeBrightnessView.h */,
+				997903112125154C005DBCA9 /* ZFVolumeBrightnessView.m */,
 			);
 			path = ControlView;
 			sourceTree = "<group>";
 		};
-		997D365520C65BA2007548BF /* Core */ = {
+		997903122125154C005DBCA9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				997D365620C65BA2007548BF /* UIScrollView+ZFPlayer.h */,
-				997D365720C65BA2007548BF /* UIScrollView+ZFPlayer.m */,
-				997D365820C65BA2007548BF /* UIViewController+ZFPlayerRotation.h */,
-				997D365920C65BA2007548BF /* UIViewController+ZFPlayerRotation.m */,
-				997D365A20C65BA2007548BF /* ZFFloatView.h */,
-				997D365B20C65BA2007548BF /* ZFFloatView.m */,
-				997D365C20C65BA2007548BF /* ZFKVOController.h */,
-				997D365D20C65BA2007548BF /* ZFKVOController.m */,
-				997D365E20C65BA2007548BF /* ZFOrientationObserver.h */,
-				997D365F20C65BA2007548BF /* ZFOrientationObserver.m */,
-				997D366020C65BA2007548BF /* ZFPlayer.h */,
-				997D366120C65BA2007548BF /* ZFPlayerController.h */,
-				997D366220C65BA2007548BF /* ZFPlayerController.m */,
-				997D366320C65BA2007548BF /* ZFPlayerGestureControl.h */,
-				997D366420C65BA2007548BF /* ZFPlayerGestureControl.m */,
-				997D366520C65BA2007548BF /* ZFPlayerMediaControl.h */,
-				997D366620C65BA2007548BF /* ZFPlayerMediaPlayback.h */,
-				997D366720C65BA2007548BF /* ZFPlayerNotification.h */,
-				997D366820C65BA2007548BF /* ZFPlayerNotification.m */,
-				997D366920C65BA2007548BF /* ZFPlayerView.h */,
-				997D366A20C65BA2007548BF /* ZFPlayerView.m */,
-				997D366B20C65BA2007548BF /* ZFReachabilityManager.h */,
-				997D366C20C65BA2007548BF /* ZFReachabilityManager.m */,
+				997903132125154C005DBCA9 /* UIScrollView+ZFPlayer.h */,
+				997903142125154C005DBCA9 /* UIScrollView+ZFPlayer.m */,
+				997903152125154C005DBCA9 /* UIViewController+ZFPlayerRotation.m */,
+				997903162125154C005DBCA9 /* ZFFloatView.h */,
+				997903172125154C005DBCA9 /* ZFFloatView.m */,
+				997903182125154C005DBCA9 /* ZFKVOController.h */,
+				997903192125154C005DBCA9 /* ZFKVOController.m */,
+				9979031A2125154C005DBCA9 /* ZFOrientationObserver.h */,
+				9979031B2125154C005DBCA9 /* ZFOrientationObserver.m */,
+				9979031C2125154C005DBCA9 /* ZFPlayer.h */,
+				9979031D2125154C005DBCA9 /* ZFPlayerController.h */,
+				9979031E2125154C005DBCA9 /* ZFPlayerController.m */,
+				9979031F2125154C005DBCA9 /* ZFPlayerGestureControl.h */,
+				997903202125154C005DBCA9 /* ZFPlayerGestureControl.m */,
+				997903212125154C005DBCA9 /* ZFPlayerLogManager.h */,
+				997903222125154C005DBCA9 /* ZFPlayerLogManager.m */,
+				997903232125154C005DBCA9 /* ZFPlayerMediaControl.h */,
+				997903242125154C005DBCA9 /* ZFPlayerMediaPlayback.h */,
+				997903252125154C005DBCA9 /* ZFPlayerNotification.h */,
+				997903262125154C005DBCA9 /* ZFPlayerNotification.m */,
+				997903272125154C005DBCA9 /* ZFPlayerView.h */,
+				997903282125154C005DBCA9 /* ZFPlayerView.m */,
+				997903292125154C005DBCA9 /* ZFReachabilityManager.h */,
+				9979032A2125154C005DBCA9 /* ZFReachabilityManager.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -2609,7 +2630,6 @@
 				99690E4C2086E5E500A68431 /* tab_work@2x.png in Resources */,
 				99690DC32086E5E500A68431 /* Default@2x.png in Resources */,
 				99690DE12086E5E500A68431 /* hud_success@3x.png in Resources */,
-				997D367220C65BA3007548BF /* ZFPlayer.bundle in Resources */,
 				99690EE82087258B00A68431 /* icon_faq@2x.png in Resources */,
 				99690E262086E5E500A68431 /* icon_upgrade@3x.png in Resources */,
 				99690E4F2086E5E500A68431 /* tab_work_click@3x.png in Resources */,
@@ -2657,6 +2677,7 @@
 				99690DCA2086E5E500A68431 /* btn_search2@2x.png in Resources */,
 				996285F920D8895900D41AC2 /* icon_download@2x.png in Resources */,
 				99690DAF2086E5E500A68431 /* 40@2x.png in Resources */,
+				997903372125154C005DBCA9 /* ZFPlayer.bundle in Resources */,
 				99690DE02086E5E500A68431 /* hud_success@2x.png in Resources */,
 				99690DC12086E5E500A68431 /* Default-568h@2x.png in Resources */,
 				99690EE02087258B00A68431 /* icon_aboutus@2x.png in Resources */,
@@ -2680,17 +2701,20 @@
 				99690E812086E5E500A68431 /* Checkbox.m in Sources */,
 				99690D622086E5E500A68431 /* UIRefreshControl+AFNetworking.m in Sources */,
 				99690CA22086E5E400A68431 /* TYViewStorage.m in Sources */,
-				997D367920C65BA3007548BF /* UIScrollView+ZFPlayer.m in Sources */,
 				99690D9D2086E5E500A68431 /* Breadcrumb.m in Sources */,
 				99690DA72086E5E500A68431 /* User.m in Sources */,
+				9979033F2125154C005DBCA9 /* UIScrollView+ZFPlayer.m in Sources */,
 				99690ED1208709F100A68431 /* BannerView.m in Sources */,
 				99690EBD2086E5E600A68431 /* YearMonthPickerView.m in Sources */,
 				99690CAC2086E5E400A68431 /* AWButton.m in Sources */,
+				997903352125154C005DBCA9 /* ZFLoadingView.m in Sources */,
 				99690DA82086E5E500A68431 /* main.m in Sources */,
 				99690D9C2086E5E500A68431 /* AppManager.m in Sources */,
+				997903312125154C005DBCA9 /* ZFAVPlayerManager.m in Sources */,
 				99690D932086E5E500A68431 /* TZImagePickerController.m in Sources */,
 				99690D692086E5E500A68431 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				99690CB72086E5E400A68431 /* UIImageView+AWProgress.m in Sources */,
+				997903402125154C005DBCA9 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				99690C492086E5E400A68431 /* CTPersistanceQueryCommand+DataManipulations.m in Sources */,
 				99690D6B2086E5E500A68431 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				99690C972086E5E400A68431 /* UIView+TYAlertView.m in Sources */,
@@ -2709,17 +2733,18 @@
 				99690D552086E5E500A68431 /* AFSecurityPolicy.m in Sources */,
 				99690EB42086E5E600A68431 /* SelectControl.m in Sources */,
 				99690C782086E5E400A68431 /* UIApplication+JTSImageViewController.m in Sources */,
-				997D367320C65BA3007548BF /* ZFPlayerControlView.m in Sources */,
 				99690C9B2086E5E400A68431 /* TYDrawStorage.m in Sources */,
 				99690D8E2086E5E500A68431 /* TZAssetModel.m in Sources */,
 				99690D682086E5E500A68431 /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				99690C582086E5E400A68431 /* FAKIonIcons.m in Sources */,
+				997903392125154C005DBCA9 /* ZFPortraitControlView.m in Sources */,
 				99690CAD2086E5E400A68431 /* UIButton+UserData.m in Sources */,
 				99690D732086E5E500A68431 /* DGActivityIndicatorBallZigZagDeflectAnimation.m in Sources */,
 				99690EFB208790E100A68431 /* NewVIPChargeVC.m in Sources */,
 				99690EA02086E5E600A68431 /* LoadingView.m in Sources */,
 				99690DA42086E5E500A68431 /* HNResultData.m in Sources */,
 				99690C6D2086E5E400A68431 /* FSCalendarExtensions.m in Sources */,
+				9979033A2125154C005DBCA9 /* ZFSliderView.m in Sources */,
 				99690C502086E5E400A68431 /* CTPersistanceTable+Find.m in Sources */,
 				99690E782086E5E500A68431 /* UserService.m in Sources */,
 				99690EB52086E5E600A68431 /* SelectPicker.m in Sources */,
@@ -2728,6 +2753,7 @@
 				99690C6B2086E5E400A68431 /* FSCalendarDelegationFactory.m in Sources */,
 				99690D522086E5E500A68431 /* AFHTTPRequestOperationManager.m in Sources */,
 				99690D772086E5E500A68431 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
+				997903342125154C005DBCA9 /* ZFLandScapeControlView.m in Sources */,
 				99690C4B2086E5E400A68431 /* CTPersistanceQueryCommand+SchemaManipulations.m in Sources */,
 				99690EA52086E5E600A68431 /* NTMonthYearPicker.m in Sources */,
 				99690D812086E5E500A68431 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
@@ -2741,6 +2767,7 @@
 				99690CC42086E5E400A68431 /* AWTableViewDataSource.m in Sources */,
 				99690D912086E5E500A68431 /* TZImageManager.m in Sources */,
 				99690C452086E5E400A68431 /* CTPersistanceDatabasePool.m in Sources */,
+				997903472125154C005DBCA9 /* ZFPlayerNotification.m in Sources */,
 				99690D752086E5E500A68431 /* DGActivityIndicatorDoubleBounceAnimation.m in Sources */,
 				9962860620D8FF7300D41AC2 /* UICKeyChainStore.m in Sources */,
 				99690D982086E5E500A68431 /* TZVideoPlayerController.m in Sources */,
@@ -2767,7 +2794,6 @@
 				99690C422086E5E400A68431 /* NSString+SQL.m in Sources */,
 				99690C532086E5E400A68431 /* CTPersistanceTable.m in Sources */,
 				99690D742086E5E500A68431 /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
-				997D367720C65BA3007548BF /* ZFUtilities.m in Sources */,
 				99690EF12087527500A68431 /* CatService.m in Sources */,
 				99690EC02086E9B400A68431 /* ExploreVC.m in Sources */,
 				99690C522086E5E400A68431 /* CTPersistanceTable+Update.m in Sources */,
@@ -2795,6 +2821,7 @@
 				99690C4E2086E5E400A68431 /* CTPersistanceRecord.m in Sources */,
 				99690E9A2086E5E600A68431 /* HNImageHelper.m in Sources */,
 				99690C3F2086E5E400A68431 /* CTPersistanceAsyncExecutor.m in Sources */,
+				997903382125154C005DBCA9 /* ZFPlayerControlView.m in Sources */,
 				99690CBD2086E5E400A68431 /* AWLocationManager.m in Sources */,
 				99690CC82086E5E400A68431 /* UITableView+RemoveBlankCells.m in Sources */,
 				99690D672086E5E500A68431 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
@@ -2802,18 +2829,18 @@
 				99690E7E2086E5E500A68431 /* AWPagerTabStrip.m in Sources */,
 				99690C912086E5E400A68431 /* TYAlertDropDownAnimation.m in Sources */,
 				99690C6C2086E5E400A68431 /* FSCalendarDelegationProxy.m in Sources */,
-				997D367B20C65BA3007548BF /* ZFFloatView.m in Sources */,
 				99690C932086E5E400A68431 /* TYAlertScaleFadeAnimation.m in Sources */,
 				99690C9E2086E5E400A68431 /* TYLinkTextStorage.m in Sources */,
 				99690C8D2086E5E400A68431 /* TYAlertController+BlurEffects.m in Sources */,
 				99690D6C2086E5E500A68431 /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				99690C742086E5E400A68431 /* JTSAnimatedGIFUtility.m in Sources */,
+				9979033D2125154C005DBCA9 /* ZFUtilities.m in Sources */,
 				99690D5F2086E5E500A68431 /* UIButton+AFNetworking.m in Sources */,
 				99690C6F2086E5E400A68431 /* FSCalendarScopeHandle.m in Sources */,
 				99690CCC2086E5E400A68431 /* AWUIUtils.m in Sources */,
+				997903482125154C005DBCA9 /* ZFPlayerView.m in Sources */,
 				99690C5A2086E5E400A68431 /* FAKOcticons.m in Sources */,
 				99690C652086E5E400A68431 /* FSCalendarAppearance.m in Sources */,
-				997D367620C65BA3007548BF /* ZFSmallFloatControlView.m in Sources */,
 				99690CA92086E5E400A68431 /* APIFileParam.m in Sources */,
 				99690D802086E5E500A68431 /* DGActivityIndicatorTriangleSkewSpinAnimation.m in Sources */,
 				99690C682086E5E400A68431 /* FSCalendarCollectionView.m in Sources */,
@@ -2821,19 +2848,19 @@
 				99690D712086E5E500A68431 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				99690C432086E5E400A68431 /* CTPersistanceCriteria.m in Sources */,
 				99690D792086E5E500A68431 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
-				997D367C20C65BA3007548BF /* ZFKVOController.m in Sources */,
 				99690C8F2086E5E400A68431 /* TYAlertController+TransitionAnimate.m in Sources */,
 				99690C8E2086E5E400A68431 /* UIImage+ImageEffects.m in Sources */,
 				99690CFD2086E5E500A68431 /* HomeVC.m in Sources */,
+				997903432125154C005DBCA9 /* ZFOrientationObserver.m in Sources */,
 				99690E7C2086E5E500A68431 /* HNAlertHelper.m in Sources */,
+				997903322125154C005DBCA9 /* UIImageView+ZFCache.m in Sources */,
 				99690CCE2086E5E400A68431 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				99690EF520878BF500A68431 /* PageVC.m in Sources */,
 				99690C952086E5E400A68431 /* TYBaseAnimation.m in Sources */,
 				99690D6A2086E5E500A68431 /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
+				997903462125154C005DBCA9 /* ZFPlayerLogManager.m in Sources */,
 				99690D8F2086E5E500A68431 /* TZGifPhotoPreviewController.m in Sources */,
 				99690E9B2086E5E600A68431 /* HNLoadingView.m in Sources */,
-				997D367F20C65BA3007548BF /* ZFPlayerGestureControl.m in Sources */,
-				997D367D20C65BA3007548BF /* ZFOrientationObserver.m in Sources */,
 				99690CC22086E5E400A68431 /* UITableView+RefreshControl.m in Sources */,
 				99690D582086E5E500A68431 /* AFURLResponseSerialization.m in Sources */,
 				99690C4A2086E5E400A68431 /* CTPersistanceQueryCommand+ReadMethods.m in Sources */,
@@ -2842,12 +2869,12 @@
 				99690C412086E5E400A68431 /* NSString+ReqularExpression.m in Sources */,
 				99690C402086E5E400A68431 /* NSArray+CTPersistanceRecordTransform.m in Sources */,
 				99690CCD2086E5E400A68431 /* iCarousel.m in Sources */,
-				997D367820C65BA3007548BF /* ZFVolumeBrightnessView.m in Sources */,
 				99690D822086E5E500A68431 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				99690CCA2086E5E400A68431 /* AWTextField.m in Sources */,
 				99690C552086E5E400A68431 /* FAKFontAwesome.m in Sources */,
 				99690C592086E5E400A68431 /* FAKMaterialIcons.m in Sources */,
 				99690D7F2086E5E500A68431 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
+				9979033B2125154C005DBCA9 /* ZFSmallFloatControlView.m in Sources */,
 				99690CAE2086E5E400A68431 /* UIButton+AWButtonLoading.m in Sources */,
 				99690C442086E5E400A68431 /* CTPersistanceDataBase.m in Sources */,
 				99690CC92086E5E400A68431 /* UITableViewCell+RemoveBackground.m in Sources */,
@@ -2859,9 +2886,9 @@
 				99690ECD208707A500A68431 /* BaseNavBarVC.m in Sources */,
 				99690E772086E5E500A68431 /* StoreService.m in Sources */,
 				99690D662086E5E500A68431 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
-				997D366E20C65BA3007548BF /* UIImageView+ZFCache.m in Sources */,
 				99690C692086E5E400A68431 /* FSCalendarCollectionViewLayout.m in Sources */,
 				99690D612086E5E500A68431 /* UIProgressView+AFNetworking.m in Sources */,
+				9979033E2125154C005DBCA9 /* ZFVolumeBrightnessView.m in Sources */,
 				99690E8E2086E5E600A68431 /* DateSelectControl.m in Sources */,
 				99690EB62086E5E600A68431 /* SettingTableHeader.m in Sources */,
 				99690D8B2086E5E500A68431 /* SVRadialGradientLayer.m in Sources */,
@@ -2876,16 +2903,13 @@
 				99690EAA2086E5E600A68431 /* PayTimeView.m in Sources */,
 				99690D882086E5E500A68431 /* SVProgressAnimatedView.m in Sources */,
 				99690C6A2086E5E400A68431 /* FSCalendarConstants.m in Sources */,
-				997D367E20C65BA3007548BF /* ZFPlayerController.m in Sources */,
 				99690CC62086E5E400A68431 /* UITableView+LoadEmptyOrErrorHandle.m in Sources */,
 				99690DA12086E5E500A68431 /* ContactSectionInfo.m in Sources */,
-				997D367120C65BA3007548BF /* ZFLoadingView.m in Sources */,
 				99690E8C2086E5E600A68431 /* CustomSearchBar.m in Sources */,
 				99690D992086E5E500A68431 /* UIView+Layout.m in Sources */,
 				99690D702086E5E500A68431 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
 				99690EBB2086E5E600A68431 /* UIActionSheet+DisabledButtons.m in Sources */,
 				99690EBC2086E5E600A68431 /* UIView+MBProgressHUD.m in Sources */,
-				997D368120C65BA3007548BF /* ZFPlayerView.m in Sources */,
 				99690CB02086E5E400A68431 /* NSObject+AWDeallocBlock.m in Sources */,
 				99690E7B2086E5E500A68431 /* ButtonHelper.m in Sources */,
 				9962860320D8FD1100D41AC2 /* UIDevice+FCUUID.m in Sources */,
@@ -2894,7 +2918,9 @@
 				99690CCF2086E5E500A68431 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				99690C9D2086E5E400A68431 /* TYImageStorage.m in Sources */,
 				99690D7A2086E5E500A68431 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
+				997903452125154C005DBCA9 /* ZFPlayerGestureControl.m in Sources */,
 				99690CD02086E5E500A68431 /* UIView+Toast.m in Sources */,
+				997903412125154C005DBCA9 /* ZFFloatView.m in Sources */,
 				99690C722086E5E400A68431 /* FSCalendarWeekdayView.m in Sources */,
 				99690D562086E5E500A68431 /* AFURLConnectionOperation.m in Sources */,
 				99690CA32086E5E400A68431 /* AppDelegate.m in Sources */,
@@ -2910,45 +2936,43 @@
 				99690D6F2086E5E500A68431 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				99690CB52086E5E400A68431 /* AWHairlineView.m in Sources */,
 				99690CA62086E5E400A68431 /* APIDictionaryReformer.m in Sources */,
+				9979033C2125154C005DBCA9 /* ZFSpeedLoadingView.m in Sources */,
 				99690CA82086E5E400A68431 /* APIError.m in Sources */,
 				99690D632086E5E500A68431 /* UIWebView+AFNetworking.m in Sources */,
 				99690E8D2086E5E600A68431 /* DatePicker.m in Sources */,
+				997903422125154C005DBCA9 /* ZFKVOController.m in Sources */,
 				99690CD22086E5E500A68431 /* UIWebView+KeyValueStorage.m in Sources */,
+				997903492125154C005DBCA9 /* ZFReachabilityManager.m in Sources */,
 				99690CC72086E5E400A68431 /* UITableView+LoadNetworkData.m in Sources */,
-				997D368020C65BA3007548BF /* ZFPlayerNotification.m in Sources */,
 				99690D452086E5E500A68431 /* SettingVC.m in Sources */,
 				99690EF82087900500A68431 /* VIPChargeListVC.m in Sources */,
 				99690CAB2086E5E400A68431 /* APIRequest.m in Sources */,
-				997D367A20C65BA3007548BF /* UIViewController+ZFPlayerRotation.m in Sources */,
 				99690D942086E5E500A68431 /* TZPhotoPickerController.m in Sources */,
-				997D367520C65BA3007548BF /* ZFSliderView.m in Sources */,
-				997D368220C65BA3007548BF /* ZFReachabilityManager.m in Sources */,
 				99690D9B2086E5E500A68431 /* AddContactsModel.m in Sources */,
 				99690C772086E5E400A68431 /* JTSSimpleImageDownloader.m in Sources */,
 				99690D9E2086E5E500A68431 /* ContactInfo.m in Sources */,
 				99690C922086E5E400A68431 /* TYAlertFadeAnimation.m in Sources */,
+				997903362125154C005DBCA9 /* ZFNetworkSpeedMonitor.m in Sources */,
 				99690CB12086E5E400A68431 /* NSDataAdditions.m in Sources */,
-				997D366F20C65BA3007548BF /* UIView+ZFFrame.m in Sources */,
 				99690C462086E5E400A68431 /* CTPersistanceMigrator.m in Sources */,
-				997D366D20C65BA3007548BF /* ZFAVPlayerManager.m in Sources */,
 				99690CAF2086E5E400A68431 /* CustomNavBar.m in Sources */,
 				99690D952086E5E500A68431 /* TZPhotoPreviewCell.m in Sources */,
 				99690C672086E5E400A68431 /* FSCalendarCell.m in Sources */,
 				99690C982086E5E400A68431 /* UIView+TYAutoLayout.m in Sources */,
 				99690D532086E5E500A68431 /* AFHTTPSessionManager.m in Sources */,
 				99690D862086E5E500A68431 /* NSDate+NVTimeAgo.m in Sources */,
-				997D367020C65BA3007548BF /* ZFLandScapeControlView.m in Sources */,
 				99690C992086E5E400A68431 /* NSMutableAttributedString+TY.m in Sources */,
 				99690E752086E5E500A68431 /* NetworkService.m in Sources */,
 				99690CC32086E5E400A68431 /* AWMultipleColumnTableViewDataSource.m in Sources */,
+				997903442125154C005DBCA9 /* ZFPlayerController.m in Sources */,
 				99690C6E2086E5E400A68431 /* FSCalendarHeaderView.m in Sources */,
 				99690C712086E5E400A68431 /* FSCalendarTransitionCoordinator.m in Sources */,
 				99690D902086E5E500A68431 /* TZImageCropManager.m in Sources */,
 				99690D7D2086E5E500A68431 /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
-				997D367420C65BA3007548BF /* ZFPortraitControlView.m in Sources */,
 				99690C512086E5E400A68431 /* CTPersistanceTable+Insert.m in Sources */,
 				99690DA32086E5E500A68431 /* HNCache.m in Sources */,
 				99690DA62086E5E500A68431 /* QNSURLSessionDemux.m in Sources */,
+				997903332125154C005DBCA9 /* UIView+ZFFrame.m in Sources */,
 				99690D652086E5E500A68431 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

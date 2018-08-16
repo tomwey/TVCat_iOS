@@ -1,5 +1,5 @@
 //
-//  ZFVolumeBrightnessView.h
+//  ZFPlayerLogManager.m
 //  ZFPlayer
 //
 // Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
@@ -22,25 +22,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "ZFPlayerLogManager.h"
 
-typedef NS_ENUM(NSInteger, ZFVolumeBrightnessType) {
-    ZFVolumeBrightnessTypeVolume,       // volume
-    ZFVolumeBrightnessTypeumeBrightness // brightness
-};
+// 默认值为NO
+static BOOL kLogEnable = NO;
 
-@interface ZFVolumeBrightnessView : UIView
+@implementation ZFPlayerLogManager
 
-@property (nonatomic, assign, readonly) ZFVolumeBrightnessType volumeBrightnessType;
-@property (nonatomic, strong, readonly) UIProgressView *progressView;
-@property (nonatomic, strong, readonly) UIImageView *iconImageView;
++ (void)setLogEnable:(BOOL)enable {
+    kLogEnable = enable;
+}
 
-- (void)updateProgress:(CGFloat)progress withVolumeBrightnessType:(ZFVolumeBrightnessType)volumeBrightnessType;
++ (BOOL)getLogEnable {
+    return kLogEnable;
+}
 
-/// 添加系统音量view
-- (void)addSystemVolumeView;
++ (NSString *)version {
+    return @"3.1.4";
+}
 
-/// 移除系统音量view
-- (void)removeSystemVolumeView;
++ (void)logWithFunction:(const char *)function lineNumber:(int)lineNumber formatString:(NSString *)formatString {
+    if ([self getLogEnable]) {
+        NSLog(@"%s[%d]%@", function, lineNumber, formatString);
+    }
+}
 
 @end

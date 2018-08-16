@@ -1,5 +1,5 @@
 //
-//  ZFVolumeBrightnessView.h
+//  ZFNetworkSpeedMonitor.h
 //  ZFPlayer
 //
 // Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
@@ -22,25 +22,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZFVolumeBrightnessType) {
-    ZFVolumeBrightnessTypeVolume,       // volume
-    ZFVolumeBrightnessTypeumeBrightness // brightness
-};
+extern NSString *const ZFDownloadNetworkSpeedNotificationKey;
+extern NSString *const ZFUploadNetworkSpeedNotificationKey;
+extern NSString *const ZFNetworkSpeedNotificationKey;
 
-@interface ZFVolumeBrightnessView : UIView
+@interface ZFNetworkSpeedMonitor : NSObject
 
-@property (nonatomic, assign, readonly) ZFVolumeBrightnessType volumeBrightnessType;
-@property (nonatomic, strong, readonly) UIProgressView *progressView;
-@property (nonatomic, strong, readonly) UIImageView *iconImageView;
+@property (nonatomic, copy, readonly) NSString *downloadNetworkSpeed;
+@property (nonatomic, copy, readonly) NSString *uploadNetworkSpeed;
 
-- (void)updateProgress:(CGFloat)progress withVolumeBrightnessType:(ZFVolumeBrightnessType)volumeBrightnessType;
-
-/// 添加系统音量view
-- (void)addSystemVolumeView;
-
-/// 移除系统音量view
-- (void)removeSystemVolumeView;
+- (void)startNetworkSpeedMonitor;
+- (void)stopNetworkSpeedMonitor;
 
 @end

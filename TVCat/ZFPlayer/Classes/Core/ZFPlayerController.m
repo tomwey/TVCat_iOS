@@ -35,13 +35,9 @@
 
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) ZFPlayerNotification *notification;
-@property (nonatomic, strong) id<ZFPlayerMediaPlayback> currentPlayerManager;
-@property (nonatomic, strong, nullable) UIScrollView *scrollView;
-@property (nonatomic, assign, getter=isPauseByUser) BOOL pauseByUser;
+@property (nonatomic, weak) UIScrollView *scrollView;
 @property (nonatomic, strong) UISlider *volumeViewSlider;
-@property (nonatomic, assign) NSTimeInterval currentTime;
-@property (nonatomic, assign) NSTimeInterval totalTime;
-@property (nonatomic, assign) NSTimeInterval bufferTime;
+@property (nonatomic, assign) NSInteger containerViewTag;
 
 @end
 
@@ -83,41 +79,46 @@
 }
 
 + (instancetype)playerWithPlayerManager:(id<ZFPlayerMediaPlayback>)playerManager containerView:(nonnull UIView *)containerView {
-    ZFPlayerController *player = [[self alloc] init];
-    player.currentPlayerManager = playerManager;
-    player.containerView = containerView;
+    ZFPlayerController *player = [[self alloc] initWithPlayerManager:playerManager containerView:containerView];
     return player;
 }
 
 + (instancetype)playerWithScrollView:(UIScrollView *)scrollView playerManager:(id<ZFPlayerMediaPlayback>)playerManager containerViewTag:(NSInteger)containerViewTag {
-    ZFPlayerController *player = [[self alloc] init];
-    player.scrollView = scrollView;
-    player.currentPlayerManager = playerManager;
-    player.containerViewTag = containerViewTag;
+    ZFPlayerController *player = [[self alloc] initWithScrollView:scrollView playerManager:playerManager containerViewTag:containerViewTag];
     return player;
 }
 
 - (instancetype)initWithPlayerManager:(id<ZFPlayerMediaPlayback>)playerManager containerView:(nonnull UIView *)containerView {
     ZFPlayerController *player = [self init];
-    player.currentPlayerManager = playerManager;
     player.containerView = containerView;
+    player.currentPlayerManager = playerManager;
     return player;
 }
 
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView playerManager:(id<ZFPlayerMediaPlayback>)playerManager containerViewTag:(NSInteger)containerViewTag {
     ZFPlayerController *player = [self init];
     player.scrollView = scrollView;
-    player.currentPlayerManager = playerManager;
     player.containerViewTag = containerViewTag;
+    player.currentPlayerManager = playerManager;
     return player;
 }
 
 - (void)playerManagerCallbcak {
     @weakify(self)
+    self.currentPlayerManager.playerPrepareToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
+        @strongify(self)
+        self.currentPlayerManager.view.hidden = NO;
+        [self.notification addNotification];
+        [self addDeviceOrientationObserver];
+        if (self.playerPrepareToPlay) self.playerPrepareToPlay(asset,assetURL);
+        if ([self.controlView respondsToSelector:@selector(videoPlayer:prepareToPlay:)]) {
+            [self.controlView videoPlayer:self prepareToPlay:assetURL];
+        }
+    };
+    
     self.currentPlayerManager.playerPlayTimeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSTimeInterval currentTime, NSTimeInterval duration) {
         @strongify(self)
-        self.currentTime = currentTime;
-        self.totalTime = duration;
+        if (self.playerPlayTimeChanged) self.playerPlayTimeChanged(asset,currentTime,duration);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:currentTime:totalTime:)]) {
             [self.controlView videoPlayer:self currentTime:currentTime totalTime:duration];
         }
@@ -125,28 +126,23 @@
     
     self.currentPlayerManager.playerBufferTimeChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSTimeInterval bufferTime) {
         @strongify(self)
-        self.bufferTime = bufferTime;
         if ([self.controlView respondsToSelector:@selector(videoPlayer:bufferTime:)]) {
             [self.controlView videoPlayer:self bufferTime:bufferTime];
         }
+        if (self.playerBufferTimeChanged) self.playerBufferTimeChanged(asset,bufferTime);
     };
     
-    self.currentPlayerManager.playerPrepareToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
+    self.currentPlayerManager.playerPlayStateChanged = ^(id  _Nonnull asset, ZFPlayerPlaybackState playState) {
         @strongify(self)
-        if ([self.controlView respondsToSelector:@selector(videoPlayer:prepareToPlay:)]) {
-            [self.controlView videoPlayer:self prepareToPlay:self.currentPlayerManager.assetURL];
-        }
-    };
-    
-    self.currentPlayerManager.playerPlayStatChanged = ^(id  _Nonnull asset, ZFPlayerPlaybackState playState) {
-        @strongify(self)
+        if (self.playerPlayStateChanged) self.playerPlayStateChanged(asset, playState);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:playStateChanged:)]) {
             [self.controlView videoPlayer:self playStateChanged:playState];
         }
     };
     
-    self.currentPlayerManager.playerLoadStatChanged = ^(id  _Nonnull asset, ZFPlayerLoadState loadState) {
+    self.currentPlayerManager.playerLoadStateChanged = ^(id  _Nonnull asset, ZFPlayerLoadState loadState) {
         @strongify(self)
+        if (self.playerLoadStateChanged) self.playerLoadStateChanged(asset, loadState);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:loadStateChanged:)]) {
             [self.controlView videoPlayer:self loadStateChanged:loadState];
         }
@@ -159,17 +155,32 @@
             [self.controlView videoPlayerPlayEnd:self];
         }
     };
+    
+    self.currentPlayerManager.playerPlayFailed = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, id  _Nonnull error) {
+        @strongify(self)
+        if (self.playerPlayFailed) self.playerPlayFailed(asset, error);
+        if ([self.controlView respondsToSelector:@selector(videoPlayerPlayFailed:error:)]) {
+            [self.controlView videoPlayerPlayFailed:self error:error];
+        }
+    };
 }
 
 - (void)layoutPlayerSubViews {
-    self.containerView.userInteractionEnabled = YES;
-    [self.containerView addSubview:self.currentPlayerManager.view];
-    [self.currentPlayerManager.view addSubview:self.controlView];
-    
-    self.currentPlayerManager.view.frame = self.controlView.bounds;
-    self.currentPlayerManager.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.controlView.frame = self.currentPlayerManager.view.bounds;
-    self.controlView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    if (self.containerView && self.currentPlayerManager.view) {
+        UIView *superview = nil;
+        if (self.isFullScreen) {
+            superview = self.orientationObserver.fullScreenContainerView;
+        } else if (self.containerView) {
+            superview = self.containerView;
+        }
+        [superview addSubview:self.currentPlayerManager.view];
+        [self.currentPlayerManager.view addSubview:self.controlView];
+        
+        self.currentPlayerManager.view.frame = superview.bounds;
+        self.currentPlayerManager.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.controlView.frame = self.currentPlayerManager.view.bounds;
+        self.controlView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    }
 }
 
 #pragma mark - getter
@@ -180,17 +191,18 @@
         @weakify(self)
         _notification.willResignActive = ^(ZFPlayerNotification * _Nonnull registrar) {
             @strongify(self)
+            if (self.isViewControllerDisappear) return;
             if (self.pauseWhenAppResignActive && self.currentPlayerManager.isPlaying) {
-                [self.currentPlayerManager pause];
-                self.pauseByUser = YES;
+                self.pauseByEvent = YES;
             }
+            if (self.isFullScreen && !self.isLockedScreen) self.orientationObserver.lockedScreen = YES;
+            [[UIApplication sharedApplication].keyWindow endEditing:YES];
         };
         _notification.didBecomeActive = ^(ZFPlayerNotification * _Nonnull registrar) {
             @strongify(self)
-            if (self.isPauseByUser) {
-                [self.currentPlayerManager play];
-                self.pauseByUser = NO;
-            }
+            if (self.isViewControllerDisappear) return;
+            if (self.isPauseByEvent) self.pauseByEvent = NO;
+            if (self.isFullScreen && !self.isLockedScreen) self.orientationObserver.lockedScreen = NO;
         };
         _notification.oldDeviceUnavailable = ^(ZFPlayerNotification * _Nonnull registrar) {
             @strongify(self)
@@ -206,34 +218,50 @@
 
 - (void)setCurrentPlayerManager:(id<ZFPlayerMediaPlayback>)currentPlayerManager {
     if (!currentPlayerManager) return;
+    if (_currentPlayerManager.isPreparedToPlay) {
+        [_currentPlayerManager stop];
+        [_currentPlayerManager.view removeFromSuperview];
+        [self.orientationObserver removeDeviceOrientationObserver];
+        [self.gestureControl removeGestureToView:self.currentPlayerManager.view];
+    }
     _currentPlayerManager = currentPlayerManager;
+    _currentPlayerManager.view.hidden = YES;
     self.gestureControl.disableTypes = self.disableGestureTypes;
-    [self.gestureControl addGestureToControlView];
+    [self.gestureControl addGestureToView:currentPlayerManager.view];
     [self playerManagerCallbcak];
-    [self.notification addNotification];
+    [self.orientationObserver updateRotateView:currentPlayerManager.view containerView:self.containerView];
+    self.controlView.player = self;
+    [self layoutPlayerSubViews];
 }
 
 - (void)setContainerView:(UIView *)containerView {
     if (!containerView) return;
     _containerView = containerView;
     containerView.userInteractionEnabled = YES;
-    [containerView addSubview:self.currentPlayerManager.view];
-    self.currentPlayerManager.view.frame = containerView.bounds;
-    self.currentPlayerManager.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.orientationObserver addDeviceOrientationObserver];
 }
 
 - (void)setControlView:(UIView<ZFPlayerMediaControl> *)controlView {
     if (!controlView) return;
     _controlView = controlView;
-    [self.currentPlayerManager.view addSubview:controlView];
-    controlView.frame = self.currentPlayerManager.view.bounds;
-    controlView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    controlView.player = self;
+    [self layoutPlayerSubViews];
 }
 
 @end
 
 @implementation ZFPlayerController (ZFPlayerTimeControl)
+
+- (NSTimeInterval)currentTime {
+    return self.currentPlayerManager.currentTime;
+}
+
+- (NSTimeInterval)totalTime {
+    return self.currentPlayerManager.totalTime;
+}
+
+- (NSTimeInterval)bufferTime {
+    return self.currentPlayerManager.bufferTime;
+}
 
 - (float)progress {
     if (self.totalTime == 0) return 0;
@@ -256,51 +284,73 @@
 - (void)stop {
     [self.notification removeNotification];
     [self.orientationObserver removeDeviceOrientationObserver];
+    if (self.isFullScreen) {
+        [self.orientationObserver exitFullScreenWithAnimated:NO];
+    }
     [self.currentPlayerManager stop];
     [self.currentPlayerManager.view removeFromSuperview];
+    self.currentPlayerManager.view.hidden = YES;
 }
 
-- (void)replaceCurrentPlayerManager:(id<ZFPlayerMediaPlayback>)manager {
-    if (manager.isPlaying) {
-        [self.notification removeNotification];
-        [self.orientationObserver removeDeviceOrientationObserver];
-        [self.currentPlayerManager stop];
-    }
-    self.currentPlayerManager = manager;
-    [self layoutPlayerSubViews];
-    [self.currentPlayerManager prepareToPlay];
+- (void)replaceCurrentPlayerManager:(id<ZFPlayerMediaPlayback>)playerManager {
+    self.currentPlayerManager = playerManager;
 }
 
 - (void)playTheNext {
-    NSInteger index = self.currentPlayIndex + 1;
-    if (index >= self.assetURLs.count) return;
-    NSURL *assetURL = [self.assetURLs objectAtIndex:index];
-    [self.currentPlayerManager replaceCurrentAssetURL:assetURL];
-    self.currentPlayIndex = [self.assetURLs indexOfObject:assetURL];
+    if (self.assetURLs.count > 0) {
+        NSInteger index = self.currentPlayIndex + 1;
+        if (index >= self.assetURLs.count) return;
+        NSURL *assetURL = [self.assetURLs objectAtIndex:index];
+        self.assetURL = assetURL;
+        self.currentPlayIndex = [self.assetURLs indexOfObject:assetURL];
+    }
 }
 
 - (void)playThePrevious {
-    NSInteger index = self.currentPlayIndex - 1;
-    if (index < 0) return;
-    NSURL *assetURL = [self.assetURLs objectAtIndex:index];
-    [self.currentPlayerManager replaceCurrentAssetURL:assetURL];
-    self.currentPlayIndex = [self.assetURLs indexOfObject:assetURL];
+    if (self.assetURLs.count > 0) {
+        NSInteger index = self.currentPlayIndex - 1;
+        if (index < 0) return;
+        NSURL *assetURL = [self.assetURLs objectAtIndex:index];
+        self.assetURL = assetURL;
+        self.currentPlayIndex = [self.assetURLs indexOfObject:assetURL];
+    }
 }
 
 - (void)playTheIndex:(NSInteger)index {
-    if (index >= self.assetURLs.count) return;
-    NSURL *assetURL = [self.assetURLs objectAtIndex:index];
-    [self.currentPlayerManager replaceCurrentAssetURL:assetURL];
-    self.currentPlayIndex = index;
+    if (self.assetURLs.count > 0) {
+        if (index >= self.assetURLs.count) return;
+        NSURL *assetURL = [self.assetURLs objectAtIndex:index];
+        self.assetURL = assetURL;
+        self.currentPlayIndex = index;
+    }
 }
 
 #pragma mark - getter
 
-- (BOOL)isWWANAutoPlay {
-    NSNumber *number = objc_getAssociatedObject(self, _cmd);
-    if (number) return number.boolValue;
-    self.WWANAutoPlay = YES;
-    return YES;
+- (NSURL *)assetURL {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (NSArray<NSURL *> *)assetURLs {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (BOOL)isLastAssetURL {
+    if (self.assetURLs.count > 0) {
+        return self.assetURL == self.assetURLs.lastObject;
+    }
+    return NO;
+}
+
+- (BOOL)isFirstAssetURL {
+    if (self.assetURLs.count > 0) {
+        return self.assetURL == self.assetURLs.firstObject;
+    }
+    return NO;
+}
+
+- (BOOL)isPauseByEvent {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 - (float)brightness {
@@ -338,7 +388,31 @@
     return YES;
 }
 
-- (void (^)(id _Nonnull))playerDidToEnd {
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSURL * _Nonnull))playerPrepareToPlay {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSTimeInterval, NSTimeInterval))playerPlayTimeChanged {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSTimeInterval))playerBufferTimeChanged {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, ZFPlayerPlaybackState))playerPlayStateChanged {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, ZFPlayerLoadState))playerLoadStateChanged {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull))playerDidToEnd {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(id<ZFPlayerMediaPlayback> _Nonnull, id _Nonnull))playerPlayFailed {
     return objc_getAssociatedObject(self, _cmd);
 }
 
@@ -346,15 +420,24 @@
     return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
+- (BOOL)isViewControllerDisappear {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
 #pragma mark - setter
 
-- (void)setWWANAutoPlay:(BOOL)WWANAutoPlay {
-    objc_setAssociatedObject(self, @selector(isWWANAutoPlay), @(WWANAutoPlay), OBJC_ASSOCIATION_ASSIGN);
-    if (self.scrollView) self.scrollView.WWANAutoPlay = self.isWWANAutoPlay;
+- (void)setAssetURL:(NSURL *)assetURL {
+    objc_setAssociatedObject(self, @selector(assetURL), assetURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.currentPlayerManager.assetURL = assetURL;
+}
+
+- (void)setAssetURLs:(NSArray<NSURL *> * _Nullable)assetURLs {
+    objc_setAssociatedObject(self, @selector(assetURLs), assetURLs, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setVolume:(float)volume {
-    objc_setAssociatedObject(self, @selector(volume), @(volume), OBJC_ASSOCIATION_ASSIGN);
+    volume = MIN(MAX(0, volume), 1);
+    objc_setAssociatedObject(self, @selector(volume), @(volume), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.volumeViewSlider.value = volume;
 }
 
@@ -368,33 +451,73 @@
 }
 
 - (void)setLastVolumeValue:(float)lastVolumeValue {
-    objc_setAssociatedObject(self, @selector(lastVolumeValue), @(lastVolumeValue), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(lastVolumeValue), @(lastVolumeValue), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setBrightness:(float)brightness {
-    if (brightness <= 0) {
-        brightness = 0;
-    } else if (brightness >= 1) {
-        brightness = 1;
-    }
-    objc_setAssociatedObject(self, @selector(brightness), @(brightness), OBJC_ASSOCIATION_ASSIGN);
+    brightness = MIN(MAX(0, brightness), 1);
+    objc_setAssociatedObject(self, @selector(brightness), @(brightness), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [UIScreen mainScreen].brightness = brightness;
 }
 
-- (void)setPauseWhenAppResignActive:(BOOL)pauseWhenAppResignActive {
-    objc_setAssociatedObject(self, @selector(pauseWhenAppResignActive), @(pauseWhenAppResignActive), OBJC_ASSOCIATION_ASSIGN);
+- (void)setPauseByEvent:(BOOL)pauseByEvent {
+    objc_setAssociatedObject(self, @selector(isPauseByEvent), @(pauseByEvent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (pauseByEvent) {
+        [self.currentPlayerManager pause];
+    } else {
+        [self.currentPlayerManager play];
+    }
 }
 
-- (void)setPlayerDidToEnd:(void (^)(id _Nonnull))playerDidToEnd {
+- (void)setPauseWhenAppResignActive:(BOOL)pauseWhenAppResignActive {
+    objc_setAssociatedObject(self, @selector(pauseWhenAppResignActive), @(pauseWhenAppResignActive), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setPlayerPrepareToPlay:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSURL * _Nonnull))playerPrepareToPlay {
+    objc_setAssociatedObject(self, @selector(playerPrepareToPlay), playerPrepareToPlay, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)setPlayerPlayTimeChanged:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSTimeInterval, NSTimeInterval))playerPlayTimeChanged {
+    objc_setAssociatedObject(self, @selector(playerPlayTimeChanged), playerPlayTimeChanged, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)setPlayerBufferTimeChanged:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, NSTimeInterval))playerBufferTimeChanged {
+    objc_setAssociatedObject(self, @selector(playerBufferTimeChanged), playerBufferTimeChanged, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)setPlayerPlayStateChanged:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, ZFPlayerPlaybackState))playerPlayStateChanged {
+    objc_setAssociatedObject(self, @selector(playerPlayStateChanged), playerPlayStateChanged, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)setPlayerLoadStateChanged:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, ZFPlayerLoadState))playerLoadStateChanged {
+    objc_setAssociatedObject(self, @selector(playerLoadStateChanged), playerLoadStateChanged, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)setPlayerDidToEnd:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull))playerDidToEnd {
     objc_setAssociatedObject(self, @selector(playerDidToEnd), playerDidToEnd, OBJC_ASSOCIATION_COPY);
 }
 
+- (void)setPlayerPlayFailed:(void (^)(id<ZFPlayerMediaPlayback> _Nonnull, id _Nonnull))playerPlayFailed {
+    objc_setAssociatedObject(self, @selector(playerPlayFailed), playerPlayFailed, OBJC_ASSOCIATION_COPY);
+}
+
 - (void)setCurrentPlayIndex:(NSInteger)currentPlayIndex {
-    objc_setAssociatedObject(self, @selector(currentPlayIndex), @(currentPlayIndex), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(currentPlayIndex), @(currentPlayIndex), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setViewControllerDisappear:(BOOL)viewControllerDisappear {
+    objc_setAssociatedObject(self, @selector(isViewControllerDisappear), @(viewControllerDisappear), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (!self.currentPlayerManager.isPreparedToPlay) return;
+    if (viewControllerDisappear) {
+        [self removeDeviceOrientationObserver];
+        if (self.currentPlayerManager.isPlaying) self.pauseByEvent = YES;
+    } else {
+        if (self.isPauseByEvent) self.pauseByEvent = NO;
+        [self addDeviceOrientationObserver];
+    }
 }
 
 @end
-
 
 @implementation ZFPlayerController (ZFPlayerOrientationRotation)
 
@@ -420,20 +543,31 @@
     if (self.orientationObserver.fullScreenMode == ZFFullScreenModePortrait) {
         [self.orientationObserver enterPortraitFullScreen:fullScreen animated:YES];
     } else {
-        UIInterfaceOrientation orientation =  UIInterfaceOrientationUnknown;
+        UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
         orientation = fullScreen? UIInterfaceOrientationLandscapeRight : UIInterfaceOrientationPortrait;
         [self.orientationObserver enterLandscapeFullScreen:orientation animated:animated];
     }
 }
 
+- (BOOL)isNeedAdaptiveiOS8Rotation {
+    NSArray<NSString *> *versionStrArr = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
+    int firstVer = [[versionStrArr objectAtIndex:0] intValue];
+    int secondVer = [[versionStrArr objectAtIndex:1] intValue];
+    if (firstVer == 8) {
+        if (secondVer >= 1 && secondVer <= 3) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 #pragma mark - getter
 
 - (ZFOrientationObserver *)orientationObserver {
-    if (!self.currentPlayerManager.view && !self.containerView) return nil;
     @weakify(self)
     ZFOrientationObserver *orientationObserver = objc_getAssociatedObject(self, _cmd);
     if (!orientationObserver) {
-        orientationObserver = [[ZFOrientationObserver alloc] initWithRotateView:self.currentPlayerManager.view containerView:self.containerView];
+        orientationObserver = [[ZFOrientationObserver alloc] init];
         orientationObserver.orientationWillChange = ^(ZFOrientationObserver * _Nonnull observer, BOOL isFullScreen) {
             @strongify(self)
             if (self.orientationWillChange) self.orientationWillChange(self, isFullScreen);
@@ -472,11 +606,22 @@
 }
 
 - (BOOL)isStatusBarHidden {
-    return self.orientationObserver.isStatusBarHidden;
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 - (BOOL)isLockedScreen {
-    return self.orientationObserver.isLockedScreen;
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (BOOL)shouldAutorotate {
+    return [self isNeedAdaptiveiOS8Rotation];
+}
+
+- (BOOL)allowOrentitaionRotation {
+    NSNumber *number = objc_getAssociatedObject(self, _cmd);
+    if (number) return number.boolValue;
+    self.allowOrentitaionRotation = YES;
+    return YES;
 }
 
 #pragma mark - setter
@@ -490,16 +635,21 @@
 }
 
 - (void)setStatusBarHidden:(BOOL)statusBarHidden {
-    objc_setAssociatedObject(self, @selector(isStatusBarHidden), @(statusBarHidden), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(isStatusBarHidden), @(statusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.orientationObserver.statusBarHidden = statusBarHidden;
 }
 
 - (void)setLockedScreen:(BOOL)lockedScreen {
-    objc_setAssociatedObject(self, @selector(isLockedScreen), @(lockedScreen), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(isLockedScreen), @(lockedScreen), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.orientationObserver.lockedScreen = lockedScreen;
     if ([self.controlView respondsToSelector:@selector(lockedVideoPlayer:lockedScreen:)]) {
         [self.controlView lockedVideoPlayer:self lockedScreen:lockedScreen];
     }
+}
+
+- (void)setAllowOrentitaionRotation:(BOOL)allowOrentitaionRotation {
+    objc_setAssociatedObject(self, @selector(allowOrentitaionRotation), @(allowOrentitaionRotation), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.orientationObserver.allowOrentitaionRotation = allowOrentitaionRotation;
 }
 
 @end
@@ -510,10 +660,9 @@
 #pragma mark - getter
 
 - (ZFPlayerGestureControl *)gestureControl {
-    if (!self.currentPlayerManager.view) return nil;
     ZFPlayerGestureControl *gestureControl = objc_getAssociatedObject(self, _cmd);
     if (!gestureControl) {
-        gestureControl = [[ZFPlayerGestureControl alloc] initWithTargetView:self.currentPlayerManager.view];
+        gestureControl = [[ZFPlayerGestureControl alloc] init];
         @weakify(self)
         gestureControl.triggerCondition = ^BOOL(ZFPlayerGestureControl * _Nonnull control, ZFPlayerGestureType type, UIGestureRecognizer * _Nonnull gesture, UITouch *touch) {
             @strongify(self)
@@ -564,7 +713,6 @@
                 [self.controlView gesturePinched:control scale:scale];
             }
         };
-        
         objc_setAssociatedObject(self, _cmd, gestureControl, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return gestureControl;
@@ -577,7 +725,7 @@
 #pragma mark - setter
 
 - (void)setDisableGestureTypes:(ZFPlayerDisableGestureTypes)disableGestureTypes {
-    objc_setAssociatedObject(self, @selector(disableGestureTypes), @(disableGestureTypes), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(disableGestureTypes), @(disableGestureTypes), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.gestureControl.disableTypes = disableGestureTypes;
 }
 
@@ -586,21 +734,24 @@
 @implementation ZFPlayerController (ZFPlayerScrollView)
 
 + (void)load {
-    SEL selectors[] = {
-        NSSelectorFromString(@"dealloc")
-    };
-    
-    for (NSUInteger index = 0; index < sizeof(selectors) / sizeof(SEL); ++index) {
-        SEL originalSelector = selectors[index];
-        SEL swizzledSelector = NSSelectorFromString([@"zf_" stringByAppendingString:NSStringFromSelector(originalSelector)]);
-        Method originalMethod = class_getInstanceMethod(self, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
-        if (class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
-            class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL selectors[] = {
+            NSSelectorFromString(@"dealloc")
+        };
+        
+        for (NSInteger index = 0; index < sizeof(selectors) / sizeof(SEL); ++index) {
+            SEL originalSelector = selectors[index];
+            SEL swizzledSelector = NSSelectorFromString([@"zf_" stringByAppendingString:NSStringFromSelector(originalSelector)]);
+            Method originalMethod = class_getInstanceMethod(self, originalSelector);
+            Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
+            if (class_addMethod(self, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
+                class_replaceMethod(self, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+            } else {
+                method_exchangeImplementations(originalMethod, swizzledMethod);
+            }
         }
-    }
+    });
 }
 
 - (void)zf_dealloc {
@@ -613,7 +764,7 @@
 - (void)addPlayerViewToCell {
     self.isSmallFloatViewShow = NO;
     self.smallFloatView.hidden = YES;
-    UIView *cell = [self.scrollView zf_getCellForIndexPath:self.scrollView.playingIndexPath];
+    UIView *cell = [self.scrollView zf_getCellForIndexPath:self.playingIndexPath];
     self.containerView = [cell viewWithTag:self.containerViewTag];
     [self.containerView addSubview:self.currentPlayerManager.view];
     self.currentPlayerManager.view.frame = self.containerView.bounds;
@@ -627,6 +778,7 @@
     self.smallFloatView.hidden = NO;
     [self.smallFloatView addSubview:self.currentPlayerManager.view];
     self.currentPlayerManager.view.frame = self.smallFloatView.bounds;
+    self.currentPlayerManager.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.orientationObserver cellSmallModelRotateView:self.currentPlayerManager.view containerView:self.smallFloatView];
 }
 
@@ -634,61 +786,83 @@
 
 - (void)setScrollView:(UIScrollView *)scrollView {
     objc_setAssociatedObject(self, @selector(scrollView), scrollView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.scrollView.WWANAutoPlay = self.isWWANAutoPlay;
+    self.scrollView.zf_WWANAutoPlay = self.isWWANAutoPlay;
     @weakify(self)
-    scrollView.enableDirection = YES;
-    scrollView.playerDidAppearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
+    scrollView.zf_enableScrollHook = YES;
+    
+    scrollView.zf_playerWillAppearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
         @strongify(self)
         if (self.isFullScreen) return;
+        if (self.zf_playerWillAppearInScrollView) self.zf_playerWillAppearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerDidAppearInScrollView:)]) {
             [self.controlView playerDidAppearInScrollView:self];
         }
-        if (!self.stopWhileNotVisible) {
-            [self addPlayerViewToCell];
+    };
+    
+    scrollView.zf_playerDidAppearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
+        @strongify(self)
+        if (self.isFullScreen) return;
+        if (self.zf_playerDidAppearInScrollView) self.zf_playerDidAppearInScrollView(indexPath);
+        if ([self.controlView respondsToSelector:@selector(playerDidAppearInScrollView:)]) {
+            [self.controlView playerDidAppearInScrollView:self];
         }
     };
     
-    scrollView.playerWillDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
+    scrollView.zf_playerWillDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
         @strongify(self)
         if (self.isFullScreen) return;
+        if (self.zf_playerWillDisappearInScrollView) self.zf_playerWillDisappearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerWillDisappearInScrollView:)]) {
             [self.controlView playerWillDisappearInScrollView:self];
         }
     };
     
-    scrollView.playerDisappearHalfInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
+    scrollView.zf_playerDidDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
         @strongify(self)
         if (self.isFullScreen) return;
-        if ([self.controlView respondsToSelector:@selector(playerDisappearHalfInScrollView:)]) {
-            [self.controlView playerDisappearHalfInScrollView:self];
-        }
-        if (self.stopWhileNotVisible) {
-            [self stopCurrentPlayingCell];
-        }
-    };
-    
-    scrollView.playerDidDisappearInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
-        if (self.isFullScreen) return;
+        if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(indexPath);
         if ([self.controlView respondsToSelector:@selector(playerDidDisappearInScrollView:)]) {
             [self.controlView playerDidDisappearInScrollView:self];
         }
-        if (!self.stopWhileNotVisible) {
-            [self addPlayerViewToKeyWindow];
-        } else {
-            [self stopCurrentPlayingCell];
+    };
+    
+    scrollView.zf_playerAppearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerApperaPercent) {
+        @strongify(self)
+        if (self.isFullScreen) return;
+        if (self.zf_playerAppearingInScrollView) self.zf_playerAppearingInScrollView(indexPath, playerApperaPercent);
+        if ([self.controlView respondsToSelector:@selector(playerAppearingInScrollView:playerApperaPercent:)]) {
+            [self.controlView playerAppearingInScrollView:self playerApperaPercent:playerApperaPercent];
         }
+        if (!self.stopWhileNotVisible && playerApperaPercent >= self.playerApperaPercent) [self addPlayerViewToCell];
+    };
+    
+    scrollView.zf_playerDisappearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerDisapperaPercent) {
+        @strongify(self)
+        if (self.isFullScreen) return;
+        if (self.zf_playerDisappearingInScrollView) self.zf_playerDisappearingInScrollView(indexPath, playerDisapperaPercent);
+        if ([self.controlView respondsToSelector:@selector(playerDisappearingInScrollView:playerDisapperaPercent:)]) {
+            [self.controlView playerDisappearingInScrollView:self playerDisapperaPercent:playerDisapperaPercent];
+        }
+        /// stop playing
+        if (self.stopWhileNotVisible && playerDisapperaPercent >= self.playerDisapperaPercent) [self stopCurrentPlayingCell];
+        /// add to window
+        if (!self.stopWhileNotVisible && playerDisapperaPercent >= self.playerDisapperaPercent) [self addPlayerViewToKeyWindow];
     };
 }
 
+- (void)setWWANAutoPlay:(BOOL)WWANAutoPlay {
+    objc_setAssociatedObject(self, @selector(isWWANAutoPlay), @(WWANAutoPlay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.scrollView) self.scrollView.zf_WWANAutoPlay = self.isWWANAutoPlay;
+}
+
 - (void)setStopWhileNotVisible:(BOOL)stopWhileNotVisible {
-    self.scrollView.stopWhileNotVisible = stopWhileNotVisible;
-    objc_setAssociatedObject(self, @selector(stopWhileNotVisible), @(stopWhileNotVisible), OBJC_ASSOCIATION_ASSIGN);
+    self.scrollView.zf_stopWhileNotVisible = stopWhileNotVisible;
+    objc_setAssociatedObject(self, @selector(stopWhileNotVisible), @(stopWhileNotVisible), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setContainerViewTag:(NSInteger)containerViewTag {
-    objc_setAssociatedObject(self, @selector(containerViewTag), @(containerViewTag), OBJC_ASSOCIATION_ASSIGN);
-    self.scrollView.containerViewTag = containerViewTag;
+    objc_setAssociatedObject(self, @selector(containerViewTag), @(containerViewTag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.scrollView.zf_containerViewTag = containerViewTag;
 }
 
 - (void)setPlayingIndexPath:(NSIndexPath *)playingIndexPath {
@@ -698,17 +872,14 @@
         UIView *cell = [self.scrollView zf_getCellForIndexPath:playingIndexPath];
         self.containerView = [cell viewWithTag:self.containerViewTag];
         [self.orientationObserver cellModelRotateView:self.currentPlayerManager.view rotateViewAtCell:cell playerViewTag:self.containerViewTag];
-        [self.orientationObserver addDeviceOrientationObserver];
-        self.scrollView.playingIndexPath = playingIndexPath;
+        [self addDeviceOrientationObserver];
+        self.scrollView.zf_playingIndexPath = playingIndexPath;
+        [self layoutPlayerSubViews];
     }
 }
 
 - (void)setShouldAutoPlay:(BOOL)shouldAutoPlay {
-    self.scrollView.shouldAutoPlay = shouldAutoPlay;
-}
-
-- (void)setAssetURLs:(NSArray<NSURL *> * _Nullable)assetURLs {
-    objc_setAssociatedObject(self, @selector(assetURLs), assetURLs, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    self.scrollView.zf_shouldAutoPlay = shouldAutoPlay;
 }
 
 - (void)setSectionAssetURLs:(NSArray<NSArray<NSURL *> *> * _Nullable)sectionAssetURLs {
@@ -720,7 +891,43 @@
 }
 
 - (void)setIsSmallFloatViewShow:(BOOL)isSmallFloatViewShow {
-    objc_setAssociatedObject(self, @selector(isSmallFloatViewShow), @(isSmallFloatViewShow), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, @selector(isSmallFloatViewShow), @(isSmallFloatViewShow), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setPlayerDisapperaPercent:(CGFloat)playerDisapperaPercent {
+    objc_setAssociatedObject(self, @selector(playerDisapperaPercent), @(playerDisapperaPercent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setPlayerApperaPercent:(CGFloat)playerApperaPercent {
+    objc_setAssociatedObject(self, @selector(playerApperaPercent), @(playerApperaPercent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setZf_playerAppearingInScrollView:(void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerAppearingInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerAppearingInScrollView), zf_playerAppearingInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_playerDisappearingInScrollView:(void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerDisappearingInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerDisappearingInScrollView), zf_playerDisappearingInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_playerDidAppearInScrollView:(void (^)(NSIndexPath * _Nonnull))zf_playerDidAppearInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerDidAppearInScrollView), zf_playerDidAppearInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_playerWillDisappearInScrollView:(void (^)(NSIndexPath * _Nonnull))zf_playerWillDisappearInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerWillDisappearInScrollView), zf_playerWillDisappearInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_playerWillAppearInScrollView:(void (^)(NSIndexPath * _Nonnull))zf_playerWillAppearInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerWillAppearInScrollView), zf_playerWillAppearInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_playerDidDisappearInScrollView:(void (^)(NSIndexPath * _Nonnull))zf_playerDidDisappearInScrollView {
+    objc_setAssociatedObject(self, @selector(zf_playerDidDisappearInScrollView), zf_playerDidDisappearInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setZf_scrollViewDidStopScrollCallback:(void (^)(NSIndexPath * _Nonnull))zf_scrollViewDidStopScrollCallback {
+    objc_setAssociatedObject(self, @selector(zf_scrollViewDidStopScrollCallback), zf_scrollViewDidStopScrollCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 #pragma mark - getter
@@ -728,6 +935,10 @@
 - (UIScrollView *)scrollView {
     UIScrollView *scrollView = objc_getAssociatedObject(self, _cmd);
     return scrollView;
+}
+
+- (BOOL)isWWANAutoPlay {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 - (BOOL)stopWhileNotVisible {
@@ -760,16 +971,80 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (NSArray<NSURL *> *)assetURLs {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
 - (NSArray<NSArray<NSURL *> *> *)sectionAssetURLs {
     return objc_getAssociatedObject(self, _cmd);
 }
 
 - (BOOL)shouldAutoPlay {
-    return self.scrollView.shouldAutoPlay;
+    return self.scrollView.zf_shouldAutoPlay;
+}
+
+- (CGFloat)playerDisapperaPercent {
+    NSNumber *number = objc_getAssociatedObject(self, _cmd);
+    if (number) return number.floatValue;
+    self.playerDisapperaPercent = 0.5;
+    return 0.5;
+}
+
+- (CGFloat)playerApperaPercent {
+    NSNumber *number = objc_getAssociatedObject(self, _cmd);
+    if (number) return number.floatValue;
+    self.playerApperaPercent = 0.0;
+    return 0.0;
+}
+
+- (void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerAppearingInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerDisappearingInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull))zf_playerDidAppearInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull))zf_playerWillDisappearInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull))zf_playerWillAppearInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull))zf_playerDidDisappearInScrollView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void (^)(NSIndexPath * _Nonnull))zf_scrollViewDidStopScrollCallback {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+#pragma mark - Public method
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ _Nullable)(void))completionHandler {
+    NSURL *assetURL;
+    if (self.sectionAssetURLs.count) {
+        assetURL = self.sectionAssetURLs[indexPath.section][indexPath.row];
+    } else if (self.assetURLs.count) {
+        assetURL = self.assetURLs[indexPath.row];
+        self.currentPlayIndex = indexPath.row;
+    }
+    if (scrollToTop) {
+        @weakify(self)
+        [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:^{
+            @strongify(self)
+            if (completionHandler) completionHandler();
+            self.playingIndexPath = indexPath;
+            self.assetURL = assetURL;
+            [self.scrollView zf_scrollViewDidStopScroll];
+        }];
+    } else {
+        if (completionHandler) completionHandler();
+        self.playingIndexPath = indexPath;
+        self.assetURL = assetURL;
+    }
 }
 
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop {
@@ -781,17 +1056,25 @@
         assetURL = self.assetURLs[indexPath.row];
         self.currentPlayIndex = indexPath.row;
     }
-    self.currentPlayerManager.assetURL = assetURL;
+    self.assetURL = assetURL;
     if (scrollToTop) {
-        [self.scrollView zf_scrollToRowAtIndexPath:indexPath];
+        [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:nil];
+    }
+}
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL scrollToTop:(BOOL)scrollToTop {
+    self.playingIndexPath = indexPath;
+    self.assetURL = assetURL;
+    if (scrollToTop) {
+        [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:nil];
     }
 }
 
 - (void)stopCurrentPlayingCell {
-    if (self.scrollView.playingIndexPath) {
+    if (self.scrollView.zf_playingIndexPath) {
         [self stop];
         self.isSmallFloatViewShow = NO;
-        self.scrollView.playingIndexPath = nil;
+        self.scrollView.zf_playingIndexPath = nil;
         if (self.smallFloatView) self.smallFloatView.hidden = YES;
     }
 }

@@ -1,5 +1,6 @@
 //
-//  UIViewController+ZFPlayerRotation.h
+//  ZFPlayerLogManager.h
+//  ZFPlayer
 //
 // Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
 //
@@ -21,16 +22,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#define ZFPlayerLog(format,...)  [ZFPlayerLogManager logWithFunction:__FUNCTION__ lineNumber:__LINE__ formatString:[NSString stringWithFormat:format, ##__VA_ARGS__]]
+
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (ZFPlayerRotation)
+@interface ZFPlayerLogManager : NSObject
 
-@end
+// 设置日志输出状态
++ (void)setLogEnable:(BOOL)enable;
 
-@interface UITabBarController (ZFPlayerRotation)
+// 获取日志输出状态
++ (BOOL)getLogEnable;
 
-@end
+/// 版本
++ (NSString *)version;
 
-@interface UINavigationController (ZFPlayerRotation)
+// 日志输出方法
++ (void)logWithFunction:(const char *)function lineNumber:(int)lineNumber formatString:(NSString *)formatString;
 
 @end

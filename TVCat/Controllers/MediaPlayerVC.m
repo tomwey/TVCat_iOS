@@ -41,9 +41,19 @@
     
     self.navBar.title = @"";
     
-    [self addRightItemWithTitle:@"全屏" size:CGSizeMake(60,40) callback:^{
-        
-    }];
+//    [self addRightItemWithTitle:@"全屏" size:CGSizeMake(60,40) callback:^{
+//        NSNumber *orientationUnknown = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+//        [[UIDevice currentDevice] setValue:orientationUnknown forKey:@"orientation"];
+//
+//        NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+//        [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+//    }];
+    
+    NSString *url = self.params[@"url"];
+    if ( [url rangeOfString:@"title="].location != NSNotFound ) {
+        self.titleString = [url queryDictionaryUsingEncoding:NSUTF8StringEncoding][@"title"];
+        self.navBar.title = self.titleString;
+    }
     
     [self loadPlayer];
     
@@ -104,6 +114,8 @@
              }*/
              
              self.result = result;
+             
+             self.navBar.title = self.result[@"title"];
              
              NSString *url = [result[@"url"] description];
              
@@ -176,25 +188,25 @@
         playerManager.seekTime = progress;
     }
     
-    @weakify(self)
-    self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
-        @strongify(self)
-        [self.view endEditing:YES];
-        [self setNeedsStatusBarAppearanceUpdate];
-    };
-    self.player.playerDidToEnd = ^(id  _Nonnull asset) {
-        @strongify(self)
-        [self.player enterFullScreen:NO animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.player.orientationObserver.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.player stop];
-        });
-    };
+//    @weakify(self)
+//    self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
+//        @strongify(self)
+//        [self.view endEditing:YES];
+//        [self setNeedsStatusBarAppearanceUpdate];
+//    };
+//    self.player.playerDidToEnd = ^(id  _Nonnull asset) {
+//        @strongify(self)
+//        [self.player enterFullScreen:NO animated:YES];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.player.orientationObserver.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self.playser stop];
+//        });
+//    };
     
 //    [self.player enterFullScreen:YES animated:YES];
     
-    [self.controlView showTitle:result[@"title"] ?: self.titleString
-                 coverURLString:nil
-                 fullScreenMode:ZFFullScreenModePortrait];
+//    [self.controlView showTitle:result[@"title"] ?: self.titleString
+//                 coverURLString:nil
+//                 fullScreenMode:ZFFullScreenModePortrait];
 //    NSString *URLString = [@"http://tb-video.bdstatic.com/videocp/12045395_f9f87b84aaf4ff1fee62742f2d39687f.mp4" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 //    NSString *proxyURLString = [KTVHTTPCache proxyURLStringWithOriginalURLString:URLString];
     
@@ -222,17 +234,21 @@
     return self.player.isStatusBarHidden;
 }
 
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return UIStatusBarAnimationSlide;
-}
+//- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+//    return UIStatusBarAnimationSlide;
+//}
+
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return self.player.shouldAutorotate;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self.view endEditing:YES];
+//}
 
 #pragma mark - about keyboard orientation
 
@@ -270,7 +286,7 @@
         _webView = [[WKWebView alloc] initWithFrame:self.contentView.bounds configuration:configuration];
         [self.contentView addSubview:_webView];
         
-        _webView.translatesAutoresizingMaskIntoConstraints = YES;
+//        _webView.translatesAutoresizingMaskIntoConstraints = YES;
         
 //        _webView.customUserAgent = @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36";
         
@@ -286,12 +302,17 @@
     NSLog(@"request: %@", request);
     
     NSString *url = [request.URL absoluteString];
-    if ( [url rangeOfString:@".m3u8"].location != NSNotFound ) {
+    
+    if ( [url rangeOfString:@".m3u8"].location != NSNotFound ||
+        [url rangeOfString:@".mp4"].location != NSNotFound
+        ) {
         NSDictionary *dict = [url queryDictionaryUsingEncoding:NSUTF8StringEncoding];
         NSString *playingURL;
         for (NSString *key in dict) {
             NSString *value = dict[key];
-            if ([value rangeOfString:@".m3u8"].location != NSNotFound) {
+            if ([value rangeOfString:@".m3u8"].location != NSNotFound ||
+                [value rangeOfString:@".mp4"].location != NSNotFound
+                ) {
                 playingURL = value;
                 break;
             }
@@ -335,7 +356,7 @@
 {
     self.titleString = result;
     self.navBar.title = result;
-//    [self.controlView showTitle:result coverURLString:nil fullScreenMode:ZFFullScreenModePortrait];
+    [self.controlView showTitle:result coverURLString:nil fullScreenMode:ZFFullScreenModeLandscape];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error

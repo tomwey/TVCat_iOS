@@ -41,9 +41,8 @@ typedef NS_ENUM(NSUInteger, ZFRotateType) {
 
 @interface ZFOrientationObserver : NSObject
 
-/// normal play
-- (instancetype)initWithRotateView:(UIView *)rotateView
-                     containerView:(UIView *)containerView;
+- (void)updateRotateView:(UIView *)rotateView
+           containerView:(UIView *)containerView;
 
 /// list play
 - (void)cellModelRotateView:(UIView *)rotateView
@@ -54,10 +53,13 @@ typedef NS_ENUM(NSUInteger, ZFRotateType) {
 - (void)cellSmallModelRotateView:(UIView *)rotateView
                    containerView:(UIView *)containerView;
 
-/// Container view of a small screen state player
+/// Container view of a full screen state player.
+@property (nonatomic, strong) UIView *fullScreenContainerView;
+
+/// Container view of a small screen state player.
 @property (nonatomic, weak) UIView *containerView;
 
-/// If the full screen
+/// If the full screen.
 @property (nonatomic, readonly, getter=isFullScreen) BOOL fullScreen;
 
 /// Lock screen orientation
@@ -82,6 +84,10 @@ typedef NS_ENUM(NSUInteger, ZFRotateType) {
 /// Default is UIInterfaceOrientationPortrait.
 @property (nonatomic, readonly) UIInterfaceOrientation currentOrientation;
 
+/// Whether allow the video orientation rotate.
+/// default is YES.
+@property (nonatomic) BOOL allowOrentitaionRotation;
+
 /// Add the device orientation observer.
 - (void)addDeviceOrientationObserver;
 
@@ -93,6 +99,8 @@ typedef NS_ENUM(NSUInteger, ZFRotateType) {
 
 /// Enter the fullScreen while the ZFFullScreenMode is ZFFullScreenModePortrait.
 - (void)enterPortraitFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
+
+- (void)exitFullScreenWithAnimated:(BOOL)animated;
 
 @end
 

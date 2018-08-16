@@ -110,6 +110,13 @@
     
     NSString *url = [request.URL absoluteString];
     
+    if ( [url rangeOfString:@".m3u8"].location != NSNotFound ||
+        [url rangeOfString:@".mp4"].location != NSNotFound) {
+        [self forwardToPlayer:request];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+
     for (NSString *prefix in self.videoURLPrefixes) {
         if ( [url hasPrefix:prefix] ) {
             [self forwardToPlayer:request];

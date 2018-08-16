@@ -2,9 +2,25 @@
 //  ZFVolumeBrightnessView.m
 //  ZFPlayer
 //
-//  Created by 紫枫 on 2018/5/23.
-//  Copyright © 2018年 紫枫. All rights reserved.
+// Copyright (c) 2016年 任子丰 ( http://github.com/renzifeng )
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "ZFVolumeBrightnessView.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -26,27 +42,21 @@
 
 @implementation ZFVolumeBrightnessView
 
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         [self addSubview:self.iconImageView];
         [self addSubview:self.progressView];
         self.layer.cornerRadius = 4;
         self.layer.masksToBounds = YES;
-        [self configureVolume];
         [self hideTipView];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(volumeChanged:)
-                                                     name:@"AVSystemController_SystemVolumeDidChangeNotification"
-                                                   object:nil];
     }
     return self;
 }
 
 - (void)dealloc {
-    [self.volumeView removeFromSuperview];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    [self addSystemVolumeView];
 }
 
 - (void)layoutSubviews {
@@ -72,23 +82,18 @@
     self.progressView.frame = CGRectMake(min_x, min_y, min_w, min_h);
 }
 
-- (void)volumeChanged:(NSNotification *)notification {
-    float volume = [[[notification userInfo] objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] floatValue];
-    [self updateProgress:volume withVolumeBrightnessType:ZFVolumeBrightnessTypeVolume];
-}
-
 - (void)hideTipView {
     self.hidden = YES;
 }
 
-/**
- *  移除系统音量toast
- */
-- (void)configureVolume {
-    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
-    volumeView.frame = CGRectMake(-1000, -1000, 100, 100);
-    [[UIApplication sharedApplication].keyWindow addSubview:volumeView];
-    self.volumeView = volumeView;
+/// 添加系统音量view
+- (void)addSystemVolumeView {
+    [self.volumeView removeFromSuperview];
+}
+
+/// 移除系统音量view
+- (void)removeSystemVolumeView {
+    [[UIApplication sharedApplication].keyWindow addSubview:self.volumeView];
 }
 
 - (void)updateProgress:(CGFloat)progress withVolumeBrightnessType:(ZFVolumeBrightnessType)volumeBrightnessType {
@@ -130,6 +135,14 @@
         _iconImageView = [UIImageView new];
     }
     return _iconImageView;
+}
+
+- (MPVolumeView *)volumeView {
+    if (!_volumeView) {
+        _volumeView = [[MPVolumeView alloc] init];
+        _volumeView.frame = CGRectMake(-1000, -1000, 100, 100);
+    }
+    return _volumeView;
 }
 
 @end
